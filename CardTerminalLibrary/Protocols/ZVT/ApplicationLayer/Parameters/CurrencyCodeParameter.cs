@@ -20,10 +20,6 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
             buffer.AddRange(_myCurrency);
         }
 
-        #endregion
-
-        #region IParameter Members
-
         public int Length
         {
             get { return _myCurrency.Length; }

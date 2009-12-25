@@ -31,9 +31,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
         {
             LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
 
-            ParameterEncodingHelper.ReadLLVarData(new byte[] { 0xF1, 0xF3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 }, 0);
-
-            
+           
             IZvtTransport transportLayer = null;
             XmlDocument transportConfig = new XmlDocument();
             //transportConfig.LoadXml(_serialConfiguration);

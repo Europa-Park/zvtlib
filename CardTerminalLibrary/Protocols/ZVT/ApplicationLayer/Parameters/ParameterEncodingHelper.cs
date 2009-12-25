@@ -10,12 +10,14 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
         /// Extracts the length out of bytes with the following format
         /// 
         /// [Fx1] [Fx2] [Fx3]...[FxlengthBytes]
+        /// 
+        /// ATTENTION: LengthBytes is not added by this generic function
         /// </summary>
         /// <param name="buffer"></param>
         /// <param name="offset"></param>
         /// <param name="lengthBytes"></param>
         /// <returns></returns>
-        private static int GetLVarLength(byte[] buffer, int offset, int lengthBytes)
+        public static int GetLVarLength(byte[] buffer, int offset, int lengthBytes)
         {
             int length = 0;
 
@@ -27,14 +29,14 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
                 if ((currentByte & 0xF0) != 0xF0)
                     throw new ArgumentException("Could not extract length out of variable-length-field");
 
-                length += ((currentByte & 0x0F) << (4 * i));
+                length += (int)((currentByte & 0x0F) * Math.Pow(10, i));
 
             }
 
             return length;
         }
 
-        private static byte[] GetLVarData(byte[] rawData, int lengthBytes)
+        public static byte[] GetLVarData(byte[] rawData, int lengthBytes)
         {
             byte[] data = new byte[lengthBytes + rawData.Length];
 
@@ -72,9 +74,10 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
             return GetLVarLength(buffer, offset, 3) + 3;
         }
 
-        public static byte[] ReadLLVarData(byte[] buffer, int offset)
+
+        public static byte[] ReadLVarData(byte[] buffer, int offset, int lengthBytes)
         {
-            int dataLength = GetLVarLength(buffer, offset, 2);
+            int dataLength = GetLVarLength(buffer, offset, lengthBytes);
 
             byte[] data = new byte[dataLength];
             Array.Copy(buffer, offset + 2, data, 0, dataLength);
@@ -82,14 +85,15 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
             return data;
         }
 
+
+        public static byte[] ReadLLVarData(byte[] buffer, int offset)
+        {
+            return ReadLVarData(buffer, offset, 2);
+        }
+
         public static byte[] ReadLLLVarData(byte[] buffer, int offset)
         {
-            int dataLength = GetLVarLength(buffer, offset, 3);
-
-            byte[] data = new byte[dataLength];
-            Array.Copy(buffer, offset + 3, data, 0, dataLength);
-
-            return data;
+            return ReadLVarData(buffer, offset, 3);
         }
 
         public static byte[] GetLLVarData(byte[] rawData)

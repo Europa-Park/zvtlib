@@ -111,21 +111,17 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 
         #region IParameter Members
 
-        public void AddToBytes(List<byte> buffer)
+        public virtual void AddToBytes(List<byte> buffer)
         {
             buffer.AddRange(_bytes);
         }
 
-        #endregion
-
-        #region IParameter Members
-
-        public int Length
+        public virtual int Length
         {
             get { return _bytes.Count; }
         }
 
-        public void ParseFromBytes(byte[] buffer, int offset)
+        public virtual void ParseFromBytes(byte[] buffer, int offset)
         {
             byte[] localBuffer = new byte[Length];
             Array.Copy(buffer, offset, localBuffer, 0, Length);

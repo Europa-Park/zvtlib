@@ -40,7 +40,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CardTerminalLibrary\CardTerminalLibrary\CardTerminalLibrary.csproj">
+    <ProjectReference Include="..\CardTerminalLibrary\CardTerminalLibrary.csproj">
       <Project>{9E899822-A4D4-47D4-9DAA-9E8279F2201E}</Project>
       <Name>CardTerminalLibrary</Name>
     </ProjectReference>
