@@ -37,18 +37,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\ICommandEnvironment.cs" />
     <Compile Include="Commands\IEndOfDayCommand.cs" />
     <Compile Include="Commands\IInitialisationCommand.cs" />
-    <Compile Include="Commands\InitialisationResult.cs" />
+    <Compile Include="Commands\Data\InitialisationResult.cs" />
     <Compile Include="Commands\IReportCommand.cs" />
     <Compile Include="Commands\IReversalCommand.cs" />
-    <Compile Include="Commands\PaymentResult.cs" />
-    <Compile Include="Commands\CommandResult.cs" />
+    <Compile Include="Commands\Data\PaymentResult.cs" />
+    <Compile Include="Commands\Data\CommandResult.cs" />
     <Compile Include="Commands\IPaymentCommand.cs" />
-    <Compile Include="Commands\IPaymentData.cs" />
+    <Compile Include="Commands\Data\IPaymentData.cs" />
     <Compile Include="Commands\ICommand.cs" />
-    <Compile Include="Commands\IData.cs" />
-    <Compile Include="Commands\IntermediateStatus.cs" />
+    <Compile Include="Commands\Data\IData.cs" />
+    <Compile Include="Commands\Data\IntermediateStatus.cs" />
     <Compile Include="Common\ByteBuffer.cs" />
     <Compile Include="Common\ByteHelpers.cs" />
     <Compile Include="Communication\ICommunication.cs" />
@@ -81,21 +82,18 @@
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\LoadParameterHelper.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ReadCardApdu.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ReportApdu.cs" />
-    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\SelftestApdu.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\StatusApdu.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\StatusCodes.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\StatusInformationApdu.cs" />
-    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\SystemConfigurationApdu.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\ZVTCommandEnvironment.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\AuthorizationCommand.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\CommandBase.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\EndOfDayCommand.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\ReportCommand.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\ReversalCommand.cs" />
-    <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\SystemConfigurationCommand.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\InitialisationCommand.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\NetworkDiagnosisCommand.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\RegistrationCommand.cs" />
-    <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\SelftestCommand.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\ControlField.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\ICommandTransmitter.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\MagicResponseCommandTransmitter.cs" />
@@ -135,6 +133,9 @@
     <Compile Include="Protocols\ZVT\TransportLayer\IZvtTpdu.cs" />
     <Compile Include="Protocols\ZVT\TransportLayer\TpduBase.cs" />
     <Compile Include="Protocols\ZVT\TransportLayer\TransportException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Protocols\ZVT\SampleConfiguration.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -95,7 +95,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
                 {
                     _transport.MasterMode = false;
                 }
-                if (responseApdu is CompletionApduResponse || responseApdu is AbortApduResponse)
+                if (responseApdu is CompletionApduResponse || responseApdu is AbortApduResponse || 
+                    (responseApdu is StatusApdu && ((StatusApdu)responseApdu).Status != StatusCodes.ErrorIDEnum.NoError))
                 {
                     _transport.MasterMode = true;
                     return true;

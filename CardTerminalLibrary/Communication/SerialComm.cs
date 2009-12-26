@@ -31,7 +31,7 @@ namespace Wiffzack.Communication
         }
 
         private SerialPort _port = null;
-        private XmlDocument _config = new XmlDocument();
+        private XmlElement _config;
 
 
 
@@ -42,7 +42,7 @@ namespace Wiffzack.Communication
 
         public SerialComm(XmlDocument config)
         {
-            _config = config;
+            _config = config.DocumentElement;
             LoadConfig();
         }
 
@@ -114,20 +114,21 @@ namespace Wiffzack.Communication
 
         public void SetupCommunication(System.Xml.XmlElement setup)
         {
+            _config = setup;
             LoadConfig();           
         }
 
 
         public void LoadConfig()
         {
-            _port = new SerialPort(XmlHelper.ReadString(_config.DocumentElement, "Port"),
-               XmlHelper.ReadInt(_config.DocumentElement, "BaudRate", 9600),
-               XmlHelper.ReadEnum<Parity>(_config.DocumentElement, "Parity", Parity.Even),
-               XmlHelper.ReadInt(_config.DocumentElement, "DataBits", 8) ,
-               XmlHelper.ReadEnum<StopBits>(_config.DocumentElement, "StopBits", StopBits.One));
+            _port = new SerialPort(XmlHelper.ReadString(_config, "Port"),
+               XmlHelper.ReadInt(_config, "BaudRate", 9600),
+               XmlHelper.ReadEnum<Parity>(_config, "Parity", Parity.Even),
+               XmlHelper.ReadInt(_config, "DataBits", 8) ,
+               XmlHelper.ReadEnum<StopBits>(_config, "StopBits", StopBits.One));
 
-            _port.ReadBufferSize = Math.Max(4096, XmlHelper.ReadInt(_config.DocumentElement, "ReadBuffer", 4096));
-            _port.WriteBufferSize = Math.Max(4096, XmlHelper.ReadInt(_config.DocumentElement, "WriteBuffer", 4096));
+            _port.ReadBufferSize = Math.Max(4096, XmlHelper.ReadInt(_config, "ReadBuffer", 4096));
+            _port.WriteBufferSize = Math.Max(4096, XmlHelper.ReadInt(_config, "WriteBuffer", 4096));
 
             if(_autoOpen)
                 Open();

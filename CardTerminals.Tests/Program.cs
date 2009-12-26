@@ -14,52 +14,49 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 {
     class Program
     {
-        public static string _serialConfiguration = @"
+        public static string _configuration = @"
             <Config>
-                <PortName>COM7</PortName>
+              <Transport>Network</Transport>
+              <!-- <Transport>Network</Transport>-->
+              <Serial>
+                <Port>COM7</Port>
                 <BaudRate>9600</BaudRate>
                 <StopBits>One</StopBits>
-            </Config>";
+              </Serial>
 
-        public static string _networkConfiguration = @"
-            <Config>
+              <Network>
                 <RemoteIP>192.168.0.154</RemoteIP>
                 <RemotePort>5577</RemotePort>
+              </Network>
+
+              <RegistrationCommand>
+                <ECRPrintsAdministrationReceipts>True</ECRPrintsAdministrationReceipts>
+                <ECRPrintsPaymentReceipt>True</ECRPrintsPaymentReceipt>
+                <PTDisableAmountInput>True</PTDisableAmountInput>
+                <PTDisableAdministrationFunctions>True</PTDisableAdministrationFunctions>
+              </RegistrationCommand>
             </Config>
-";
+            ";
 
         static void Main(string[] args)
         {
             LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
 
-            IZvtTransport transportLayer = null;
-            XmlDocument transportConfig = new XmlDocument();
-            //transportConfig.LoadXml(_serialConfiguration);
-            transportConfig.LoadXml(_networkConfiguration);
+            XmlDocument configuration = new XmlDocument();
+            configuration.LoadXml(_configuration);
 
-                
-            //transportLayer = new RS232Transport(transportConfig.DocumentElement);
-            transportLayer = new NetworkTransport(transportConfig.DocumentElement);
+            ICommandEnvironment environment = new ZVTCommandEnvironment(configuration.DocumentElement);
+            ClassifyCommandResult(environment.CreateInitialisationCommand().Execute());
+            ClassifyCommandResult(environment.CreatePaymentCommand().Execute(90));
 
-            RegistrationCommand cmd = new RegistrationCommand(transportLayer);
-            cmd.Execute();
-
-            //new EndOfDayCommand(transportLayer).Execute();
-
-            //ReversalCommand reversal = new ReversalCommand(transportLayer);
-            //reversal.ReceiptNr = 3;
-            //reversal.Execute();
-            //new ReportCommand(transportLayer).Execute();
-            //new InitialisationCommand(transportLayer).Execute();
-            //new NetworkDiagnosisCommand(transportLayer).Execute();
-            //PaymentResult result = new AuthorizationCommand(transportLayer).Execute(120);
-            //new SelftestCommand(transportLayer).Execute();
-            //new SystemConfigurationCommand(transportLayer).Execute();
-
-            //BCDNumberParameter param = new BCDNumberParameter();
-            //param.SetNumber((Int64)120, 6);
             
             Console.ReadLine();
+        }
+
+        static void ClassifyCommandResult(CommandResult cmdResult)
+        {
+            if (cmdResult.Success == false)
+                throw new ArgumentException("Command not successful");
         }
     }
 }

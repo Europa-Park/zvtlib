@@ -6,13 +6,14 @@ using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU;
 using Wiffzack.Devices.CardTerminals.Commands;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Parameters;
 using Wiffzack.Diagnostic.Log;
+using System.Xml;
+using Wiffzack.Services.Utils;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 {
     public class RegistrationCommand:IInitialisationCommand
     {
         public event IntermediateStatusDelegate Status;
-
 
         /// <summary>
         /// Transportlayer to use
@@ -24,28 +25,37 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         /// </summary>
         private RegistrationApdu _registration;
 
+        /// <summary>
+        /// Command Environment
+        /// </summary>
+        private ZVTCommandEnvironment _environment;
+
         private Logger _log = LogManager.Global.GetLogger("Wiffzack");
-        public RegistrationCommand(IZvtTransport transport)
+
+        public RegistrationCommand(IZvtTransport transport, ZVTCommandEnvironment env)
         {
             _transport = transport;
             _registration = new RegistrationApdu();
+            _environment = env;
+
+            XmlElement myConfig = env.RegistrationCommandConfig;
+
+            _registration.ConfigByte.ECRPrintsAdministrationReceipts = XmlHelper.ReadBool(myConfig, "ECRPrintsAdministrationReceipts", true);
+            _registration.ConfigByte.ECRPrintsPaymentReceipt = XmlHelper.ReadBool(myConfig, "ECRPrintsPaymentReceipt", true);
+            _registration.ConfigByte.ECRPrintType = true;
+            _registration.ConfigByte.PTDisableAmountInput = XmlHelper.ReadBool(myConfig, "PTDisableAmountInput", true);
+            _registration.ConfigByte.PTDisableAdministrationFunctions = XmlHelper.ReadBool(myConfig, "PTDisableAdministrationFunctions", true);
+            _registration.ConfigByte.SendIntermediateStatusInformation = true;
+            _registration.EnableServiceByte = false;
+            _registration.ServiceByte.DisplayAuthorisationInCapitals = true;
+            _registration.ServiceByte.NotAssignPTServiceMenuToFunctionKey = true;
         }
 
 
         public InitialisationResult Execute()
         {
             InitialisationResult result = new InitialisationResult();
-            result.Success = true;
-
-            _registration.ConfigByte.ECRPrintsAdministrationReceipts = true;
-            _registration.ConfigByte.ECRPrintsPaymentReceipt = true;
-            _registration.ConfigByte.ECRPrintType = true;
-            _registration.ConfigByte.PTDisableAmountInput = false;
-            _registration.ConfigByte.PTDisableAdministrationFunctions = true;
-            _registration.ConfigByte.SendIntermediateStatusInformation = true;
-            _registration.EnableServiceByte = false;
-            _registration.ServiceByte.DisplayAuthorisationInCapitals = true;
-            _registration.ServiceByte.NotAssignPTServiceMenuToFunctionKey = true;
+            result.Success = true;            
 
             try
             {
@@ -117,7 +127,10 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             
         }
 
-
+        public void ReadSettings(XmlElement settings)
+        {
+            _log.Warning("ReadSettings for RegistrationCommand, but no settings should be read");
+        }
       
     }
 }

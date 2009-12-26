@@ -10,7 +10,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
     public class ApduResponse : IZvtApdu
     {
 
-        public static ApduResponse Create(byte[] rawApduData)
+        public static IZvtApdu Create(byte[] rawApduData)
         {
             if (rawApduData == null)
                 return null;
@@ -21,6 +21,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
                 return new CompletionApduResponse(rawApduData);
             else if (rawApduData[0] == 0x06 && rawApduData[1] == 0x1E)
                 return new AbortApduResponse(rawApduData);
+            else if (rawApduData[0] == 0x80 || rawApduData[0] == 0x84)
+                return new StatusApdu(rawApduData);
             else
                 return new ApduResponse(rawApduData);
                     

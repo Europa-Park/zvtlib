@@ -156,7 +156,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
 
             NetworkTpdu responseTpdu = NetworkTpdu.CreateFromBuffer(_receiveBuffer, true);
 
-            _log.Debug("Received TPDU: {0}", ByteHelpers.ByteToString(responseTpdu.GetTPDUData()));
+            if(responseTpdu != null)
+                _log.Debug("Received TPDU: {0}", ByteHelpers.ByteToString(responseTpdu.GetTPDUData()));
 
             if (responseTpdu == null)
                 return null;

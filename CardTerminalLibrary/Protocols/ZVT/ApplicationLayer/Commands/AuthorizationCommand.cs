@@ -5,6 +5,8 @@ using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Parameters;
 using Wiffzack.Devices.CardTerminals.Commands;
+using Wiffzack.Diagnostic.Log;
+using System.Xml;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 {
@@ -23,6 +25,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         private AuthorizationApdu _apdu;
 
         private ICommandTransmitter _commandTransmitter;
+
+        private Logger _log = LogManager.Global.GetLogger("Wiffzack");
 
         public AuthorizationCommand(IZvtTransport transport)
         {
@@ -54,6 +58,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             //Abort is only sent if something went wrong
             AbortApduResponse abort = responses.FindFirstApduOfType<AbortApduResponse>();
 
+            //If the terminal is not registered a application layer nack (0x84 XX XX) is sent
+            StatusApdu status = responses.FindFirstApduOfType<StatusApdu>();
 
             bool success = true;
             int? errorCode = null;
@@ -76,11 +82,23 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
                     errorDescription = result.ResultCode.ToString();
                 }
             }
+            else if (status != null && status.Status != StatusCodes.ErrorIDEnum.NoError)
+            {
+                success = false;
+                errorCode = (byte)status.Status;
+                errorDescription = status.Status.ToString();
+            }
 
             PaymentResult authResult = new PaymentResult(success, errorCode, errorDescription, statusInformation);
 
             return authResult;
 
-        }        
+        }
+
+        
+        public void ReadSettings(XmlElement settings)
+        {
+            _log.Warning("ReadSettings for AuthorisationCommand, but no settings should be read");
+        }
     }
 }
