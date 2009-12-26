@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU;
+using Wiffzack.Devices.CardTerminals.Commands;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 {
-    public abstract class CommandBase<T> where T: IZvtApdu
+    public abstract class CommandBase<T, U> where T: IZvtApdu where U: class
     {
            /// <summary>
         /// Transportlayer to use
@@ -18,7 +19,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         /// </summary>
         protected T _apdu;
 
-        private ICommandTransmitter _commandTransmitter;
+        protected ICommandTransmitter _commandTransmitter;
 
         public CommandBase(IZvtTransport transport)
         {
@@ -36,11 +37,27 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         {
         }
      
-        public virtual void Execute()
+        public virtual U Execute()
         {
             _transport.OpenConnection();
             ApduCollection responses = _commandTransmitter.TransmitAPDU(_apdu);
             _transport.CloseConnection();
+
+            return null;
+        }
+
+        public static bool CheckForAbortApdu(CommandResult cmdResult, ApduCollection collection)
+        {
+            AbortApduResponse abort = collection.FindFirstApduOfType<AbortApduResponse>();
+
+            if (abort != null)
+            {
+                cmdResult.Success = false;
+                cmdResult.ProtocolSpecificErrorCode = (byte)abort.ResultCode;
+                cmdResult.ProtocolSpecificErrorDescription = abort.ResultCode.ToString();
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
 
         public StatusInformationApdu.StatusParameterEnum ResultCode
         {
-            get { return (StatusInformationApdu.StatusParameterEnum)base._rawApduData[4]; }
+            get { return (StatusInformationApdu.StatusParameterEnum)base._rawApduData[3]; }
         }
 
         public AbortApduResponse(params byte[] rawData)

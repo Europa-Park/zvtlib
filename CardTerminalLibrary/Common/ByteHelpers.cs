@@ -15,5 +15,17 @@ namespace Wiffzack.Devices.CardTerminals.Common
 
             return sBuilder.ToString();
         }
+
+        public static byte[] ByteStringToByte(string bytes)
+        {
+            List<byte> bs = new List<byte>();
+
+            foreach (string b in bytes.Split(' '))
+            {
+                bs.Add(byte.Parse(b, System.Globalization.NumberStyles.HexNumber));
+            }
+
+            return bs.ToArray();
+        }
     }
 }

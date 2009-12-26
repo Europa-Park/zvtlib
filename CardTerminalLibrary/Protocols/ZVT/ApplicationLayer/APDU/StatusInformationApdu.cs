@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Parameters;
+using Wiffzack.Devices.CardTerminals.Commands;
+using System.Xml;
+using Wiffzack.Services.Utils;
+using Wiffzack.Devices.CardTerminals.Common;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
 {
@@ -11,7 +15,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
     /// <remarks>
     /// The special thing about status informations
     /// </remarks>
-    public class StatusInformationApdu : ApduResponse
+    public class StatusInformationApdu : ApduResponse, IPaymentData
     {
         public enum StatusParameterEnum : byte
         {
@@ -52,24 +56,22 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
         public StatusInformationApdu(byte[] rawApduData)
             : base(rawApduData)
         {
-            int currentIndex = 3;
+            LoadParameters();
+        }
 
-            while (currentIndex + 1 < rawApduData.Length)
-            {
-                IParameter param = CreateParameterForBMP(rawApduData[currentIndex]);
+        private void LoadParameters()
+        {
+            _parameters.Clear();
 
-                if (param == null)
-                    break;
-
-                param.ParseFromBytes(rawApduData, currentIndex);
-
-                if (_parameters.ContainsKey((StatusParameterEnum)rawApduData[currentIndex]))
-                    _parameters[(StatusParameterEnum)rawApduData[currentIndex]] = param;
-                else
-                    _parameters.Add((StatusParameterEnum)rawApduData[currentIndex], param);
-
-                currentIndex += param.Length;
-            }
+            LoadParameterHelper.LoadParameters(CreateParameterForBMP,
+                (LoadParameterHelper.AddToParameterListDelegate)delegate(byte bmp, IParameter param)
+                {
+                    if (_parameters.ContainsKey((StatusParameterEnum)bmp))
+                        _parameters[(StatusParameterEnum)bmp] = param;
+                    else
+                        _parameters.Add((StatusParameterEnum)bmp, param);
+                },
+                _rawApduData, 3);
         }
 
         /// <summary>
@@ -81,7 +83,12 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
         public T FindParameter<T>(StatusParameterEnum parameterType) where T : class, IParameter
         {
             if (_parameters.ContainsKey(parameterType))
-                return (T)_parameters[parameterType];
+            {
+                if (_parameters[parameterType] is PrefixedParameter<T>)
+                    return ((PrefixedParameter<T>)_parameters[parameterType]).SubParameter;
+                else
+                    return (T)_parameters[parameterType];
+            }
             else
                 return null;
         }
@@ -204,5 +211,19 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
             }
         }
 
+
+        #region IData Members
+
+        public void WriteXml(XmlElement rootNode)
+        {
+            XmlHelper.WriteString(rootNode, "RawData", ByteHelpers.ByteToString(_rawApduData));
+        }
+
+        public void ReadXml(XmlElement rootNode)
+        {
+            _rawApduData = ByteHelpers.ByteStringToByte(XmlHelper.ReadString(rootNode, "RawData"));
+        }
+
+        #endregion
     }
 }

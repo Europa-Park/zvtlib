@@ -12,7 +12,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
         /// <summary>
         /// Current configuration
         /// </summary>
-        private byte _myByte = 0;
+        protected byte _myByte = 0;
 
         /// <summary>
         /// Sets all bits to the given value
@@ -69,10 +69,6 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
         {
             buffer.Add(_myByte);
         }
-
-        #endregion
-
-        #region IParameter Members
 
         public int Length
         {

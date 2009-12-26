@@ -8,6 +8,7 @@ using Wiffzack.Devices.CardTerminals.Common;
 using System.Xml;
 using Wiffzack.Services.Utils;
 using System.Threading;
+using Wiffzack.Diagnostic.Log;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
 {
@@ -42,6 +43,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
         /// Transport configuration
         /// </summary>
         private XmlElement _config;
+
+        private Logger _log = LogManager.Global.GetLogger("Wiffzack");
 
         #region IZvtTransport Members
 
@@ -100,7 +103,6 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
             //connection closed
             if (read == 0)
             {
-                Console.WriteLine("huhu");
                 //eeeek
             }
             else
@@ -129,6 +131,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
         public void Transmit(IZvtTpdu tpdu)
         {
             byte[] data = tpdu.GetTPDUData();
+            _log.Debug("Transmitting TPDU: {0}", ByteHelpers.ByteToString(data));
             _client.GetStream().Write(data, 0, data.Length);
         }
 
@@ -152,6 +155,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
             }
 
             NetworkTpdu responseTpdu = NetworkTpdu.CreateFromBuffer(_receiveBuffer, true);
+
+            _log.Debug("Received TPDU: {0}", ByteHelpers.ByteToString(responseTpdu.GetTPDUData()));
 
             if (responseTpdu == null)
                 return null;

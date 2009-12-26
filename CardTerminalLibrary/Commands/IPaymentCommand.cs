@@ -8,13 +8,13 @@ namespace Wiffzack.Devices.CardTerminals.Commands
     /// Command that performs the booking process
     /// 
     /// </summary>
-    public interface IAuthorizationCommand : ICommand
+    public interface IPaymentCommand : ICommand
     {     
    
         /// <summary>
         /// Initiates the payment process
         /// </summary>
         /// <param name="centAmount">Amount to book in EuroCents</param>
-        AuthorizationResult Execute(Int64 centAmount);
+        PaymentResult Execute(Int64 centAmount);
     }
 }

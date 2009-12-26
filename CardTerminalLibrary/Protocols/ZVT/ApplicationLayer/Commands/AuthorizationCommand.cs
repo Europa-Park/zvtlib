@@ -8,7 +8,7 @@ using Wiffzack.Devices.CardTerminals.Commands;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 {
-    public class AuthorizationCommand : IAuthorizationCommand
+    public class AuthorizationCommand : IPaymentCommand
     {
         public event IntermediateStatusDelegate Status;
 
@@ -38,26 +38,48 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         }
 
      
-        public AuthorizationResult Execute(Int64 centAmount)
+        public PaymentResult Execute(Int64 centAmount)
         {
             _apdu.SetCentAmount(centAmount);
             _transport.OpenConnection();
             ApduCollection responses = _commandTransmitter.TransmitAPDU(_apdu);
             _transport.CloseConnection();
 
-            //Contains the result (sucess or failure) and much information about the transaction
+            //Contains the result (success or failure) and much information about the transaction
             StatusInformationApdu statusInformation = responses.FindFirstApduOfType<StatusInformationApdu>();
 
-            //Completion is only sent if everathing worked fine
+            //Completion is only sent if everything worked fine
             CompletionApduResponse completion = responses.FindFirstApduOfType<CompletionApduResponse>();
 
             //Abort is only sent if something went wrong
             AbortApduResponse abort = responses.FindFirstApduOfType<AbortApduResponse>();
 
 
-            AuthorizationResult result = new AuthorizationResult();
-            
-            return null;
+            bool success = true;
+            int? errorCode = null;
+            string errorDescription = "";
+
+            if (completion == null && abort != null)
+            {
+                success = false;
+                errorCode = (byte)abort.ResultCode;
+                errorDescription = abort.ResultCode.ToString();
+            }
+            else if (statusInformation != null)
+            {
+                StatusInformationResultCode result = statusInformation.FindParameter<StatusInformationResultCode>(StatusInformationApdu.StatusParameterEnum.ResultCode);
+
+                if (result.ResultCode != StatusCodes.ErrorIDEnum.NoError)
+                {
+                    success = false;
+                    errorCode = (byte)result.ResultCode;
+                    errorDescription = result.ResultCode.ToString();
+                }
+            }
+
+            PaymentResult authResult = new PaymentResult(success, errorCode, errorDescription, statusInformation);
+
+            return authResult;
 
         }        
     }

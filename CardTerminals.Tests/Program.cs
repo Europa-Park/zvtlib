@@ -8,6 +8,7 @@ using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer;
 using System.IO.Ports;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Parameters;
+using Wiffzack.Devices.CardTerminals.Commands;
 
 namespace Wiffzack.Devices.CardTerminals.Tests
 {
@@ -43,9 +44,15 @@ namespace Wiffzack.Devices.CardTerminals.Tests
             RegistrationCommand cmd = new RegistrationCommand(transportLayer);
             cmd.Execute();
 
+            //new EndOfDayCommand(transportLayer).Execute();
+
+            //ReversalCommand reversal = new ReversalCommand(transportLayer);
+            //reversal.ReceiptNr = 3;
+            //reversal.Execute();
+            //new ReportCommand(transportLayer).Execute();
             //new InitialisationCommand(transportLayer).Execute();
             //new NetworkDiagnosisCommand(transportLayer).Execute();
-            new AuthorizationCommand(transportLayer).Execute(120);
+            //PaymentResult result = new AuthorizationCommand(transportLayer).Execute(120);
             //new SelftestCommand(transportLayer).Execute();
             //new SystemConfigurationCommand(transportLayer).Execute();
 
