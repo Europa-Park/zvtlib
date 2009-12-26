@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
 {
@@ -13,6 +14,6 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
     {
         event Action<IZvtApdu> ResponseReceived;
 
-        IZvtApdu[] TransmitAPDU(IZvtApdu apdu);
+        ApduCollection TransmitAPDU(IZvtApdu apdu);
     }
 }

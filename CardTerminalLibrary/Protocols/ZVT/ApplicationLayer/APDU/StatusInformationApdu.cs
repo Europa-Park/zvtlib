@@ -11,7 +11,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
     /// <remarks>
     /// The special thing about status informations
     /// </remarks>
-    public abstract class StatusInformationApdu : ApduResponse
+    public class StatusInformationApdu : ApduResponse
     {
         public enum StatusParameterEnum : byte
         {
@@ -24,6 +24,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
             ExpiryDate = 0x0E,
             SequenceNumber = 0x17,
             PaymentType = 0x19,
+            PanEfId = 0x22,
             TerminalId = 0x29,
             AuthorisationAttribute = 0x3B,
             CurrencyCode = 0x49,
@@ -46,13 +47,44 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
         /// <summary>
         /// Saves the parsed paramters from the Apdu
         /// </summary>
-        private List<IParameter> _parameters = new List<IParameter>();
+        private Dictionary<StatusParameterEnum, IParameter> _parameters = new Dictionary<StatusParameterEnum, IParameter>();
 
         public StatusInformationApdu(byte[] rawApduData)
             : base(rawApduData)
         {
+            int currentIndex = 3;
+
+            while (currentIndex + 1 < rawApduData.Length)
+            {
+                IParameter param = CreateParameterForBMP(rawApduData[currentIndex]);
+
+                if (param == null)
+                    break;
+
+                param.ParseFromBytes(rawApduData, currentIndex);
+
+                if (_parameters.ContainsKey((StatusParameterEnum)rawApduData[currentIndex]))
+                    _parameters[(StatusParameterEnum)rawApduData[currentIndex]] = param;
+                else
+                    _parameters.Add((StatusParameterEnum)rawApduData[currentIndex], param);
+
+                currentIndex += param.Length;
+            }
         }
 
+        /// <summary>
+        /// Returns the specific parameter or null
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="parameterType"></param>
+        /// <returns></returns>
+        public T FindParameter<T>(StatusParameterEnum parameterType) where T : class, IParameter
+        {
+            if (_parameters.ContainsKey(parameterType))
+                return (T)_parameters[parameterType];
+            else
+                return null;
+        }
 
         /// <summary>
         /// Creates an empty Parameter Object wich is then filled by ParseFromBytes
@@ -98,6 +130,9 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
                 //Payment Type: 1Byte
                 case StatusParameterEnum.PaymentType:
                     return new PrefixedParameter<StatusPaymentTypeParam>(bmp, new StatusPaymentTypeParam());
+
+                case StatusParameterEnum.PanEfId:
+                    return new PrefixedParameter<StatusPanEfId>(bmp, new StatusPanEfId());
 
                 //Terminal ID: 4Bytes
                 case StatusParameterEnum.TerminalId:

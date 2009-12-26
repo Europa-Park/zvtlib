@@ -23,12 +23,12 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 
         public override int Length
         {
-            get{ return ParameterEncodingHelper.GetLVarLength(_bytes.ToArray(), 0, _lLevel); }
+            get { return _bytes.Count + _lLevel; }
         }
 
         public override void AddToBytes(List<byte> buffer)
         {
-            buffer.AddRange(ParameterEncodingHelper.GetLVarData(_bytes.ToArray(), _lLevel));
+            buffer.AddRange(ParameterEncodingHelper.ComposeLVarData(_bytes.ToArray(), _lLevel));
         }
 
         public override void ParseFromBytes(byte[] buffer, int offset)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer;
+using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 {
@@ -38,7 +39,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         public virtual void Execute()
         {
             _transport.OpenConnection();
-            IZvtApdu[] responses = _commandTransmitter.TransmitAPDU(_apdu);
+            ApduCollection responses = _commandTransmitter.TransmitAPDU(_apdu);
             _transport.CloseConnection();
         }
     }

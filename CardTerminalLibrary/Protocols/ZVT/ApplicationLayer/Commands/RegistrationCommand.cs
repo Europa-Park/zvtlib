@@ -42,7 +42,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             MagicResponseCommandTransmitter commandTransmitter = new MagicResponseCommandTransmitter(_transport);
             commandTransmitter.ResponseReceived += new Action<IZvtApdu>(commandTransmitter_ResponseReceived);
 
-            IZvtApdu[] responses = commandTransmitter.TransmitAPDU(_registration);
+            ApduCollection responses = commandTransmitter.TransmitAPDU(_registration);
             _transport.CloseConnection();
         }
 

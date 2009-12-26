@@ -27,7 +27,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 
         public int Length
         {
-            get { return ParameterEncodingHelper.GetLVarLength(_data, 0, _lLevel) + _lLevel; }
+            get { return _data.Length + _lLevel; }
         }
 
         public void ParseFromBytes(byte[] buffer, int offset)
@@ -37,7 +37,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 
         public void AddToBytes(List<byte> buffer)
         {
-            buffer.AddRange(ParameterEncodingHelper.GetLVarData(_data, _lLevel));
+            buffer.AddRange(ParameterEncodingHelper.ComposeLVarData(_data, _lLevel));
         }
 
         #endregion

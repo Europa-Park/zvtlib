@@ -36,7 +36,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
             for (int i = 0; i < decodedBytes.Length; i++)
             {
                 byte current = decodedBytes[decodedBytes.Length - i - 1];
-                num += current << i;
+                num += (Int64)(current * Math.Pow(10, i));
+                //num += current << i;
             }
 
             return num;
@@ -50,9 +51,9 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
         {
             List<byte> decodedBytes = new List<byte>();
 
-            for (int i = 0; i < compressedBCD.Length; i += 2)
+            for (int i = 0; i < compressedBCD.Length; i ++)
             {
-                decodedBytes.Add((byte)(compressedBCD[i] & 0xF0));
+                decodedBytes.Add((byte)((compressedBCD[i] & 0xF0) >> 4));
                 decodedBytes.Add((byte)(compressedBCD[i] & 0x0F));
             }
 
@@ -106,7 +107,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 
         public Int64 DecodeNumber()
         {
-            return BCDDecodeNumber(_bytes.ToArray());
+            return BCDDecodeNumber(BCDGetDecodedBytes(_bytes.ToArray()));
         }
 
         #region IParameter Members

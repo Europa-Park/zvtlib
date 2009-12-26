@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\AuthorizationResult.cs" />
+    <Compile Include="Commands\CommandResult.cs" />
     <Compile Include="Commands\IAuthorizationCommand.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\IntermediateStatus.cs" />
@@ -61,7 +62,10 @@
     <Compile Include="Protocols\ZVT\ApplicationLayer\ApduHandlerDefinitions\IApduHandler.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ActivateCardReaderApdu.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ApduBase.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ApduCollection.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\AuthorizationApdu.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\CompletionApduResponse.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\AbortApduResponse.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\DiagnosisApdu.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\InitialisationApdu.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ReadCardApdu.cs" />
@@ -78,7 +82,6 @@
     <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\RegistrationCommand.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\SelftestCommand.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\ControlField.cs" />
-    <Compile Include="Protocols\ZVT\ApplicationLayer\FixedAmountCommandTransmitter.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\ICommandTransmitter.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\MagicResponseCommandTransmitter.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\AsciiFixedSizeParameter.cs" />

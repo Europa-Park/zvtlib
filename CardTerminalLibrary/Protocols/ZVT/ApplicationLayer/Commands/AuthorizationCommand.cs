@@ -42,9 +42,21 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         {
             _apdu.SetCentAmount(centAmount);
             _transport.OpenConnection();
-            IZvtApdu[] responses = _commandTransmitter.TransmitAPDU(_apdu);
+            ApduCollection responses = _commandTransmitter.TransmitAPDU(_apdu);
             _transport.CloseConnection();
 
+            //Contains the result (sucess or failure) and much information about the transaction
+            StatusInformationApdu statusInformation = responses.FindFirstApduOfType<StatusInformationApdu>();
+
+            //Completion is only sent if everathing worked fine
+            CompletionApduResponse completion = responses.FindFirstApduOfType<CompletionApduResponse>();
+
+            //Abort is only sent if something went wrong
+            AbortApduResponse abort = responses.FindFirstApduOfType<AbortApduResponse>();
+
+
+            AuthorizationResult result = new AuthorizationResult();
+            
             return null;
 
         }        

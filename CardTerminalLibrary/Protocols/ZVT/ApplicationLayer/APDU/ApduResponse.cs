@@ -15,11 +15,17 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
             if (rawApduData == null)
                 return null;
 
-            return new ApduResponse(rawApduData);
+            if (rawApduData[0] == 0x04 && rawApduData[1] == 0x0F)
+                return new StatusInformationApdu(rawApduData);
+            else if (rawApduData[0] == 0x06 && rawApduData[1] == 0x0F)
+                return new CompletionApduResponse();
+
+            else
+                return new ApduResponse(rawApduData);
                     
         }
 
-        private byte[] _rawApduData;
+        protected byte[] _rawApduData;
 
         public ApduResponse(byte[] rawApduData)
         {

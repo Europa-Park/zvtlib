@@ -52,12 +52,12 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
 
         public event Action<IZvtApdu> ResponseReceived;
 
-        public IZvtApdu[] TransmitAPDU(IZvtApdu apdu)
+        public ApduCollection TransmitAPDU(IZvtApdu apdu)
         {
 
             _transport.Transmit(_transport.CreateTpdu(apdu));
 
-            List<IZvtApdu> responses = new List<IZvtApdu>();
+            ApduCollection responses = new ApduCollection();
 
             while (true)
             {
@@ -82,7 +82,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
                 
             }
 
-            return responses.ToArray();
+            return responses;
         }
 
         private bool InternalIsCompletionPacket(IZvtApdu transmittedApdu, IZvtApdu responseApdu)
@@ -95,7 +95,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
                 {
                     _transport.MasterMode = false;
                 }
-                if (apduData[0] == 0x06 && (apduData[1] == 0x0F || apduData[1] == 0x0E))
+                if (responseApdu is CompletionApduResponse || responseApdu is AbortApduResponse)
                 {
                     _transport.MasterMode = true;
                     return true;

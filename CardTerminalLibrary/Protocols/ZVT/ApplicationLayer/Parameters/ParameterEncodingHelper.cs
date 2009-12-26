@@ -17,7 +17,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
         /// <param name="offset"></param>
         /// <param name="lengthBytes"></param>
         /// <returns></returns>
-        public static int GetLVarLength(byte[] buffer, int offset, int lengthBytes)
+        public static int ExtractLVarLength(byte[] buffer, int offset, int lengthBytes)
         {
             int length = 0;
 
@@ -36,9 +36,9 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
             return length;
         }
 
-        public static byte[] GetLVarData(byte[] rawData, int lengthBytes)
+        public static byte[] ComposeLVarLength(byte[] rawData, int lengthBytes)
         {
-            byte[] data = new byte[lengthBytes + rawData.Length];
+            byte[] data = new byte[lengthBytes];
 
             int myLength = rawData.Length;
             for (int i = 0; i < lengthBytes; i++)
@@ -52,32 +52,40 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
             if (myLength > 0)
                 throw new ArgumentException(string.Format("#{0}-Bytes cannot be compressed in L-{1}-Var value", rawData.Length, lengthBytes));
 
+            return data;
+        }
+
+
+        public static byte[] ComposeLVarData(byte[] rawData, int lengthBytes)
+        {
+            byte[] data = new byte[lengthBytes + rawData.Length];
+            Array.Copy(ComposeLVarLength(rawData, lengthBytes), data, lengthBytes);
             Array.Copy(rawData, 0, data, lengthBytes, rawData.Length);
             return data;
 
         }
 
 
-        public static int GetLLVarLength(byte[] buffer, int offset)
+        public static int ExtractLLVarLength(byte[] buffer, int offset)
         {
             if (buffer.Length - offset < 2)
                 throw new ArgumentException("For LL-Var at least 2 bytes are required");
 
-            return GetLVarLength(buffer, offset, 2) + 2;
+            return ExtractLVarLength(buffer, offset, 2) + 2;
         }
 
-        public static int GetLLLVarLength(byte[] buffer, int offset)
+        public static int ExtractLLLVarLength(byte[] buffer, int offset)
         {
             if (buffer.Length - offset < 3)
                 throw new ArgumentException("For LLL-Var at least 3 bytes are required");
 
-            return GetLVarLength(buffer, offset, 3) + 3;
+            return ExtractLVarLength(buffer, offset, 3) + 3;
         }
 
 
         public static byte[] ReadLVarData(byte[] buffer, int offset, int lengthBytes)
         {
-            int dataLength = GetLVarLength(buffer, offset, lengthBytes);
+            int dataLength = ExtractLVarLength(buffer, offset, lengthBytes);
 
             byte[] data = new byte[dataLength];
             Array.Copy(buffer, offset + 2, data, 0, dataLength);
@@ -96,14 +104,14 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
             return ReadLVarData(buffer, offset, 3);
         }
 
-        public static byte[] GetLLVarData(byte[] rawData)
+        public static byte[] ComposeLLVarData(byte[] rawData)
         {
-            return GetLVarData(rawData, 2);
+            return ComposeLVarData(rawData, 2);
         }
 
-        public static byte[] GetLLLVarData(byte[] rawData)
+        public static byte[] ComposeLLLVarData(byte[] rawData)
         {
-            return GetLVarData(rawData, 3);
+            return ComposeLVarData(rawData, 3);
         }
 
     }

@@ -31,7 +31,6 @@ namespace Wiffzack.Devices.CardTerminals.Tests
         {
             LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
 
-           
             IZvtTransport transportLayer = null;
             XmlDocument transportConfig = new XmlDocument();
             //transportConfig.LoadXml(_serialConfiguration);
@@ -46,7 +45,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 
             //new InitialisationCommand(transportLayer).Execute();
             //new NetworkDiagnosisCommand(transportLayer).Execute();
-            //new AuthorizationCommand(transportLayer).Execute(120);
+            new AuthorizationCommand(transportLayer).Execute(120);
             //new SelftestCommand(transportLayer).Execute();
             //new SystemConfigurationCommand(transportLayer).Execute();
 

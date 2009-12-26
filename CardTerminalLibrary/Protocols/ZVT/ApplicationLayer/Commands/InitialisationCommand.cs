@@ -37,7 +37,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         public void Execute()
         {
             _transport.OpenConnection();
-            IZvtApdu[] responses = _commandTransmitter.TransmitAPDU(_initialisation);
+            ApduCollection responses = _commandTransmitter.TransmitAPDU(_initialisation);
             _transport.CloseConnection();
         }
 
