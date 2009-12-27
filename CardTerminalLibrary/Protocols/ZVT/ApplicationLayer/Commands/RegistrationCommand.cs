@@ -62,6 +62,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
                 _transport.OpenConnection();
                 MagicResponseCommandTransmitter commandTransmitter = new MagicResponseCommandTransmitter(_transport);
                 commandTransmitter.ResponseReceived += new Action<IZvtApdu>(commandTransmitter_ResponseReceived);
+                commandTransmitter.StatusReceived += new Action<IntermediateStatusApduResponse>(commandTransmitter_StatusReceived);
 
                 ApduCollection responses = commandTransmitter.TransmitAPDU(_registration);
                 CompletionApduResponse completionApdu = responses.FindFirstApduOfType<CompletionApduResponse>();
@@ -120,6 +121,12 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             return result;
 
 
+        }
+
+        private void commandTransmitter_StatusReceived(IntermediateStatusApduResponse apdu)
+        {
+            if (Status != null)
+                Status(CommandHelpers.ConvertIntermediateStatus(apdu));
         }
 
         private void commandTransmitter_ResponseReceived(IZvtApdu responseApdu)

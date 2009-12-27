@@ -12,6 +12,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
     /// </summary>
     public class MagicResponseCommandTransmitter : ICommandTransmitter
     {
+        public event Action<IntermediateStatusApduResponse> StatusReceived;
+
         public delegate bool PacketReceivedDelegate(IZvtApdu transmittedApdu, IZvtApdu responseApdu);
 
 
@@ -32,6 +34,13 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
             _transport = transport;
 
             _apduHandlers.Add(new AckSenderApduHandler(_transport));
+            _apduHandlers.Add(new IntermediateStatusApduHandler(_transport, IntermediateStatusReceived));
+        }
+
+        private void IntermediateStatusReceived(IntermediateStatusApduResponse status)
+        {
+            if (StatusReceived != null)
+                StatusReceived(status);
         }
 
         /// <summary>

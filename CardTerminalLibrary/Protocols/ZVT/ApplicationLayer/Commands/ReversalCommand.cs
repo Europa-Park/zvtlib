@@ -16,12 +16,9 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 
 
         #region ICommand Members
+       
 
-        public event IntermediateStatusDelegate Status;
-
-        
-
-        public void ReadSettings(XmlElement settings)
+        public override void ReadSettings(XmlElement settings)
         {
             _log.Warning("ReadSettings for Reversal, but no settings should be read");
         }
@@ -34,8 +31,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             set { _apdu.ReceiptNr = value; }
         }
 
-        public ReversalCommand(IZvtTransport transport)
-            : base(transport)
+        public ReversalCommand(IZvtTransport transport, ZVTCommandEnvironment commandEnvironment)
+            : base(transport, commandEnvironment)
         {
             _apdu = new ReversalApdu();
         }

@@ -7,9 +7,11 @@ using Wiffzack.Devices.CardTerminals.Commands;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 {
-    public abstract class CommandBase<T, U> where T: IZvtApdu where U: class
+    public abstract class CommandBase<T, U>: ICommand where T: IZvtApdu where U: class
     {
-           /// <summary>
+        public event IntermediateStatusDelegate Status;
+
+        /// <summary>
         /// Transportlayer to use
         /// </summary>
         protected IZvtTransport _transport;
@@ -21,11 +23,24 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 
         protected ICommandTransmitter _commandTransmitter;
 
-        public CommandBase(IZvtTransport transport)
+        /// <summary>
+        /// Command Environment
+        /// </summary>
+        protected ZVTCommandEnvironment _environment;
+
+        public CommandBase(IZvtTransport transport, ZVTCommandEnvironment commandEnvironment)
         {
+            _environment = commandEnvironment;
             _transport = transport;
             _commandTransmitter = new MagicResponseCommandTransmitter(_transport);
             _commandTransmitter.ResponseReceived += new Action<IZvtApdu>(_commandTransmitter_ResponseReceived);
+            _commandTransmitter.StatusReceived += new Action<IntermediateStatusApduResponse>(_commandTransmitter_StatusReceived);
+        }
+
+        protected virtual void _commandTransmitter_StatusReceived(IntermediateStatusApduResponse apdu)
+        {
+            if (Status != null)
+                Status(CommandHelpers.ConvertIntermediateStatus(apdu));
         }
 
         private void _commandTransmitter_ResponseReceived(IZvtApdu responseApdu)
@@ -59,5 +74,15 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             }
             return false;
         }
+
+        #region ICommand Members
+
+        public virtual void ReadSettings(System.Xml.XmlElement settings)
+        {
+            
+        }
+
+
+        #endregion
     }
 }

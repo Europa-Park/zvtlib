@@ -13,14 +13,9 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
     {
         private Logger _log = LogManager.Global.GetLogger("Wiffzack");
 
-        #region ICommand Members
-
-        public event IntermediateStatusDelegate Status;
-
-        #endregion
         
-        public EndOfDayCommand(IZvtTransport transport)
-            : base(transport)
+        public EndOfDayCommand(IZvtTransport transport, ZVTCommandEnvironment commandEnvironment)
+            : base(transport, commandEnvironment)
         {
             _apdu = new EndOfDayApdu();
         }
@@ -44,7 +39,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             }
         }
 
-        public void ReadSettings(XmlElement settings)
+        public override void ReadSettings(XmlElement settings)
         {
             _log.Warning("ReadSettings for EndOfDayCommand, but no settings should be read");
         }

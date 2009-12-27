@@ -28,12 +28,25 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 
         private Logger _log = LogManager.Global.GetLogger("Wiffzack");
 
-        public AuthorizationCommand(IZvtTransport transport)
+        /// <summary>
+        /// Command Environment
+        /// </summary>
+        private ZVTCommandEnvironment _environment;
+
+        public AuthorizationCommand(IZvtTransport transport, ZVTCommandEnvironment commandEnvironment)
         {
+            _environment = commandEnvironment;
             _transport = transport;
             _apdu = new AuthorizationApdu();
             _commandTransmitter = new MagicResponseCommandTransmitter(_transport);
             _commandTransmitter.ResponseReceived += new Action<IZvtApdu>(_commandTransmitter_ResponseReceived);
+            _commandTransmitter.StatusReceived += new Action<IntermediateStatusApduResponse>(_commandTransmitter_StatusReceived);
+        }
+
+        private void _commandTransmitter_StatusReceived(IntermediateStatusApduResponse apdu)
+        {
+            if (Status != null)
+                Status(CommandHelpers.ConvertIntermediateStatus(apdu));
         }
 
         private void _commandTransmitter_ResponseReceived(IZvtApdu responseApdu)

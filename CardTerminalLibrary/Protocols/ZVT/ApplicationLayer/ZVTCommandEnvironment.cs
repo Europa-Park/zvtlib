@@ -16,6 +16,11 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
     public class ZVTCommandEnvironment:ICommandEnvironment
     {
         /// <summary>
+        /// Raised when an intermediate status is received
+        /// </summary>
+        public event IntermediateStatusDelegate StatusReceived;
+
+        /// <summary>
         /// Contains the configuration of the environment
         /// </summary>
         private XmlElement _environmentConfig;
@@ -68,33 +73,47 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
             }
         }
 
-
+        public void RaiseIntermediateStatusEvent(IntermediateStatus status)
+        {
+            if (StatusReceived != null)
+                StatusReceived(status);
+        }
 
         #region ICommandEnvironment Members
 
         public IInitialisationCommand CreateInitialisationCommand()
         {
-            return new RegistrationCommand(_transport, this);
+            RegistrationCommand cmd = new RegistrationCommand(_transport, this);
+            cmd.Status += RaiseIntermediateStatusEvent;
+            return cmd;
         }
 
         public IPaymentCommand CreatePaymentCommand()
         {
-            return new AuthorizationCommand(_transport);
+            AuthorizationCommand cmd = new AuthorizationCommand(_transport, this);
+            cmd.Status += RaiseIntermediateStatusEvent;
+            return cmd;
         }
 
         public IReversalCommand CreateReversalCommand()
         {
-            return new ReversalCommand(_transport);
+            ReversalCommand cmd = new ReversalCommand(_transport, this);
+            cmd.Status += RaiseIntermediateStatusEvent;
+            return cmd;
         }
 
         public IReportCommand CreateReportCommand()
         {
-            return new ReportCommand(_transport);
+            ReportCommand cmd =  new ReportCommand(_transport, this);
+            cmd.Status += RaiseIntermediateStatusEvent;
+            return cmd;
         }
 
         public IEndOfDayCommand CreateEndOfDayCommand()
         {
-            return new EndOfDayCommand(_transport);
+            EndOfDayCommand cmd = new EndOfDayCommand(_transport, this);
+            cmd.Status += RaiseIntermediateStatusEvent;
+            return cmd;
         }
 
         #endregion

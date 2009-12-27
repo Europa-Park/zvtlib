@@ -13,6 +13,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
     public interface ICommandTransmitter
     {
         event Action<IZvtApdu> ResponseReceived;
+        event Action<IntermediateStatusApduResponse> StatusReceived;
 
         ApduCollection TransmitAPDU(IZvtApdu apdu);
     }

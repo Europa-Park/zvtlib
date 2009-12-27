@@ -10,6 +10,8 @@ namespace Wiffzack.Devices.CardTerminals.Commands
     /// </summary>
     public interface ICommandEnvironment
     {
+        event IntermediateStatusDelegate StatusReceived;
+
         #region Command factory
         IInitialisationCommand CreateInitialisationCommand();
         IPaymentCommand CreatePaymentCommand();

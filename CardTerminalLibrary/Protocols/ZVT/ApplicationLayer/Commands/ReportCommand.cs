@@ -11,12 +11,6 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 {
     public class ReportCommand :CommandBase<ReportApdu, CommandResult>, IReportCommand
     {
-        #region ICommand Members
-
-        public event IntermediateStatusDelegate Status;
-
-        #endregion
-
         private SystemInfoApdu _systemInfo = new SystemInfoApdu();
 
         /// <summary>
@@ -44,13 +38,13 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         }
 
         
-        public void ReadSettings(XmlElement settings)
+        public override void ReadSettings(XmlElement settings)
         {
             _log.Warning("ReadSettings for ReportCommand, but no settings should be read");
         }
 
-        public ReportCommand(IZvtTransport transport)
-            : base(transport)
+        public ReportCommand(IZvtTransport transport, ZVTCommandEnvironment commandEnvironment)
+            : base(transport, commandEnvironment)
         {
             _apdu = new ReportApdu();
         }

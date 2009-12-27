@@ -46,11 +46,17 @@ namespace Wiffzack.Devices.CardTerminals.Tests
             configuration.LoadXml(_configuration);
 
             ICommandEnvironment environment = new ZVTCommandEnvironment(configuration.DocumentElement);
+            environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
             ClassifyCommandResult(environment.CreateInitialisationCommand().Execute());
             ClassifyCommandResult(environment.CreatePaymentCommand().Execute(90));
 
             
             Console.ReadLine();
+        }
+
+        static void environment_StatusReceived(IntermediateStatus status)
+        {
+            Console.WriteLine(status);
         }
 
         static void ClassifyCommandResult(CommandResult cmdResult)
