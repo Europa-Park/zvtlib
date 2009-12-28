@@ -6,6 +6,9 @@ using Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer;
 using Wiffzack.Devices.CardTerminals.Commands;
 using Wiffzack.Diagnostic.Log;
 using System.Xml;
+using Wiffzack.Devices.CardTerminals.Common;
+using Wiffzack.Services.Utils;
+using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Parameters;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 {
@@ -14,13 +17,18 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         
         private Logger _log = LogManager.Global.GetLogger("Wiffzack");
 
+        /// <summary>
+        /// Statusinformation that comes from the outside from a previous autorization request
+        /// </summary>
+        private StatusInformationApdu _outsideStatusInformation = null;
 
         #region ICommand Members
        
 
         public override void ReadSettings(XmlElement settings)
         {
-            _log.Warning("ReadSettings for Reversal, but no settings should be read");
+            _outsideStatusInformation = StatusInformationApdu.CreateFromIData(settings);
+            ReceiptNr = (int)_outsideStatusInformation.FindParameter<BCDNumberParameter>(StatusInformationApdu.StatusParameterEnum.ReceiptNr).DecodeNumber();
         }
 
         #endregion

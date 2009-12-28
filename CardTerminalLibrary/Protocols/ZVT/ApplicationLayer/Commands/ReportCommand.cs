@@ -7,6 +7,7 @@ using Wiffzack.Devices.CardTerminals.Commands;
 using Wiffzack.Diagnostic.Log;
 using System.Xml;
 using Wiffzack.Devices.CardTerminals.PrintSupport;
+using Wiffzack.Services.Utils;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 {
@@ -41,7 +42,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         
         public override void ReadSettings(XmlElement settings)
         {
-            _log.Warning("ReadSettings for ReportCommand, but no settings should be read");
+            _printSystemInfo = XmlHelper.ReadBool(settings, "PrintSystemInfo", false);
+            _printReport = XmlHelper.ReadBool(settings, "PrintReport", true);
         }
 
         public ReportCommand(IZvtTransport transport, ZVTCommandEnvironment commandEnvironment)

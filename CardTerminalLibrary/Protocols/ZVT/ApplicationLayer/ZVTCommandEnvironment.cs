@@ -79,40 +79,51 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
                 StatusReceived(status);
         }
 
+        private void ReadSettings(ICommand command, XmlElement settings)
+        {
+            if (settings != null)
+                command.ReadSettings(settings);
+        }
+
         #region ICommandEnvironment Members
 
-        public IInitialisationCommand CreateInitialisationCommand()
+        public IInitialisationCommand CreateInitialisationCommand(XmlElement settings)
         {
             RegistrationCommand cmd = new RegistrationCommand(_transport, this);
             cmd.Status += RaiseIntermediateStatusEvent;
+            ReadSettings(cmd, settings);
             return cmd;
         }
 
-        public IPaymentCommand CreatePaymentCommand()
+        public IPaymentCommand CreatePaymentCommand(XmlElement settings)
         {
             AuthorizationCommand cmd = new AuthorizationCommand(_transport, this);
             cmd.Status += RaiseIntermediateStatusEvent;
+            ReadSettings(cmd, settings);
             return cmd;
         }
 
-        public IReversalCommand CreateReversalCommand()
+        public IReversalCommand CreateReversalCommand(XmlElement settings)
         {
             ReversalCommand cmd = new ReversalCommand(_transport, this);
             cmd.Status += RaiseIntermediateStatusEvent;
+            ReadSettings(cmd, settings);
             return cmd;
         }
 
-        public IReportCommand CreateReportCommand()
+        public IReportCommand CreateReportCommand(XmlElement settings)
         {
             ReportCommand cmd =  new ReportCommand(_transport, this);
             cmd.Status += RaiseIntermediateStatusEvent;
+            ReadSettings(cmd, settings);
             return cmd;
         }
 
-        public IEndOfDayCommand CreateEndOfDayCommand()
+        public IEndOfDayCommand CreateEndOfDayCommand(XmlElement settings)
         {
             EndOfDayCommand cmd = new EndOfDayCommand(_transport, this);
             cmd.Status += RaiseIntermediateStatusEvent;
+            ReadSettings(cmd, settings);
             return cmd;
         }
 

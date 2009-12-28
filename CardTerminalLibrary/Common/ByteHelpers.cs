@@ -22,7 +22,9 @@ namespace Wiffzack.Devices.CardTerminals.Common
 
             foreach (string b in bytes.Split(' '))
             {
-                bs.Add(byte.Parse(b, System.Globalization.NumberStyles.HexNumber));
+                if (b.Trim().Equals(""))
+                    continue;
+                bs.Add(byte.Parse(b.Trim(), System.Globalization.NumberStyles.HexNumber));
             }
 
             return bs.ToArray();

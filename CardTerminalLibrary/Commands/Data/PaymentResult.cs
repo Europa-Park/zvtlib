@@ -9,9 +9,14 @@ namespace Wiffzack.Devices.CardTerminals.Commands
         /// <summary>
         /// Identifier of the payment process on the terminal
         /// </summary>
-        private IPaymentData _data;
+        private IData _data;
 
-        public PaymentResult(bool success, int? protocolSpecificErrorCode, string protocolSpecificDescription, IPaymentData data)
+        public IData Data
+        {
+            get { return _data; }
+        }
+
+        public PaymentResult(bool success, int? protocolSpecificErrorCode, string protocolSpecificDescription, IData data)
         {
             _success = success;
             _protocolSpecificErrorCode = protocolSpecificErrorCode;

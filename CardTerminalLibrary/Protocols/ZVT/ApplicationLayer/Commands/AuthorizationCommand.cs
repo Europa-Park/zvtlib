@@ -7,6 +7,7 @@ using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Parameters;
 using Wiffzack.Devices.CardTerminals.Commands;
 using Wiffzack.Diagnostic.Log;
 using System.Xml;
+using Wiffzack.Services.Utils;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 {
@@ -33,6 +34,12 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         /// </summary>
         private ZVTCommandEnvironment _environment;
 
+        public Int64 CentAmount
+        {
+            get { return _apdu.CentAmount; }
+            set { _apdu.CentAmount = value; }
+        }
+
         public AuthorizationCommand(IZvtTransport transport, ZVTCommandEnvironment commandEnvironment)
         {
             _environment = commandEnvironment;
@@ -55,9 +62,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         }
 
      
-        public PaymentResult Execute(Int64 centAmount)
+        public PaymentResult Execute()
         {
-            _apdu.SetCentAmount(centAmount);
             _transport.OpenConnection();
             ApduCollection responses = _commandTransmitter.TransmitAPDU(_apdu);
             _transport.CloseConnection();
@@ -108,10 +114,19 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 
         }
 
-        
+        /// <summary>
+        /// Reads the amount settings from an generic xml file
+        /// </summary>
+        /// <param name="settings"></param>
         public void ReadSettings(XmlElement settings)
         {
-            _log.Warning("ReadSettings for AuthorisationCommand, but no settings should be read");
+            Int64 myAmount = XmlHelper.ReadInt64(settings, "Amount", 0);
+
+            if (myAmount < 0)
+                myAmount = 0;
+
+            CentAmount = myAmount;
+            
         }
     }
 }

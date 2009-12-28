@@ -15,6 +15,6 @@ namespace Wiffzack.Devices.CardTerminals.Commands
         /// Initiates the payment process
         /// </summary>
         /// <param name="centAmount">Amount to book in EuroCents</param>
-        PaymentResult Execute(Int64 centAmount);
+        PaymentResult Execute();
     }
 }

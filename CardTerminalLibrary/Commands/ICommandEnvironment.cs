@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml;
 
 namespace Wiffzack.Devices.CardTerminals.Commands
 {
@@ -13,11 +14,11 @@ namespace Wiffzack.Devices.CardTerminals.Commands
         event IntermediateStatusDelegate StatusReceived;
 
         #region Command factory
-        IInitialisationCommand CreateInitialisationCommand();
-        IPaymentCommand CreatePaymentCommand();
-        IReversalCommand CreateReversalCommand();
-        IReportCommand CreateReportCommand();
-        IEndOfDayCommand CreateEndOfDayCommand();
+        IInitialisationCommand CreateInitialisationCommand(XmlElement settings);
+        IPaymentCommand CreatePaymentCommand(XmlElement settings);
+        IReversalCommand CreateReversalCommand(XmlElement settings);
+        IReportCommand CreateReportCommand(XmlElement settings);
+        IEndOfDayCommand CreateEndOfDayCommand(XmlElement settings);
         #endregion
 
 

@@ -46,7 +46,6 @@
     <Compile Include="Commands\Data\PaymentResult.cs" />
     <Compile Include="Commands\Data\CommandResult.cs" />
     <Compile Include="Commands\IPaymentCommand.cs" />
-    <Compile Include="Commands\Data\IPaymentData.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\Data\IData.cs" />
     <Compile Include="Commands\Data\IntermediateStatus.cs" />

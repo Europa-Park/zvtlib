@@ -14,6 +14,11 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 {
     class Program
     {
+        public static string _paymentSettings = @"
+            <Payment>
+                <Amount>192</Amount>
+            </Payment>
+";
         public static string _configuration = @"
             <Config>
               <!--<Transport>Serial</Transport>-->
@@ -45,11 +50,22 @@ namespace Wiffzack.Devices.CardTerminals.Tests
             XmlDocument configuration = new XmlDocument();
             configuration.LoadXml(_configuration);
 
+            XmlDocument paymentSettings = new XmlDocument();
+            paymentSettings.LoadXml(_paymentSettings);
+
             ICommandEnvironment environment = new ZVTCommandEnvironment(configuration.DocumentElement);
             environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
-            ClassifyCommandResult(environment.CreateInitialisationCommand().Execute());
-            //ClassifyCommandResult(environment.CreatePaymentCommand().Execute(90));
-            ClassifyCommandResult(environment.CreateReportCommand().Execute());
+            ClassifyCommandResult(environment.CreateInitialisationCommand(null).Execute());
+
+            PaymentResult result = environment.CreatePaymentCommand(paymentSettings.DocumentElement).Execute();
+            ClassifyCommandResult(result);
+            XmlDocument authorisationIdentifier = new XmlDocument();
+            authorisationIdentifier.AppendChild(authorisationIdentifier.CreateElement("Data"));
+            result.Data.WriteXml(authorisationIdentifier.DocumentElement);
+            
+            ClassifyCommandResult(environment.CreateReversalCommand(authorisationIdentifier.DocumentElement).Execute());
+
+            //ClassifyCommandResult(environment.CreateReportCommand(null).Execute());
 
             
             Console.ReadLine();

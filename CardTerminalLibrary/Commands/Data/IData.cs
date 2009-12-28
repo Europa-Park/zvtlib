@@ -6,7 +6,7 @@ using System.Xml;
 namespace Wiffzack.Devices.CardTerminals.Commands
 {
     /// <summary>
-    /// Implemented by classes that provide protocol specific data in some way, see IAuthorizationData for further information
+    /// Implemented by classes that provide protocol specific data in some way.
     /// Basically this interface just provides serialization mechanisms
     /// </summary>
     public interface IData

@@ -165,6 +165,46 @@ namespace Wiffzack.Services.Utils
                 element.InnerText = value.Value.ToString();
         }
 
+
+
+        public static Int64 ReadInt64(XmlElement rootElement, string name, Int64 defaultValue)
+        {
+            Int64? val = ReadInt64(rootElement, name);
+
+            if (val == null)
+                return defaultValue;
+            else
+                return val.Value;
+        }
+
+        public static Int64? ReadInt64(XmlElement rootElement, string name)
+        {
+            XmlElement element = (XmlElement)rootElement.SelectSingleNode(name);
+
+            if (element != null)
+            {
+                Int64 val = 0;
+                if (Int64.TryParse(element.InnerText, out val))
+                    return val;
+                return null;
+            }
+            return null;
+        }
+
+        public static void WriteInt64(XmlElement rootElement, string name, Int64? value)
+        {
+            XmlElement element = (XmlElement)rootElement.SelectSingleNode(name);
+
+            if (element == null)
+                element = (XmlElement)rootElement.AppendChild(rootElement.OwnerDocument.CreateElement(name));
+
+            if (value == null)
+                element.InnerText = "";
+            else
+                element.InnerText = value.Value.ToString();
+        }
+
+
         public static string ReadString(XmlElement rootElement, string name)
         {
             if (rootElement == null)

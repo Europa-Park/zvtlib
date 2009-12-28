@@ -32,18 +32,22 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
         }
         */
 
+
+        public Int64 CentAmount
+        {
+            get { return _amountParam.SubParameter.DecodeNumber(); }
+            set { _amountParam.SubParameter.SetNumber(value, 6); }
+        }
+
         public AuthorizationApdu()
         {
             _parameters.Add(_amountParam);
             _parameters.Add(_currencyCodeParam);
         }
         
-        
-        public void SetCentAmount(Int64 value)
-        {
-            _amountParam.SubParameter.SetNumber(value, 6);
-        }
+       
 
+        
 
 
         protected override byte[] ByteControlField

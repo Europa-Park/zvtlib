@@ -15,8 +15,15 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
     /// <remarks>
     /// The special thing about status informations
     /// </remarks>
-    public class StatusInformationApdu : ApduResponse, IPaymentData
+    public class StatusInformationApdu : ApduResponse, IData
     {
+        public static StatusInformationApdu CreateFromIData(XmlElement rootNode)
+        {
+            StatusInformationApdu status = new StatusInformationApdu();
+            status.ReadXml(rootNode);
+            return status;
+        }
+
         public enum StatusParameterEnum : byte
         {
             ResultCode = 0x27,
@@ -52,6 +59,10 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
         /// Saves the parsed paramters from the Apdu
         /// </summary>
         private Dictionary<StatusParameterEnum, IParameter> _parameters = new Dictionary<StatusParameterEnum, IParameter>();
+
+        private StatusInformationApdu():base(null)
+        {
+        }
 
         public StatusInformationApdu(byte[] rawApduData)
             : base(rawApduData)
@@ -222,6 +233,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
         public void ReadXml(XmlElement rootNode)
         {
             _rawApduData = ByteHelpers.ByteStringToByte(XmlHelper.ReadString(rootNode, "RawData"));
+            LoadParameters();
         }
 
         #endregion
