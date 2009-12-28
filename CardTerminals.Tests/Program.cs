@@ -16,16 +16,16 @@ namespace Wiffzack.Devices.CardTerminals.Tests
     {
         public static string _configuration = @"
             <Config>
+              <!--<Transport>Serial</Transport>-->
               <Transport>Network</Transport>
-              <!-- <Transport>Network</Transport>-->
               <Serial>
-                <Port>COM7</Port>
+                <Port>COM20</Port>
                 <BaudRate>9600</BaudRate>
                 <StopBits>One</StopBits>
               </Serial>
 
               <Network>
-                <RemoteIP>192.168.0.154</RemoteIP>
+                <RemoteIP>192.168.0.157</RemoteIP>
                 <RemotePort>5577</RemotePort>
               </Network>
 
@@ -48,7 +48,8 @@ namespace Wiffzack.Devices.CardTerminals.Tests
             ICommandEnvironment environment = new ZVTCommandEnvironment(configuration.DocumentElement);
             environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
             ClassifyCommandResult(environment.CreateInitialisationCommand().Execute());
-            ClassifyCommandResult(environment.CreatePaymentCommand().Execute(90));
+            //ClassifyCommandResult(environment.CreatePaymentCommand().Execute(90));
+            ClassifyCommandResult(environment.CreateReportCommand().Execute());
 
             
             Console.ReadLine();

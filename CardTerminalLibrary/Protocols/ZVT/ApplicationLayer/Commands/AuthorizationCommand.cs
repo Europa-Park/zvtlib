@@ -103,7 +103,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             }
 
             PaymentResult authResult = new PaymentResult(success, errorCode, errorDescription, statusInformation);
-
+            authResult.PrintDocuments = _commandTransmitter.PrintDocuments;
             return authResult;
 
         }

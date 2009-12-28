@@ -11,6 +11,11 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.ApduHand
     public interface IApduHandler
     {
         /// <summary>
+        /// gives the handler the chance to do some cleanup
+        /// </summary>
+        void StartCommand();
+
+        /// <summary>
         /// Returns if the specified APDU should be processed with this handler
         /// </summary>
         /// <param name="apdu"></param>

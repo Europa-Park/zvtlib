@@ -31,6 +31,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 
                 ApduCollection apdus = _commandTransmitter.TransmitAPDU(_apdu);
                 CheckForAbortApdu(result, apdus);
+                result.PrintDocuments = _commandTransmitter.PrintDocuments;
                 return result;
             }
             finally

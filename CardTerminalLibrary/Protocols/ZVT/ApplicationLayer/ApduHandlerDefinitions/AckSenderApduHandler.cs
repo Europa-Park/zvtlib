@@ -44,6 +44,10 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.ApduHand
 
         #region IApduHandler Members
 
+        public void StartCommand()
+        {
+        }
+
         /// <summary>
         /// Checks if this handler is compatible with the specified apdu
         /// </summary>

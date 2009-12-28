@@ -65,10 +65,17 @@
     <Compile Include="Log\LogUtils.cs" />
     <Compile Include="Log\TeeLogger.cs" />
     <Compile Include="Log\TextLogger.cs" />
+    <Compile Include="PrintSupport\IPrintDocument.cs" />
+    <Compile Include="PrintSupport\IPrintLine.cs" />
+    <Compile Include="PrintSupport\IPrintText.cs" />
+    <Compile Include="PrintSupport\PrintDocument.cs" />
+    <Compile Include="PrintSupport\PrintLine.cs" />
+    <Compile Include="PrintSupport\PrintText.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\ApduHandlerDefinitions\AckSenderApduHandler.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\ApduHandlerDefinitions\IntermediateStatusApduHandler.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\ApduHandlerDefinitions\IApduHandler.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\ApduHandlerDefinitions\PrintApduHandler.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ActivateCardReaderApdu.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ApduBase.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ApduCollection.cs" />
@@ -78,6 +85,7 @@
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\AbortApduResponse.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\EndOfDayApdu.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\IntermediateStatusApduResponse.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\PrintLineApduResponse.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ReversalApdu.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\SystemInfoApdu.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\DiagnosisApdu.cs" />

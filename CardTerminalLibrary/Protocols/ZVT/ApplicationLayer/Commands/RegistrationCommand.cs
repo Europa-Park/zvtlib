@@ -112,12 +112,15 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
                     }
                 }
 
+                result.PrintDocuments = commandTransmitter.PrintDocuments;
+
             }
             finally
             {
                 _transport.CloseConnection();
             }
 
+            
             return result;
 
 

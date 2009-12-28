@@ -4,6 +4,7 @@ using System.Text;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.ApduHandlerDefinitions;
+using Wiffzack.Devices.CardTerminals.PrintSupport;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
 {
@@ -29,12 +30,21 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
 
         private List<IApduHandler> _apduHandlers = new List<IApduHandler>();
 
+        private PrintApduHandler _printApduHandler;
+
+
+        public IPrintDocument[] PrintDocuments
+        {
+            get { return _printApduHandler.PrintDocuments; }
+        }
+
         public MagicResponseCommandTransmitter(IZvtTransport transport)
         {
             _transport = transport;
-
+             _printApduHandler = new PrintApduHandler(transport);
             _apduHandlers.Add(new AckSenderApduHandler(_transport));
             _apduHandlers.Add(new IntermediateStatusApduHandler(_transport, IntermediateStatusReceived));
+            _apduHandlers.Add(_printApduHandler);
         }
 
         private void IntermediateStatusReceived(IntermediateStatusApduResponse status)
@@ -63,6 +73,9 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
 
         public ApduCollection TransmitAPDU(IZvtApdu apdu)
         {
+            foreach (IApduHandler apduHandler in _apduHandlers)
+                apduHandler.StartCommand();
+
 
             _transport.Transmit(_transport.CreateTpdu(apdu));
 

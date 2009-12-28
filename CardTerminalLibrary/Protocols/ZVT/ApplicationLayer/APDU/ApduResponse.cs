@@ -17,10 +17,12 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
 
             if (rawApduData[0] == 0x04 && rawApduData[1] == 0x0F)
                 return new StatusInformationApdu(rawApduData);
-            else if (rawApduData[0] == 0x04 && rawApduData[1] == 0xff)
+            else if (rawApduData[0] == 0x04 && rawApduData[1] == 0xFF)
                 return new IntermediateStatusApduResponse(rawApduData);
             else if (rawApduData[0] == 0x06 && rawApduData[1] == 0x0F)
                 return new CompletionApduResponse(rawApduData);
+            else if (rawApduData[0] == 0x06 && rawApduData[1] == 0xD1)
+                return new PrintLineApduResponse(rawApduData);
             else if (rawApduData[0] == 0x06 && rawApduData[1] == 0x1E)
                 return new AbortApduResponse(rawApduData);
             else if (rawApduData[0] == 0x80 || rawApduData[0] == 0x84)

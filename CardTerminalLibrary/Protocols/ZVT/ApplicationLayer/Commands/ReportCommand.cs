@@ -6,6 +6,7 @@ using Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer;
 using Wiffzack.Devices.CardTerminals.Commands;
 using Wiffzack.Diagnostic.Log;
 using System.Xml;
+using Wiffzack.Devices.CardTerminals.PrintSupport;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 {
@@ -52,6 +53,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 
         public override CommandResult Execute()
         {
+            List<IPrintDocument> printDocuments = new List<IPrintDocument>();
             CommandResult result = new CommandResult();
             result.Success = true;
 
@@ -62,12 +64,14 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
                 if (_printSystemInfo)
                 {
                     ApduCollection apdus = _commandTransmitter.TransmitAPDU(_systemInfo);
+                    printDocuments.AddRange(_commandTransmitter.PrintDocuments);
                     CheckForAbortApdu(result, apdus);
                 }
 
                 if (_printReport && result.Success)
                 {
                     ApduCollection apdus = _commandTransmitter.TransmitAPDU(_apdu);
+                    printDocuments.AddRange(_commandTransmitter.PrintDocuments);
                     CheckForAbortApdu(result, apdus);
                 }
             }
@@ -76,6 +80,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
                 _transport.CloseConnection();
             }
 
+            result.PrintDocuments = printDocuments.ToArray();
             return result;
         }
 
