@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml;
+using Wiffzack.Services.Utils;
 
 namespace Wiffzack.Devices.CardTerminals.PrintSupport
 {
@@ -44,6 +46,17 @@ namespace Wiffzack.Devices.CardTerminals.PrintSupport
         public int? AlignRight
         {
             get { return _alignRight; }
+        }
+
+
+        public void SerializeToXml(XmlElement rootNode)
+        {
+            XmlHelper.WriteString(rootNode, "Text", _text);
+            XmlHelper.WriteBool(rootNode, "Bold", _bold);
+            XmlHelper.WriteBool(rootNode, "DoubleHeight", _doubleHeight);
+            XmlHelper.WriteBool(rootNode, "DoubleWidth", _doubleWidth);
+            XmlHelper.WriteBool(rootNode, "Center", _center);
+            XmlHelper.WriteInt(rootNode, "AlignRight", _alignRight);
         }
 
         #endregion

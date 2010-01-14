@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using Wiffzack.Devices.CardTerminals.PrintSupport;
+using System.Xml;
+using Wiffzack.Services.Utils;
 
 namespace Wiffzack.Devices.CardTerminals.Commands
 {
@@ -52,5 +54,32 @@ namespace Wiffzack.Devices.CardTerminals.Commands
             set { _printDocuments = value; }
         }
 
+        public CommandResult()
+        {
+        }
+
+        public CommandResult(bool success, int? protocolSpecificErrorCode, string protocolSpecificErrorMessage)
+        {
+            _success = success;
+            _protocolSpecificErrorCode = protocolSpecificErrorCode;
+            _protocolSpecificErrorDescription = protocolSpecificErrorMessage;
+        }
+
+        public virtual void SerializeToXml(XmlElement rootNode)
+        {
+            XmlHelper.WriteBool(rootNode, "Success", Success);
+            XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", _protocolSpecificErrorCode);
+            XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", _protocolSpecificErrorDescription);
+
+            if (_printDocuments != null)
+            {
+                foreach (IPrintDocument document in _printDocuments)
+                {
+                    XmlElement documentRoot = (XmlElement)rootNode.AppendChild(rootNode.OwnerDocument.CreateElement("Document"));
+                    document.SerializeToXml(documentRoot);
+                }
+            }
+
+        }
     }
 }

@@ -4,9 +4,9 @@ using System.Text;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer;
 using Wiffzack.Devices.CardTerminals.Commands;
-using Wiffzack.Diagnostic.Log;
 using System.Xml;
 using Wiffzack.Devices.CardTerminals.PrintSupport;
+using Wiffzack.Diagnostic.Log;
 using Wiffzack.Services.Utils;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
@@ -61,7 +61,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 
             try
             {
-                _transport.OpenConnection();
+                if(_environment.RaiseAskOpenConnection())
+                    _transport.OpenConnection();
 
                 if (_printSystemInfo)
                 {
@@ -79,7 +80,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             }
             finally
             {
-                _transport.CloseConnection();
+                if(_environment.RaiseAskCloseConnection())
+                    _transport.CloseConnection();
             }
 
             result.PrintDocuments = printDocuments.ToArray();

@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU;
-using Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer;
 using Wiffzack.Devices.CardTerminals.Commands;
+using Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 {
-    public class NetworkDiagnosisCommand : CommandBase<DiagnosisApdu, CommandResult>, IDiagnosisCommand
+    public class ResetCommand : CommandBase<ResetApdu, CommandResult>, IResetCommand
     {
 
-        public NetworkDiagnosisCommand(IZvtTransport transport, ZVTCommandEnvironment commandEnvironment)
-            :base (transport, commandEnvironment)
+        public ResetCommand(IZvtTransport transport, ZVTCommandEnvironment environment)
+            :base(transport, environment)
         {
-            base._apdu = new DiagnosisApdu();
+            _apdu = new ResetApdu();
         }
 
         public override CommandResult Execute()
@@ -40,8 +40,11 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 
         #region ICommand Members
 
+        public event IntermediateStatusDelegate Status;
+
         public void ReadSettings(System.Xml.XmlElement settings)
         {
+            
         }
 
         #endregion

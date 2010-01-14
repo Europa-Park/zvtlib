@@ -236,6 +236,14 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
             LoadParameters();
         }
 
+
+        public XmlElement ToXml()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.AppendChild(doc.CreateElement("Data"));
+            WriteXml(doc.DocumentElement);
+            return doc.DocumentElement;
+        }
         #endregion
     }
 }

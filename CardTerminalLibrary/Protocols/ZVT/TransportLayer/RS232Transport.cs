@@ -287,7 +287,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
                     currentState = ReceiveStates.WaitForCRCHigh;
                 else if (currentState == ReceiveStates.WaitForCRCHigh)
                 {
-                    _log.Debug("ReceiveTpduFrame: TPDU received completly (not crc checked yet)");
+                    _log.Debug("ReceiveTpduFrame: {0}", ByteHelpers.ByteToString(frameData.ToArray()));
                     frameComplete = true;
                     currentState = ReceiveStates.Completed;
                 }
@@ -347,5 +347,19 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
             Error
 
         }
+
+        #region IDisposable Members
+
+        public void Dispose()
+        {
+            if (_serialPort != null)
+            {
+                CloseConnection();
+                _serialPort.Dispose();
+            }
+
+        }
+
+        #endregion
     }
 }

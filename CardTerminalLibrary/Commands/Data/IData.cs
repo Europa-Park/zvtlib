@@ -23,5 +23,10 @@ namespace Wiffzack.Devices.CardTerminals.Commands
         /// <param name="rootNode"></param>
         void ReadXml(XmlElement rootNode);
 
+        /// <summary>
+        /// Simpler WriteXml ;)
+        /// </summary>
+        /// <returns></returns>
+        XmlElement ToXml();
     }
 }

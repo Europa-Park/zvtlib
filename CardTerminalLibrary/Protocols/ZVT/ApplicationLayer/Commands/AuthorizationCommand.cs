@@ -64,9 +64,11 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
      
         public PaymentResult Execute()
         {
-            _transport.OpenConnection();
+            if(_environment.RaiseAskOpenConnection())
+                _transport.OpenConnection();
             ApduCollection responses = _commandTransmitter.TransmitAPDU(_apdu);
-            _transport.CloseConnection();
+            if(_environment.RaiseAskCloseConnection())
+                _transport.CloseConnection();
 
             //Contains the result (success or failure) and much information about the transaction
             StatusInformationApdu statusInformation = responses.FindFirstApduOfType<StatusInformationApdu>();

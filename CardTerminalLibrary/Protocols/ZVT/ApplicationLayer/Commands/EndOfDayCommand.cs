@@ -27,7 +27,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
                 CommandResult result = new CommandResult();
                 result.Success = true;
 
-                _transport.OpenConnection();
+                if(_environment.RaiseAskOpenConnection())
+                    _transport.OpenConnection();
 
                 ApduCollection apdus = _commandTransmitter.TransmitAPDU(_apdu);
                 CheckForAbortApdu(result, apdus);
@@ -36,13 +37,14 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             }
             finally
             {
-                _transport.CloseConnection();
+                if(_environment.RaiseAskCloseConnection())
+                    _transport.CloseConnection();
             }
         }
 
         public override void ReadSettings(XmlElement settings)
         {
-            _log.Warning("ReadSettings for EndOfDayCommand, but no settings should be read");
+            
         }
 
     }

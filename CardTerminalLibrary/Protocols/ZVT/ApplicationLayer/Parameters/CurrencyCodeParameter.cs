@@ -28,7 +28,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
         public void ParseFromBytes(byte[] buffer, int offset)
         {
             _myCurrency = new byte[2];
-            Array.Copy(buffer, offset, buffer, 0, 2);
+            Array.Copy(buffer, offset, _myCurrency, 0, 2);
         }
 
         #endregion

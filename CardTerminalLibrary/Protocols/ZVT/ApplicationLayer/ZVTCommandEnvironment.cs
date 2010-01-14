@@ -15,6 +15,10 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
     /// </summary>
     public class ZVTCommandEnvironment:ICommandEnvironment
     {
+        public event AskConnectionDelegate CloseConnection;
+
+        public event AskConnectionDelegate OpenConnection;
+
         /// <summary>
         /// Raised when an intermediate status is received
         /// </summary>
@@ -57,7 +61,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
 
             if (transport.Equals("serial", StringComparison.InvariantCultureIgnoreCase))
             {
-                XmlElement serialConfig = (XmlElement)environmentConfig.SelectSingleNode("Serial");
+                XmlElement serialConfig = (XmlElement)environmentConfig.SelectSingleNode("TransportSettings");
                 if(serialConfig == null)
                     throw new ArgumentException("No serial configuration specified");
 
@@ -65,7 +69,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
             }
             else if (transport.Equals("network", StringComparison.InvariantCultureIgnoreCase))
             {
-                XmlElement networkConfig = (XmlElement)environmentConfig.SelectSingleNode("Network");
+                XmlElement networkConfig = (XmlElement)environmentConfig.SelectSingleNode("TransportSettings");
                 if (networkConfig == null)
                     throw new ArgumentException("No network configuration specified");
 
@@ -127,6 +131,51 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
             return cmd;
         }
 
+        public IResetCommand CreateResetCommand(XmlElement settings)
+        {
+            ResetCommand cmd = new ResetCommand(_transport, this);
+            cmd.Status += RaiseIntermediateStatusEvent;
+            ReadSettings(cmd, settings);
+            return cmd;
+        }
+
+        public IDiagnosisCommand CreateDiagnosisCommand(XmlElement settings)
+        {
+            NetworkDiagnosisCommand cmd = new NetworkDiagnosisCommand(_transport, this);
+            cmd.Status += RaiseIntermediateStatusEvent;
+            ReadSettings(cmd, settings);
+            return cmd;
+        }
+
         #endregion
+
+        #region IDisposable Members
+
+        public void Dispose()
+        {
+            if (_transport != null)
+            {
+                _transport.Dispose();
+                _transport = null;
+            }
+        }
+
+        #endregion
+
+        public bool RaiseAskCloseConnection()
+        {
+            if (CloseConnection == null)
+                return true;
+
+            return CloseConnection();
+        }
+
+        public bool RaiseAskOpenConnection()
+        {
+            if (OpenConnection == null)
+                return true;
+
+            return OpenConnection();
+        }
     }
 }

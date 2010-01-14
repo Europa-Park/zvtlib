@@ -55,6 +55,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.ApduHand
         /// <returns></returns>
         public bool IsCompatibleHandler(IZvtApdu responseApdu)
         {
+            Console.WriteLine("Received: {0:x2}, {1:x2}", responseApdu.ControlField.Class, responseApdu.ControlField.Instruction);
             foreach (byte[] compatibleApdu in _compatibleApdus)
             {
                 if (responseApdu.ControlField.Equals(compatibleApdu))

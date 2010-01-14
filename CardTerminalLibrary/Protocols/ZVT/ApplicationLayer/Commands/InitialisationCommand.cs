@@ -20,8 +20,11 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 
         private ICommandTransmitter _commandTransmitter;
 
-        public InitialisationCommand(IZvtTransport transport)
+        private ZVTCommandEnvironment _environment;
+
+        public InitialisationCommand(IZvtTransport transport, ZVTCommandEnvironment environment)
         {
+            _environment = environment;
             _transport = transport;
             _initialisation = new InitialisationApdu();
             _commandTransmitter = new MagicResponseCommandTransmitter(_transport);
@@ -32,13 +35,14 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         {
 
         }
-
-     
         public void Execute()
         {
-            _transport.OpenConnection();
+            if(_environment.RaiseAskOpenConnection())
+                _transport.OpenConnection();
             ApduCollection responses = _commandTransmitter.TransmitAPDU(_initialisation);
-            _transport.CloseConnection();
+
+            if(_environment.RaiseAskCloseConnection())
+                _transport.CloseConnection();
         }
 
     }

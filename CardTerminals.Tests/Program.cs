@@ -23,16 +23,16 @@ namespace Wiffzack.Devices.CardTerminals.Tests
             <Config>
               <!--<Transport>Serial</Transport>-->
               <Transport>Network</Transport>
-              <Serial>
+              <!--<TransportSettings>
                 <Port>COM20</Port>
                 <BaudRate>9600</BaudRate>
                 <StopBits>One</StopBits>
-              </Serial>
+              </TransportSettings>-->
 
-              <Network>
-                <RemoteIP>192.168.0.157</RemoteIP>
+              <TransportSettings>
+                <RemoteIP>192.168.0.156</RemoteIP>
                 <RemotePort>5577</RemotePort>
-              </Network>
+              </TransportSettings>
 
               <RegistrationCommand>
                 <ECRPrintsAdministrationReceipts>True</ECRPrintsAdministrationReceipts>

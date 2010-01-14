@@ -52,16 +52,19 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
                 CommandResult result = new CommandResult();
                 result.Success = true;
 
-                _transport.OpenConnection();
+                if(_environment.RaiseAskOpenConnection())
+                    _transport.OpenConnection();
 
                 ApduCollection apdus = _commandTransmitter.TransmitAPDU(_apdu);
                 CheckForAbortApdu(result, apdus);
                 result.PrintDocuments = _commandTransmitter.PrintDocuments;
+
                 return result;
             }
             finally
             {
-                _transport.CloseConnection();
+                if(_environment.RaiseAskCloseConnection())
+                    _transport.CloseConnection();
             }
         }
 

@@ -59,7 +59,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 
             try
             {
-                _transport.OpenConnection();
+                if(_environment.RaiseAskOpenConnection())
+                    _transport.OpenConnection();
                 MagicResponseCommandTransmitter commandTransmitter = new MagicResponseCommandTransmitter(_transport);
                 commandTransmitter.ResponseReceived += new Action<IZvtApdu>(commandTransmitter_ResponseReceived);
                 commandTransmitter.StatusReceived += new Action<IntermediateStatusApduResponse>(commandTransmitter_StatusReceived);
@@ -117,7 +118,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             }
             finally
             {
-                _transport.CloseConnection();
+                if(_environment.RaiseAskCloseConnection())
+                    _transport.CloseConnection();
             }
 
             

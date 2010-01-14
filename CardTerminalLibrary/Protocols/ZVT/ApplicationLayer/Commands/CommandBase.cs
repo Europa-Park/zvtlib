@@ -54,9 +54,12 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
      
         public virtual U Execute()
         {
-            _transport.OpenConnection();
+            if(_environment.RaiseAskOpenConnection())
+                _transport.OpenConnection();
             ApduCollection responses = _commandTransmitter.TransmitAPDU(_apdu);
-            _transport.CloseConnection();
+
+            if(_environment.RaiseAskCloseConnection())
+                _transport.CloseConnection();
 
             return null;
         }
@@ -72,6 +75,20 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
                 cmdResult.ProtocolSpecificErrorDescription = abort.ResultCode.ToString();
                 return true;
             }
+
+            StatusApdu status = collection.FindFirstApduOfType<StatusApdu>();
+
+            if (status != null && status.Status != StatusCodes.ErrorIDEnum.NoError)
+            {
+                cmdResult.Success = false;
+                cmdResult.ProtocolSpecificErrorCode = (byte)status.Status;
+                cmdResult.ProtocolSpecificErrorDescription = status.Status.ToString();
+                return true;
+            }
+            
+
+
+            
             return false;
         }
 

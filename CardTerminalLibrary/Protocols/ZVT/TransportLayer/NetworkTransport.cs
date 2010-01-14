@@ -95,20 +95,27 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
             State myState = (State)ar.AsyncState;
 
             //Maybe the connection has been closed or so
-            if (myState._client.Connected == false)
+            if (myState._client == null || myState._client.Client == null || myState._client.Connected == false)
                 return;
 
-            int read = myState._client.Client.EndReceive(ar);
+            try
+            {
+                int read = myState._client.Client.EndReceive(ar);
 
-            //connection closed
-            if (read == 0)
-            {
-                //eeeek
+                //connection closed
+                if (read == 0)
+                {
+                    //eeeek
+                }
+                else
+                {
+                    _receiveBuffer.Add(myState._buffer, 0, read);
+                    StartReceive(myState);
+                }
             }
-            else
+            catch (Exception e)
             {
-                _receiveBuffer.Add(myState._buffer, 0, read);
-                StartReceive(myState);
+                _log.Warning("Network Transport error: {0}", e.ToString()); 
             }
         }
 
@@ -163,6 +170,19 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
                 return null;
             else
                 return responseTpdu.GetAPDUData();
+        }
+
+        #endregion
+
+        #region IDisposable Members
+
+        public void Dispose()
+        {
+            if (_client != null)
+            {
+                CloseConnection();
+                _client = null;
+            }
         }
 
         #endregion

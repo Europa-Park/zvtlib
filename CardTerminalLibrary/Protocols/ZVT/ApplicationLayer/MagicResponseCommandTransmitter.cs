@@ -83,7 +83,10 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
 
             while (true)
             {
-                IZvtApdu responseApdu = ApduResponse.Create(_transport.ReceiveResponsePacket());
+                byte[] apduData = _transport.ReceiveResponsePacket();
+                byte[] apduCopy = new byte[apduData.Length];
+                Array.Copy(apduData, apduCopy, apduData.Length);
+                IZvtApdu responseApdu = ApduResponse.Create(apduData);
 
                 if (responseApdu == null)
                     throw new ArgumentException("Could not retrieve response");

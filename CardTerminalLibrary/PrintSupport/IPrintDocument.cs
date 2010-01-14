@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml;
 
 namespace Wiffzack.Devices.CardTerminals.PrintSupport
 {
@@ -15,5 +16,8 @@ namespace Wiffzack.Devices.CardTerminals.PrintSupport
     public interface IPrintDocument
     {
         IPrintLine[] PrintLines { get; }
+
+        void SerializeToXml(XmlElement rootNode);
+
     }
 }

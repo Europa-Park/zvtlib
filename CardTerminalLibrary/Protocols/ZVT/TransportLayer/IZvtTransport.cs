@@ -10,7 +10,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
     /// The Transport layer receives IZvtApdu objects from the application layer
     /// and gives back IZvtApduResponse objects
     /// </summary>
-    public interface IZvtTransport
+    public interface IZvtTransport : IDisposable
     {
         /// <summary>
         /// Tells the transport layer if he is in master mode (active mode) or just in listening mode

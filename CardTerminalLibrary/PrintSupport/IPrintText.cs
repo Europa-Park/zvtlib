@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml;
 
 namespace Wiffzack.Devices.CardTerminals.PrintSupport
 {
@@ -36,5 +37,8 @@ namespace Wiffzack.Devices.CardTerminals.PrintSupport
         /// the number returned. This only has effect if Center is false
         /// </summary>
         int? AlignRight { get; }
+
+        void SerializeToXml(XmlElement rootNode);
+        
     }
 }

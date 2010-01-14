@@ -2,16 +2,16 @@
 <Config>
   <Transport>Serial</Transport>
   <!-- <Transport>Network</Transport>-->
-  <Serial>
+  <TransportSettings>
     <Port>COM7</Port>
     <BaudRate>9600</BaudRate>
     <StopBits>One</StopBits>
-  </Serial>
+  </TransportSettings>
 
-  <Network>
+  <!--<TransportSettings>
     <RemoteIP>192.168.0.154</RemoteIP>
     <RemotePort>5577</RemotePort>
-  </Network>
+  </TransportSettings>-->
 
   <RegistrationCommand>
     <ECRPrintsAdministrationReceipts>True</ECRPrintsAdministrationReceipts>
