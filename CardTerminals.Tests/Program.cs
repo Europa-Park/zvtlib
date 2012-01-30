@@ -30,8 +30,8 @@ namespace Wiffzack.Devices.CardTerminals.Tests
               </TransportSettings>-->
 
               <TransportSettings>
-                <RemoteIP>192.168.0.156</RemoteIP>
-                <RemotePort>5577</RemotePort>
+                <RemoteIP>192.168.1.3</RemoteIP>
+                <RemotePort>51234</RemotePort>
               </TransportSettings>
 
               <RegistrationCommand>
