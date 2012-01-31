@@ -35,16 +35,17 @@ namespace Wiffzack.Devices.CardTerminals.Tests
               </TransportSettings>
 
               <RegistrationCommand>
-                <ECRPrintsAdministrationReceipts>True</ECRPrintsAdministrationReceipts>
-                <ECRPrintsPaymentReceipt>True</ECRPrintsPaymentReceipt>
+                <ECRPrintsAdministrationReceipts>False</ECRPrintsAdministrationReceipts>
+                <ECRPrintsPaymentReceipt>False</ECRPrintsPaymentReceipt>
                 <PTDisableAmountInput>True</PTDisableAmountInput>
-                <PTDisableAdministrationFunctions>True</PTDisableAdministrationFunctions>
+                <PTDisableAdministrationFunctions>False</PTDisableAdministrationFunctions>
               </RegistrationCommand>
             </Config>
             ";
 
         static void Main(string[] args)
         {
+			  
             LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
 
             XmlDocument configuration = new XmlDocument();

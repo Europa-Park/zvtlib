@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,8 +13,6 @@
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>false</SignAssembly>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -157,6 +155,8 @@
     <Compile Include="Protocols\ZVT\TransportLayer\IZvtTpdu.cs" />
     <Compile Include="Protocols\ZVT\TransportLayer\TpduBase.cs" />
     <Compile Include="Protocols\ZVT\TransportLayer\TransportException.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\TLVParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\ParameterByteHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Protocols\ZVT\SampleConfiguration.xml" />
@@ -166,12 +166,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LangDe.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\server\Wiffzack\corelib.csproj">
-      <Project>{AF7A661A-FF6B-418E-87D0-CFB9C6FEDD7E}</Project>
-      <Name>corelib</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
