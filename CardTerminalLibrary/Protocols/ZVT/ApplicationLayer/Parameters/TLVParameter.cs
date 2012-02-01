@@ -60,13 +60,9 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 			if(enablePrefix){
 				buffer.Add(prefix);
 				int len=buffer.Count-before;
-				byte[] lohi=ParameterByteHelper.int16ToByte((Int16)len);
-				if(lohi[1]!=0x00){
-					buffer.Insert(before,lohi[1]);
-					buffer.Insert(before,lohi[0]);
-					buffer.Insert(before,0xFF);
-				}else{
-					buffer.Insert(before,lohi[0]);
+				byte[] lenarr=ParameterByteHelper.convertLength(len);
+				for(int i=lenarr.Length-1;i>=0;i--){
+					buffer.Insert(before,lenarr[i]);
 				}
 				buffer.Insert(before,prefix);
 			}

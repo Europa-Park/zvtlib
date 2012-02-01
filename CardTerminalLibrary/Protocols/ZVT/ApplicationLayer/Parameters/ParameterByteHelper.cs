@@ -26,6 +26,39 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 			array[1]=highByte;
 			return array;
 		}
+		/// <summary>
+		/// This methode is used to convert a int length to a lenght field according to the
+		/// ZVT-Standard.
+		/// 
+		/// If the length is 255 or higher a extended length field is used.
+		/// A extended length field consists of 3 bytes 
+		/// byte 1: 0xFF is used to signal a extended length field
+		/// byte 2: low byte 
+		/// byte 3: high byte
+		///
+		/// If the length is smaller than 255 a normal length field of 1 byte is used.
+		/// </summary>
+		/// <returns>
+		/// The length.
+		/// </returns>
+		/// <param name='len'>
+		/// Length.
+		/// </param>
+		public static byte[] convertLength(int len){
+			byte[] lohi=ParameterByteHelper.int16ToByte((Int16)len);
+			byte[] buffer;
+			if(lohi[1]!=0x00 || lohi[0]==0xFF){
+				buffer=new byte[3];
+				buffer[0]=0xFF;
+				buffer[1]=lohi[0];
+				buffer[2]=lohi[1];
+				return buffer;
+			}else{
+				buffer=new byte[1];
+				buffer[0]=lohi[0];
+				return buffer;
+			}
+		}
 	}
 }
 

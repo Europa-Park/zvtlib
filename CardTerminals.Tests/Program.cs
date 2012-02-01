@@ -24,8 +24,9 @@ namespace Wiffzack.Devices.CardTerminals.Tests
               <!--<Transport>Serial</Transport>-->
               <Transport>Network</Transport>
               <!--<TransportSettings>
-                <Port>COM20</Port>
+                <Port>/dev/ttyUSB0</Port>
                 <BaudRate>9600</BaudRate>
+				<Parity>None</Parity>
                 <StopBits>One</StopBits>
               </TransportSettings>-->
 

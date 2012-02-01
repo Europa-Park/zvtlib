@@ -1,0 +1,8 @@
+*.pidb
+*.resources
+*.dll
+*.dll.mdb
+CardTerminals.Tests/bin/Debug/
+.gitignore~
+*.userprefs
+
