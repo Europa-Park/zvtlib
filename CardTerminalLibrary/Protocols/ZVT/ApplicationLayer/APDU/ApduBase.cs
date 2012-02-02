@@ -42,6 +42,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
 			for(int i=lenarr.Length-1;i>=0;i--){
 				buffer.Insert(0,lenarr[i]);
 			}
+			if(lenarr.Length>=2)
+				buffer.Insert(0,0xFF);
             buffer.InsertRange(0, ByteControlField);
             return buffer.ToArray();
 

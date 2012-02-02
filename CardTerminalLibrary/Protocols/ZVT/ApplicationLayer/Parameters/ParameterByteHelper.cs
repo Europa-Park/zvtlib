@@ -1,5 +1,5 @@
 using System;
-
+using System.Collections.Generic;
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Parameters
 {
 	public class ParameterByteHelper
@@ -32,9 +32,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 		/// 
 		/// If the length is 255 or higher a extended length field is used.
 		/// A extended length field consists of 3 bytes 
-		/// byte 1: 0xFF is used to signal a extended length field
-		/// byte 2: low byte 
-		/// byte 3: high byte
+		/// byte 1: low byte 
+		/// byte 2: high byte
 		///
 		/// If the length is smaller than 255 a normal length field of 1 byte is used.
 		/// </summary>
@@ -48,16 +47,19 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 			byte[] lohi=ParameterByteHelper.int16ToByte((Int16)len);
 			byte[] buffer;
 			if(lohi[1]!=0x00 || lohi[0]==0xFF){
-				buffer=new byte[3];
-				buffer[0]=0xFF;
-				buffer[1]=lohi[0];
-				buffer[2]=lohi[1];
+				buffer=new byte[2];
+				buffer[0]=lohi[0];
+				buffer[1]=lohi[1];
 				return buffer;
 			}else{
 				buffer=new byte[1];
 				buffer[0]=lohi[0];
 				return buffer;
 			}
+		}
+
+		public static int getLength(List<byte> buffer,int offset){
+				
 		}
 	}
 }
