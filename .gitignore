@@ -5,4 +5,4 @@
 CardTerminals.Tests/bin/Debug/
 .gitignore~
 *.userprefs
-
+*.csproj
