@@ -59,7 +59,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 		}
 
 		public static int getLength(List<byte> buffer,int offset){
-				
+				return 0;
 		}
 	}
 }
