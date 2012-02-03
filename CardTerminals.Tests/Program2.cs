@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml;
@@ -47,7 +48,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
         static void Main(string[] args)
         {
 //			LoadParameters(args);
-			string[] test = {"-c","config.xml"};
+			string[] test = {"-c","config.xml", "-ip", "127.0.0.1"};
 			LoadParameters(test);
 			
             LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
@@ -103,8 +104,16 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 		/// Arguments.
 		/// </param>
 		static void LoadParameters(string[] args){
-			for(int i=0; i<args.Length; i++){
-				Console.Write(args[i]+" ");
+			string field = "";
+			for(int i=0; i<args.Length; i= i+2){
+				field = args[i].Substring(1,args[i].Length-1);
+				Console.WriteLine(field);
+			}
+			
+			//check if config switch is set
+			if (args.Contains("-c")) {
+    			int index = Array.IndexOf(args,"-c");
+				Console.Write(index);
 			}
 		}
     }
