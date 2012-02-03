@@ -8,6 +8,25 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 		{
 		}
 		/// <summary>
+		/// Converts 2 bytes to a int.
+		/// </summary>
+		/// <returns>
+		/// The Bytes as int.
+		/// </returns>
+		/// <param name='toconv'>
+		/// Toconv.
+		/// </param>
+		/// <param name='hilo'>
+		/// If hilo is true the 2nd byte is the high byte otherwise the the first byte is
+		/// the high byte.
+		/// </param>
+		public static int byteToInt16(byte[] toconv,Boolean hilo){
+			if(hilo)
+				return (256 * (Int16)toconv[1] + (Int16)toconv[0]);
+			return (256 * (Int16)toconv[0] + (Int16)toconv[1]);		
+		}
+		
+		/// <summary>
 		/// Converts a Int16 to a byte[]
 		/// index 0 is the lowByte
 		/// index 1 is the highByte
@@ -58,9 +77,6 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 			}
 		}
 
-		public static int getLength(List<byte> buffer,int offset){
-				return 0;
-		}
 	}
 }
 

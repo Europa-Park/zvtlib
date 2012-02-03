@@ -4,10 +4,25 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 {
 	public class TLVLength:IParameter
 	{
-		
+		/// <summary>
+		/// Initializes a new instance of the
+		/// <see cref="Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Parameters.TLV.TLVLength"/> class.
+		/// </summary>
+		/// <param name='len'>
+		/// Length.
+		/// </param>
 		public TLVLength (int len)
 		{
-			
+			tlvLength=len;
+			if(len<=127){
+				Length=1;
+			}else{
+				if(len<=255){
+					Length=2;
+				}else{
+					Length=3;
+				}
+			}
 		}
 		
 		public int Length{
@@ -29,8 +44,27 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 				tlvLength=buffer[offset];
 				return;
 			}
-			if(firstByte==128){
+			// If the first byte is 129 then 1 length byte follows
+			if(firstByte==129){
+				Length=2;
+				tlvLength=(int)buffer[offset+1];
+				return;
 			}
+			/*
+			 * If first byte is 130 then 2 length bytes follow 
+			 * 2nd byte = high byte
+			 * 3rd byte = low byte
+			 */ 
+			if(firstByte==130){
+				Length=3;
+				byte[] lenbuffer=new byte[2];
+				lenbuffer[0]=buffer[offset+1];
+				lenbuffer[1]=buffer[offset+2];
+				tlvLength=ParameterByteHelper.byteToInt16(lenbuffer,true);
+				return;
+			}
+			// Throw Exception for any other firstByte
+			
 			
 		}
 
