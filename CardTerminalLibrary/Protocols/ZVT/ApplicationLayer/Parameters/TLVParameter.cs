@@ -17,13 +17,29 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 		public TLVLength tlvLength{
 			get{ return new TLVLength(Length);}
 		}
+		public int prefixLen{
+			get{return prefixLen;}
+			set{prefixLen=(int)value;}
+		}
+				
 		public int Length{
 			 get{
 				int len=0;
-				foreach (IParameter param in subparams){
-					if(param!=null)
-                		len+=param.Length;
+				if(subparams!=null){
+					foreach (IParameter param in subparams){
+						if(param!=null)
+	                		len+=param.Length;
+					}
 				}
+				if(enablePrefix){
+					len++;
+					if(prefixLen<=127){
+						len++;
+					}else{
+						byte[] lenarr=ParameterByteHelper.convertLength(prefixLen);
+						len=len+lenarr.Length+1;
+					}
+				}	
 				return len;}
 		}
 		
@@ -65,13 +81,25 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 			// If prefix is enabled the bmp id and length for tlv will be added infront of every thing
 			if(enablePrefix){
 				buffer.Add(prefix);
-				int len=buffer.Count-before;
+				int len=prefixLen;
 				byte[] lenarr=ParameterByteHelper.convertLength(len);
-				for(int i=lenarr.Length-1;i>=0;i--){
-					buffer.Insert(before,lenarr[i]);
+				/**
+				 *According to TLV length a byte equals 0xxx xxxx is the length
+				 *1000 0000 is a invalid length byte
+				 *1000 0001 indicates that one length byte follows for lengths ranging from 128-254 
+				 *1000 0010 indricates that two length bytes follow for lengths ranign from 255 onwards 
+				 */
+				if(len<=127){
+					buffer.Insert(before,(byte)len);
+				}else{
+					for(int i=lenarr.Length-1;i>=0;i--){
+						buffer.Insert(before,lenarr[i]);
+					}
+					if(lenarr.Length==2)
+						buffer.Insert(before,(byte)130);
+					if(lenarr.Length==1)
+						buffer.Inster(before,(byte)129);
 				}
-				if(lenarr.Length>=2)
-					buffer.Insert(before,0xFF);
 				buffer.Insert(before,prefix);
 			}
 				
