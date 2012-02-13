@@ -1,6 +1,7 @@
 <Config>
 	<!--<Transport>Serial</Transport>-->
 	<Transport>Network</Transport>
+	
 	<!--<TransportSettings>
 		<Port>/dev/ttyUSB0</Port>
 		<BaudRate>9600</BaudRate>
