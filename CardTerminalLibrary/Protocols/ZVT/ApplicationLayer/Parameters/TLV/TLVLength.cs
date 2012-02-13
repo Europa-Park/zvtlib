@@ -73,6 +73,26 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
         /// </summary>
         /// <param name="buffer"></param>
         public void AddToBytes(List<byte> buffer){
+			int len=tlvLength;
+			byte[] lenarr=ParameterByteHelper.convertLength(len);
+			/**
+				 *According to TLV length a byte equals 0xxx xxxx is the length
+				 *1000 0000 is a invalid length byte
+				 *1000 0001 indicates that one length byte follows for lengths ranging from 128-254 
+				 *1000 0010 indricates that two length bytes follow for lengths ranign from 255 onwards 
+				 */
+			if(len<=127){
+				buffer.Add((byte)len);
+			}else{
+				int before=buffer.Count;
+				for(int i=0;i<lenarr.Length;i++){
+					buffer.Insert(before,lenarr[i]);
+				}
+				if(lenarr.Length==2)
+					buffer.Insert(before,(byte)130);
+				if(lenarr.Length==1)
+					buffer.Insert(before,(byte)129);
+			}
 		
 		}
 		

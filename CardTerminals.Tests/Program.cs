@@ -54,6 +54,15 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 			Console.WriteLine("Solution:"+(test & testphase2));
 			byte testphase3=test &= (byte)~testphase2;
 			Console.WriteLine("testphase3:"+testphase3);
+			int val8=0;
+			int val7=0;
+			if(true)
+				val8=1;
+			if(true)
+				val7=1;
+			byte bit8=(byte)(val8<<1);
+			byte bit7=(byte)(val7<<0);
+		    Console.WriteLine("Bit test:"+(bit8 | bit7));
 //            LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
 //
 //            XmlDocument configuration = new XmlDocument();

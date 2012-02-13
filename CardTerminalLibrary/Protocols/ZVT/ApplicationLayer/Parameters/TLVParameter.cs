@@ -27,23 +27,26 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 			}
 		}
 		/// <summary>
-		/// Gets or sets the length field of the prefix.
+		/// Gets the length field of the prefix.
 		/// </summary>
 		/// <value>
-		/// The length of the tlv container including .
+		/// The length of the tlv container including the tag and length field.
+		/// if prefix is not enabled it is equals to Length
 		/// </value>
 		public int prefixLen{
-			get{return prefixLen;}
-			set{prefixLen=(int)value;}
+			get{int len=0;
+				len=tlvLength.Length+tlvLength.tlvLength;
+				// add tlv tag length len+=TLVTag.Length;
+				return len;
+			}
 		}
 				
 		public int Length{
 			 get{
 				int len=0;
-				len=tlvLength.Length+tlvLength.tlvLength;
-				// add tlv tag length len+=TLVTag.Length;
+				len=prefixLen;
 				if(enablePrefix){
-					// Current len variable is the equals to the length field of the prefix
+					// Current len variable is equals to the length field of the prefix
 					if(len<=127){
 						len++;
 					}else{
@@ -95,23 +98,11 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 				buffer.Add(prefix);
 				int len=prefixLen;
 				byte[] lenarr=ParameterByteHelper.convertLength(len);
-				/**
-				 *According to TLV length a byte equals 0xxx xxxx is the length
-				 *1000 0000 is a invalid length byte
-				 *1000 0001 indicates that one length byte follows for lengths ranging from 128-254 
-				 *1000 0010 indricates that two length bytes follow for lengths ranign from 255 onwards 
-				 */
-				if(len<=127){
-					buffer.Insert(before,(byte)len);
-				}else{
-					for(int i=lenarr.Length-1;i>=0;i--){
-						buffer.Insert(before,lenarr[i]);
-					}
-					if(lenarr.Length==2)
-						buffer.Insert(before,(byte)130);
-					if(lenarr.Length==1)
-						buffer.Insert(before,(byte)129);
+				for(int i=lenarr.Length-1;i>=0;i--){
+					buffer.Insert(before,lenarr[i]);
 				}
+				if(lenarr.Length>=2)
+					buffer.Insert(before,0xFF);
 				buffer.Insert(before,prefix);
 			}
 				
