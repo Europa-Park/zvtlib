@@ -15,8 +15,23 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
              get { return 0x06; }
         }
 		public TLVLength tlvLength{
-			get{ return new TLVLength(Length);}
+			get{
+				int len=0;
+				if(subparams!=null){
+					foreach (IParameter param in subparams){
+						if(param!=null)
+	                		len+=param.Length;
+					}
+				}
+				return new TLVLength(len);
+			}
 		}
+		/// <summary>
+		/// Gets or sets the length field of the prefix.
+		/// </summary>
+		/// <value>
+		/// The length of the tlv container including .
+		/// </value>
 		public int prefixLen{
 			get{return prefixLen;}
 			set{prefixLen=(int)value;}
@@ -25,20 +40,17 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 		public int Length{
 			 get{
 				int len=0;
-				if(subparams!=null){
-					foreach (IParameter param in subparams){
-						if(param!=null)
-	                		len+=param.Length;
-					}
-				}
+				len=tlvLength.Length+tlvLength.tlvLength;
+				// add tlv tag length len+=TLVTag.Length;
 				if(enablePrefix){
-					len++;
-					if(prefixLen<=127){
+					// Current len variable is the equals to the length field of the prefix
+					if(len<=127){
 						len++;
 					}else{
-						byte[] lenarr=ParameterByteHelper.convertLength(prefixLen);
+						byte[] lenarr=ParameterByteHelper.convertLength(len);
 						len=len+lenarr.Length+1;
 					}
+					len++;
 				}	
 				return len;}
 		}
@@ -98,7 +110,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 					if(lenarr.Length==2)
 						buffer.Insert(before,(byte)130);
 					if(lenarr.Length==1)
-						buffer.Inster(before,(byte)129);
+						buffer.Insert(before,(byte)129);
 				}
 				buffer.Insert(before,prefix);
 			}
