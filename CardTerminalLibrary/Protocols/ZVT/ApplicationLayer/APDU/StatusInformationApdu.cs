@@ -228,6 +228,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
         public void WriteXml(XmlElement rootNode)
         {
             XmlHelper.WriteString(rootNode, "RawData", ByteHelpers.ByteToString(_rawApduData));
+			XmlHelper.WriteInt64(rootNode,"ReceiptNr",this.FindParameter<BCDNumberParameter>(StatusInformationApdu.StatusParameterEnum.ReceiptNr).DecodeNumber());
         }
 
         public void ReadXml(XmlElement rootNode)

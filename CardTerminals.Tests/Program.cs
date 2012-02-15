@@ -47,46 +47,33 @@ namespace Wiffzack.Devices.CardTerminals.Tests
         static void Main(string[] args)
         {
 			  
-			byte test=5;
-			byte testphase2=(byte)(1 << 0);
-			Console.WriteLine("test:"+test);
-			Console.WriteLine("testphase2:"+testphase2);
-			Console.WriteLine("Solution:"+(test & testphase2));
-			byte testphase3=test &= (byte)~testphase2;
-			Console.WriteLine("testphase3:"+testphase3);
-			int val8=0;
-			int val7=0;
-			if(true)
-				val8=1;
-			if(true)
-				val7=1;
-			byte bit8=(byte)(val8<<1);
-			byte bit7=(byte)(val7<<0);
-		    Console.WriteLine("Bit test:"+(bit8 | bit7));
-//            LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
-//
-//            XmlDocument configuration = new XmlDocument();
-//            configuration.LoadXml(_configuration);
-//
+            LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
+
+            XmlDocument configuration = new XmlDocument();
+            configuration.LoadXml(_configuration);
+
 //            XmlDocument paymentSettings = new XmlDocument();
 //            paymentSettings.LoadXml(_paymentSettings);
-//
-//            ICommandEnvironment environment = new ZVTCommandEnvironment(configuration.DocumentElement);
-//            environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
-//            ClassifyCommandResult(environment.CreateInitialisationCommand(null).Execute());
-//
+
+            ICommandEnvironment environment = new ZVTCommandEnvironment(configuration.DocumentElement);
+            environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
+			CommandResult result=environment.CreateInitialisationCommand(null).Execute();
+			
 //            PaymentResult result = environment.CreatePaymentCommand(paymentSettings.DocumentElement).Execute();
 //            ClassifyCommandResult(result);
 //            XmlDocument authorisationIdentifier = new XmlDocument();
 //            authorisationIdentifier.AppendChild(authorisationIdentifier.CreateElement("Data"));
-//            result.Data.WriteXml(authorisationIdentifier.DocumentElement);
-//            
+			
+            XmlDocument resultXML=new XmlDocument();
+			resultXML.AppendChild(resultXML.CreateElement("Result"));
+			result.SerializeToXml(resultXML.DocumentElement);
+            
 //            ClassifyCommandResult(environment.CreateReversalCommand(authorisationIdentifier.DocumentElement).Execute());
-//
-//            //ClassifyCommandResult(environment.CreateReportCommand(null).Execute());
-//
-//            
-//            Console.ReadLine();
+
+            //ClassifyCommandResult(environment.CreateReportCommand(null).Execute());
+
+            
+            Console.ReadLine();
         }
 
         static void environment_StatusReceived(IntermediateStatus status)
