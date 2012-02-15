@@ -39,7 +39,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
             get
             {
                 XmlElement config = (XmlElement)_environmentConfig.SelectSingleNode("RegistrationCommand");
-
+				
                 if (config == null)
                 {
                     config = (XmlElement)_environmentConfig.AppendChild(_environmentConfig.OwnerDocument.CreateElement("RegistrationCommand"));
@@ -53,15 +53,14 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
         public ZVTCommandEnvironment(XmlElement environmentConfig)
         {
             _environmentConfig = environmentConfig;
-
             string transport = XmlHelper.ReadString(environmentConfig, "Transport");
-
             if (transport == null)
                 throw new ArgumentException("No transport layer specified");
 
             if (transport.Equals("serial", StringComparison.InvariantCultureIgnoreCase))
             {
                 XmlElement serialConfig = (XmlElement)environmentConfig.SelectSingleNode("TransportSettings");
+				
                 if(serialConfig == null)
                     throw new ArgumentException("No serial configuration specified");
 

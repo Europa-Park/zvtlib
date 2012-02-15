@@ -9,7 +9,7 @@ using System.IO.Ports;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Parameters;
 using Wiffzack.Devices.CardTerminals.Commands;
-
+using Wiffzack.Services.Utils;
 namespace Wiffzack.Devices.CardTerminals.Tests
 {
     class Program
@@ -31,7 +31,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
               </TransportSettings>-->
 
               <TransportSettings>
-                <RemoteIP>192.168.1.7</RemoteIP>
+                <RemoteIP>192.168.2.3</RemoteIP>
                 <RemotePort>51234</RemotePort>
               </TransportSettings>
 
@@ -52,21 +52,29 @@ namespace Wiffzack.Devices.CardTerminals.Tests
             XmlDocument configuration = new XmlDocument();
             configuration.LoadXml(_configuration);
 
-//            XmlDocument paymentSettings = new XmlDocument();
-//            paymentSettings.LoadXml(_paymentSettings);
+            XmlDocument paymentSettings = new XmlDocument();
+            paymentSettings.LoadXml(_paymentSettings);
 
             ICommandEnvironment environment = new ZVTCommandEnvironment(configuration.DocumentElement);
             environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
-			CommandResult result=environment.CreateInitialisationCommand(null).Execute();
+//			CommandResult result=environment.CreateInitialisationCommand(null).Execute();
 			
-//            PaymentResult result = environment.CreatePaymentCommand(paymentSettings.DocumentElement).Execute();
-//            ClassifyCommandResult(result);
-//            XmlDocument authorisationIdentifier = new XmlDocument();
-//            authorisationIdentifier.AppendChild(authorisationIdentifier.CreateElement("Data"));
+            PaymentResult result = environment.CreatePaymentCommand(paymentSettings.DocumentElement).Execute();
+            ClassifyCommandResult(result);
+            XmlDocument authorisationIdentifier = new XmlDocument();
+            authorisationIdentifier.AppendChild(authorisationIdentifier.CreateElement("Data"));
+			result.Data.WriteXml(authorisationIdentifier.DocumentElement);
+			Console.WriteLine("Saving XML");
+			authorisationIdentifier.Save("test.xml");
+			ReversalCommand revers=(ReversalCommand)environment.CreateReversalCommand(null);
+			revers.ReceiptNr=(int)XmlHelper.ReadInt(authorisationIdentifier.DocumentElement, "ReceiptNr");
 			
-            XmlDocument resultXML=new XmlDocument();
-			resultXML.AppendChild(resultXML.CreateElement("Result"));
-			result.SerializeToXml(resultXML.DocumentElement);
+			ClassifyCommandResult(revers.Execute());
+
+//            XmlWriter f=new XmlTextWriter("test.xml");
+//			XmlDocument resultXML=new XmlDocument();
+//			resultXML.AppendChild(resultXML.CreateElement("Result"));
+//			result.SerializeToXml(resultXML.DocumentElement);
             
 //            ClassifyCommandResult(environment.CreateReversalCommand(authorisationIdentifier.DocumentElement).Execute());
 

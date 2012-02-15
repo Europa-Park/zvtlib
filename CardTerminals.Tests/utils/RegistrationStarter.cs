@@ -1,9 +1,19 @@
-using System;
-using System.Xml;
 using System.Linq;
 using System.IO;
-
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Xml;
+using Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer;
+using Wiffzack.Diagnostic.Log;
+using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer;
+using System.IO.Ports;
+using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands;
+using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Parameters;
+using Wiffzack.Devices.CardTerminals.Commands;
+using Wiffzack.Services.Utils;
 namespace Wiffzack.Devices.CardTerminals.Tests
+
 {
 	/// <summary>
 	/// Registration starter. 
@@ -12,6 +22,30 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 	/// </summary>
 	public class RegistrationStarter
 	{
+		public static string _configuration = @"
+            <Config>
+              <!--<Transport>Serial</Transport>-->
+              <Transport>Network</Transport>
+              <!--<TransportSettings>
+                <Port>/dev/ttyUSB0</Port>
+                <BaudRate>9600</BaudRate>
+				<Parity>None</Parity>
+                <StopBits>One</StopBits>
+              </TransportSettings>-->
+
+              <TransportSettings>
+                <RemoteIP>192.168.2.3</RemoteIP>
+                <RemotePort>51234</RemotePort>
+              </TransportSettings>
+
+              <RegistrationCommand>
+                <ECRPrintsAdministrationReceipts>False</ECRPrintsAdministrationReceipts>
+                <ECRPrintsPaymentReceipt>False</ECRPrintsPaymentReceipt>
+                <PTDisableAmountInput>True</PTDisableAmountInput>
+                <PTDisableAdministrationFunctions>False</PTDisableAdministrationFunctions>
+              </RegistrationCommand>
+            </Config>
+            ";
 		/// <summary>
 		/// The entry point of the program, where the program control starts and ends.
 		/// </summary>
@@ -28,7 +62,8 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 			//load the XML file
 			XmlDocument config = new XmlDocument();
 			try {
-				config.Load(args[0]);
+				//config.Load(args[0]);
+				config.LoadXml(_configuration);
  			}
 			//if any exception occur, the XML file could not be read and thus the program stops
  			catch {
@@ -37,20 +72,25 @@ namespace Wiffzack.Devices.CardTerminals.Tests
  			}
 			//debug message --> remove later
 			Console.WriteLine("XML file loaded");
-			
+			config.Save("test2.xml");
 			//initialise environment with the configuration file and execute command
-//			ICommandEnvironment environment = new ZVTCommandEnvironment(configuration.DocumentElement);
-//			environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
-//			CommandResult result = environment.CreateInitialisationCommand(null).Execute();
+     		ICommandEnvironment environment = new ZVTCommandEnvironment(config.DocumentElement);
+			Console.WriteLine("XML file loaded");
+			environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
+			CommandResult result = environment.CreateInitialisationCommand(null).Execute();
 			
 			//create XML file with result message
 			XmlDocument resultXML = new XmlDocument();
 			resultXML.AppendChild(resultXML.CreateElement("Result"));
-//			result.SerializeToXml(resultXML.DocumentElement);
+			result.SerializeToXml(resultXML.DocumentElement);
 			//save file in /tmp/result.xml
 			resultXML.Save("/tmp/result.xml");
 			//debug message --> remove later
 			Console.WriteLine("XML file created");
 		}
+		  static void environment_StatusReceived(IntermediateStatus status)
+        {
+            Console.WriteLine(status);
+        }
 	}
 }
