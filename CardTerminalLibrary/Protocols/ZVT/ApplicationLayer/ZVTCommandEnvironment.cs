@@ -71,7 +71,6 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
                 XmlElement networkConfig = (XmlElement)environmentConfig.SelectSingleNode("TransportSettings");
                 if (networkConfig == null)
                     throw new ArgumentException("No network configuration specified");
-
                 _transport = new NetworkTransport(networkConfig);
             }
         }

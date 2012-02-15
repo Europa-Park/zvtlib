@@ -53,6 +53,8 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 		/// The command-line arguments.
 		/// </param>
 		static void Main(string[] args){
+			 LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
+
 			//check if the first argument is a file
 			if(args.Length!=1 || !File.Exists(args[0])){
 				Console.WriteLine("Please pass a XML configuration file as first argument!");
@@ -62,8 +64,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 			//load the XML file
 			XmlDocument config = new XmlDocument();
 			try {
-				//config.Load(args[0]);
-				config.LoadXml(_configuration);
+				config.Load(args[0]);
  			}
 			//if any exception occur, the XML file could not be read and thus the program stops
  			catch {
@@ -72,7 +73,6 @@ namespace Wiffzack.Devices.CardTerminals.Tests
  			}
 			//debug message --> remove later
 			Console.WriteLine("XML file loaded");
-			config.Save("test2.xml");
 			//initialise environment with the configuration file and execute command
      		ICommandEnvironment environment = new ZVTCommandEnvironment(config.DocumentElement);
 			Console.WriteLine("XML file loaded");

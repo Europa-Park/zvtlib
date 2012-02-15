@@ -57,7 +57,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 
             ICommandEnvironment environment = new ZVTCommandEnvironment(configuration.DocumentElement);
             environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
-//			CommandResult result=environment.CreateInitialisationCommand(null).Execute();
+			CommandResult cmdresult=environment.CreateInitialisationCommand(null).Execute();
 			
             PaymentResult result = environment.CreatePaymentCommand(paymentSettings.DocumentElement).Execute();
             ClassifyCommandResult(result);
