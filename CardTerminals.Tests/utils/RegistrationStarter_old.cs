@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Wiffzack.Devices.CardTerminals.Tests
 {
-	public class RegistrationStarter_old : Starter
+	public class RegistrationStarter_old
 	{
 		bool configFlag = false;
 		XmlDocument config;
