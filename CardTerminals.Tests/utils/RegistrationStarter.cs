@@ -22,30 +22,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 	/// </summary>
 	public class RegistrationStarter
 	{
-		public static string _configuration = @"
-            <Config>
-              <!--<Transport>Serial</Transport>-->
-              <Transport>Network</Transport>
-              <!--<TransportSettings>
-                <Port>/dev/ttyUSB0</Port>
-                <BaudRate>9600</BaudRate>
-				<Parity>None</Parity>
-                <StopBits>One</StopBits>
-              </TransportSettings>-->
-
-              <TransportSettings>
-                <RemoteIP>192.168.2.3</RemoteIP>
-                <RemotePort>51234</RemotePort>
-              </TransportSettings>
-
-              <RegistrationCommand>
-                <ECRPrintsAdministrationReceipts>False</ECRPrintsAdministrationReceipts>
-                <ECRPrintsPaymentReceipt>False</ECRPrintsPaymentReceipt>
-                <PTDisableAmountInput>True</PTDisableAmountInput>
-                <PTDisableAdministrationFunctions>False</PTDisableAdministrationFunctions>
-              </RegistrationCommand>
-            </Config>
-            ";
+	
 		/// <summary>
 		/// The entry point of the program, where the program control starts and ends.
 		/// </summary>
@@ -84,24 +61,47 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 				resultXML.Save("/tmp/result.xml");
 				return;
  			}
-			//debug message --> remove later
-			LogManager.Global.GetLogger("Wiffzack").Info("XML file loaded");
 			//initialise environment with the configuration file and execute command
-     		ICommandEnvironment environment = new ZVTCommandEnvironment(config.DocumentElement);
-			environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
-			CommandResult result = environment.CreateInitialisationCommand(null).Execute();
+			try{
+	     		ICommandEnvironment environment = new ZVTCommandEnvironment(config.DocumentElement);
+				environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
+				CommandResult result = environment.CreateInitialisationCommand(null).Execute();
+				//create XML file with result message
+				result.SerializeToXml(resultXML.DocumentElement);
+				//save file in /tmp/result.xml
+				resultXML.Save("/tmp/result.xml");
+				//debug message --> remove later
+				LogManager.Global.GetLogger("Wiffzack").Info("XML file created");
+			}catch(System.ArgumentException se){
+				LogManager.Global.GetLogger("Wiffzack").Info("Bad Xml Argument");
+				XmlHelper.WriteBool(rootNode, "Success", false);
+            	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -3);
+            	XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", "Bad Xml Argument");
+				//save file in /tmp/result.xml
+				resultXML.Save("/tmp/result.xml");
+				return;			
+			}catch(System.FormatException fe){
+				LogManager.Global.GetLogger("Wiffzack").Info("Bad Xml Argument");
+				XmlHelper.WriteBool(rootNode, "Success", false);
+            	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -3);
+            	XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", fe.Message);
+				//save file in /tmp/result.xml
+				resultXML.Save("/tmp/result.xml");
+				return;	
+			}catch(System.Net.Sockets.SocketException ce){
+				LogManager.Global.GetLogger("Wiffzack").Info("Connection Error: "+ce.Message);
+				XmlHelper.WriteBool(rootNode, "Success", false);
+            	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -4);
+            	XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", ce.Message);
+				//save file in /tmp/result.xml
+				resultXML.Save("/tmp/result.xml");
+				return;	
+			}
 			
-			
-			//create XML file with result message
-			result.SerializeToXml(resultXML.DocumentElement);
-			//save file in /tmp/result.xml
-			resultXML.Save("/tmp/result.xml");
-			//debug message --> remove later
-			LogManager.Global.GetLogger("Wiffzack").Info("XML file created");
 		}
 		  static void environment_StatusReceived(IntermediateStatus status)
         {
-            Console.WriteLine(status);
+            LogManager.Global.GetLogger("Wiffzack").Info(status.ToString());
         }
 	}
 }
