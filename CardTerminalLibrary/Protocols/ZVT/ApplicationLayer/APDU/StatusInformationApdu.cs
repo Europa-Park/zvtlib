@@ -229,7 +229,17 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
         {
             XmlHelper.WriteString(rootNode, "RawData", ByteHelpers.ByteToString(_rawApduData));
 			XmlHelper.WriteInt64(rootNode,"ReceiptNr",this.FindParameter<BCDNumberParameter>(StatusInformationApdu.StatusParameterEnum.ReceiptNr).DecodeNumber());
-        }
+        	PrefixedParameter<AsciiLVarParameter> cardinfo=this.FindParameter<PrefixedParameter<AsciiLVarParameter>>(StatusInformationApdu.StatusParameterEnum.CardTypeName);
+			XmlHelper.WriteString(rootNode,"CardInfo",cardinfo.SubParameter.Text);
+			PrefixedParameter<AsciiLVarParameter> additional=this.FindParameter<PrefixedParameter<AsciiLVarParameter>>(StatusInformationApdu.StatusParameterEnum.AdditionalCardDataForECCash);
+			if(additional!=null)
+				XmlHelper.WriteString(rootNode,"Additional",additional.SubParameter.Text);
+			PrefixedParameter<StatusPanEfId> panefid=this.FindParameter<PrefixedParameter<StatusPanEfId>>(StatusInformationApdu.StatusParameterEnum.PanEfId);
+			if(panefid!=null)
+				XmlHelper.WriteInt64(rootNode,"PanEfid",panefid.SubParameter.DecodeNumber());
+			
+		}
+			
 
         public void ReadXml(XmlElement rootNode)
         {

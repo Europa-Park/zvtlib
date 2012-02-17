@@ -54,7 +54,9 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 		/// </param>
 		static void Main(string[] args){
 			 LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
-
+			//create XML file with result message
+			XmlDocument resultXML = new XmlDocument();
+			resultXML.AppendChild(resultXML.CreateElement("Result"));
 			//check if the first argument is a file
 			if(args.Length!=1 || !File.Exists(args[0])){
 				Console.WriteLine("Please pass a XML configuration file as first argument!");
@@ -75,13 +77,11 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 			Console.WriteLine("XML file loaded");
 			//initialise environment with the configuration file and execute command
      		ICommandEnvironment environment = new ZVTCommandEnvironment(config.DocumentElement);
-			Console.WriteLine("XML file loaded");
 			environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
 			CommandResult result = environment.CreateInitialisationCommand(null).Execute();
 			
+			
 			//create XML file with result message
-			XmlDocument resultXML = new XmlDocument();
-			resultXML.AppendChild(resultXML.CreateElement("Result"));
 			result.SerializeToXml(resultXML.DocumentElement);
 			//save file in /tmp/result.xml
 			resultXML.Save("/tmp/result.xml");

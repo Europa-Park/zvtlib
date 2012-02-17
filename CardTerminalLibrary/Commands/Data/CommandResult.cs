@@ -68,8 +68,10 @@ namespace Wiffzack.Devices.CardTerminals.Commands
         public virtual void SerializeToXml(XmlElement rootNode)
         {
             XmlHelper.WriteBool(rootNode, "Success", Success);
-            XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", _protocolSpecificErrorCode);
-            XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", _protocolSpecificErrorDescription);
+			if(_protocolSpecificErrorCode!=null)
+            	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", _protocolSpecificErrorCode);
+			if(_protocolSpecificErrorDescription!=null && !_protocolSpecificErrorDescription.Equals(""))
+            	XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", _protocolSpecificErrorDescription);
 
             if (_printDocuments != null)
             {

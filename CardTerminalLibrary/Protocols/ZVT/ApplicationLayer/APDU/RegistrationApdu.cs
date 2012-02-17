@@ -64,5 +64,25 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
         {
             get { return new byte[] { 0x06, 0x00 }; }
         }
+		
+		 public override byte[] GetRawApduData()
+        {
+            List<byte> buffer = new List<byte>();
+
+            foreach (IParameter param in _parameters)
+                param.AddToBytes(buffer);
+//			buffer.Add(0x06);
+//			buffer.Add(0x00);
+			int len=buffer.Count;
+			byte[] lenarr=ParameterByteHelper.convertLength(len);
+			for(int i=lenarr.Length-1;i>=0;i--){
+				buffer.Insert(0,lenarr[i]);
+			}
+			if(lenarr.Length>=2)
+				buffer.Insert(0,0xFF);
+            buffer.InsertRange(0, ByteControlField);
+            return buffer.ToArray();
+
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 
               <RegistrationCommand>
                 <ECRPrintsAdministrationReceipts>False</ECRPrintsAdministrationReceipts>
-                <ECRPrintsPaymentReceipt>False</ECRPrintsPaymentReceipt>
+                <ECRPrintsPaymentReceipt>True</ECRPrintsPaymentReceipt>
                 <PTDisableAmountInput>True</PTDisableAmountInput>
                 <PTDisableAdministrationFunctions>False</PTDisableAdministrationFunctions>
               </RegistrationCommand>
@@ -46,30 +46,41 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 
         static void Main(string[] args)
         {
-			  
-            LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
-
-            XmlDocument configuration = new XmlDocument();
-            configuration.LoadXml(_configuration);
-
-            XmlDocument paymentSettings = new XmlDocument();
-            paymentSettings.LoadXml(_paymentSettings);
-
-            ICommandEnvironment environment = new ZVTCommandEnvironment(configuration.DocumentElement);
-            environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
-			CommandResult cmdresult=environment.CreateInitialisationCommand(null).Execute();
-			
-            PaymentResult result = environment.CreatePaymentCommand(paymentSettings.DocumentElement).Execute();
-            ClassifyCommandResult(result);
-            XmlDocument authorisationIdentifier = new XmlDocument();
-            authorisationIdentifier.AppendChild(authorisationIdentifier.CreateElement("Data"));
-			result.Data.WriteXml(authorisationIdentifier.DocumentElement);
-			Console.WriteLine("Saving XML");
-			authorisationIdentifier.Save("test.xml");
-			ReversalCommand revers=(ReversalCommand)environment.CreateReversalCommand(null);
-			revers.ReceiptNr=(int)XmlHelper.ReadInt(authorisationIdentifier.DocumentElement, "ReceiptNr");
-			
-			ClassifyCommandResult(revers.Execute());
+			PaymentResult result=null;
+			try{ 
+	            LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
+	
+	            XmlDocument configuration = new XmlDocument();
+	            configuration.LoadXml(_configuration);
+	
+	            XmlDocument paymentSettings = new XmlDocument();
+	            paymentSettings.LoadXml(_paymentSettings);
+	
+	            ICommandEnvironment environment = new ZVTCommandEnvironment(configuration.DocumentElement);
+	            environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
+				CommandResult cmdresult=environment.CreateInitialisationCommand(null).Execute();
+				
+	            result = environment.CreatePaymentCommand(paymentSettings.DocumentElement).Execute();
+	            ClassifyCommandResult(result);
+	            XmlDocument authorisationIdentifier = new XmlDocument();
+				XmlElement data=authorisationIdentifier.CreateElement("Data");
+	            authorisationIdentifier.AppendChild(data);
+				result.SerializeToXml(data);
+				result.Data.WriteXml(data);
+				Console.WriteLine("Saving XML");
+				authorisationIdentifier.Save("test.xml");
+				ReversalCommand revers=(ReversalCommand)environment.CreateReversalCommand(null);
+				revers.ReceiptNr=(int)XmlHelper.ReadInt(authorisationIdentifier.DocumentElement, "ReceiptNr");
+				
+				ClassifyCommandResult(revers.Execute());
+			}catch(ArgumentException e){
+				XmlDocument authorisationIdentifier = new XmlDocument();
+				XmlElement data=authorisationIdentifier.CreateElement("Data");
+				authorisationIdentifier.AppendChild(data);
+				result.SerializeToXml(data);
+				Console.WriteLine("Saving XML");
+				authorisationIdentifier.Save("test.xml");
+			}
 
 //            XmlWriter f=new XmlTextWriter("test.xml");
 //			XmlDocument resultXML=new XmlDocument();

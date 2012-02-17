@@ -12,7 +12,7 @@
     <AssemblyName>CardTerminals.Tests</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <StartupObject>Wiffzack.Devices.CardTerminals.Tests.RegistrationStarter</StartupObject>
+    <StartupObject>Wiffzack.Devices.CardTerminals.Tests.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
