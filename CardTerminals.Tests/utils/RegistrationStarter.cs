@@ -56,10 +56,16 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 			 LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
 			//create XML file with result message
 			XmlDocument resultXML = new XmlDocument();
-			resultXML.AppendChild(resultXML.CreateElement("Result"));
+			XmlElement rootNode=resultXML.CreateElement("Result");
+			resultXML.AppendChild(rootNode);
 			//check if the first argument is a file
 			if(args.Length!=1 || !File.Exists(args[0])){
-				Console.WriteLine("Please pass a XML configuration file as first argument!");
+				LogManager.Global.GetLogger("Wiffzack").Info("Please pass a XML configuration file as first argument!");
+				XmlHelper.WriteBool(rootNode, "Success", false);
+            	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -1);
+            	XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", "Please pass a XML configuration file as first argument!");
+				//save file in /tmp/result.xml
+				resultXML.Save("/tmp/result.xml");
 				return;
 			}
 			
@@ -70,11 +76,16 @@ namespace Wiffzack.Devices.CardTerminals.Tests
  			}
 			//if any exception occur, the XML file could not be read and thus the program stops
  			catch {
-				Console.WriteLine("Your XML was probably bad...");
+				LogManager.Global.GetLogger("Wiffzack").Info("Your XML was probably bad...");
+				XmlHelper.WriteBool(rootNode, "Success", false);
+            	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -2);
+            	XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", "Your XML was probably bad.");
+				//save file in /tmp/result.xml
+				resultXML.Save("/tmp/result.xml");
 				return;
  			}
 			//debug message --> remove later
-			Console.WriteLine("XML file loaded");
+			LogManager.Global.GetLogger("Wiffzack").Info("XML file loaded");
 			//initialise environment with the configuration file and execute command
      		ICommandEnvironment environment = new ZVTCommandEnvironment(config.DocumentElement);
 			environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
@@ -86,7 +97,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 			//save file in /tmp/result.xml
 			resultXML.Save("/tmp/result.xml");
 			//debug message --> remove later
-			Console.WriteLine("XML file created");
+			LogManager.Global.GetLogger("Wiffzack").Info("XML file created");
 		}
 		  static void environment_StatusReceived(IntermediateStatus status)
         {
