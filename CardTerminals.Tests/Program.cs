@@ -71,7 +71,6 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 				authorisationIdentifier.Save("test.xml");
 				ReversalCommand revers=(ReversalCommand)environment.CreateReversalCommand(null);
 				revers.ReceiptNr=(int)XmlHelper.ReadInt(authorisationIdentifier.DocumentElement, "ReceiptNr");
-				
 				ClassifyCommandResult(revers.Execute());
 			}catch(ArgumentException e){
 				XmlDocument authorisationIdentifier = new XmlDocument();

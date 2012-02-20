@@ -1,13 +1,10 @@
 using System;
-using System.Xml;
 
 namespace Wiffzack.Devices.CardTerminals.Tests
 {
-	public interface Starter
+	public class Starter
 	{
-		bool checkArgs(string[] args);
-		XmlDocument generateXML(string[] args);
-		void execute();
+		public static String result="tmp/result.xml";
 	}
 }
 

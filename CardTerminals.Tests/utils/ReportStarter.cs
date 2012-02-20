@@ -42,7 +42,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
             	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -1);
             	XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", "Please pass a XML configuration file as first argument!");
 				//save file in /tmp/result.xml
-				resultXML.Save("/tmp/result.xml");
+				resultXML.Save(Starter.result);
 				return;
 			}
 			
@@ -59,7 +59,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
             	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -2);
             	XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", "Your XML was probably bad.");
 				//save file in /tmp/result.xml
-				resultXML.Save("/tmp/result.xml");
+				resultXML.Save(Starter.result);
 				return;
  			}
 			//initialise environment with the configuration file and execute command
@@ -70,7 +70,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 				//create XML file with result message
 				result.SerializeToXml(resultXML.DocumentElement);
 				//save file in /tmp/result.xml
-				resultXML.Save("/tmp/result.xml");
+				resultXML.Save(Starter.result);
 				//debug message --> remove later
 				LogManager.Global.GetLogger("Wiffzack").Info("XML file created");
 			}catch(System.ArgumentException se){
@@ -79,7 +79,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
             	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -3);
             	XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", "Bad Xml Argument");
 				//save file in /tmp/result.xml
-				resultXML.Save("/tmp/result.xml");
+				resultXML.Save(Starter.result);
 				return;			
 			}catch(System.FormatException fe){
 				LogManager.Global.GetLogger("Wiffzack").Info("Bad Xml Argument");
@@ -87,7 +87,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
             	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -3);
             	XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", fe.Message);
 				//save file in /tmp/result.xml
-				resultXML.Save("/tmp/result.xml");
+				resultXML.Save(Starter.result);
 				return;	
 			}catch(System.Net.Sockets.SocketException ce){
 				LogManager.Global.GetLogger("Wiffzack").Info("Connection Error: "+ce.Message);
@@ -95,7 +95,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
             	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -4);
             	XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", ce.Message);
 				//save file in /tmp/result.xml
-				resultXML.Save("/tmp/result.xml");
+				resultXML.Save(Starter.result);
 				return;	
 			}catch(Exception e){
 				LogManager.Global.GetLogger("Wiffzack").Info("System Error:"+e.Message);
@@ -103,7 +103,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
             	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -255);
             	XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", e.Message);
 				//save file in /tmp/result.xml
-				resultXML.Save("/tmp/result.xml");
+				resultXML.Save(Starter.result);
 				return;
 			}
 			

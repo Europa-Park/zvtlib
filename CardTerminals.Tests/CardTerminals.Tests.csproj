@@ -12,7 +12,7 @@
     <AssemblyName>CardTerminals.Tests</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <StartupObject>Wiffzack.Devices.CardTerminals.Tests.EndOfDayStarter</StartupObject>
+    <StartupObject>Wiffzack.Devices.CardTerminals.Tests.ReversalStarter</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,6 +48,7 @@
     <Compile Include="utils\ResetStarter.cs" />
     <Compile Include="utils\NetworkDiagnosisStarter.cs" />
     <Compile Include="utils\EndOfDayStarter.cs" />
+    <Compile Include="utils\ReversalStarter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CardTerminalLibrary\CardTerminalLibrary.csproj">
