@@ -96,6 +96,14 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 				//save file in /tmp/result.xml
 				resultXML.Save("/tmp/result.xml");
 				return;	
+			}catch(Exception e){
+				LogManager.Global.GetLogger("Wiffzack").Info("System Error:"+e.Message);
+				XmlHelper.WriteBool(rootNode, "Success", false);
+            	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -255);
+            	XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", e.Message);
+				//save file in /tmp/result.xml
+				resultXML.Save("/tmp/result.xml");
+				return;
 			}
 			
 		}

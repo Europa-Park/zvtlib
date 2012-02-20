@@ -65,7 +65,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
                     _transport.OpenConnection();
 
                 if (_printSystemInfo)
-                {
+                {	
                     ApduCollection apdus = _commandTransmitter.TransmitAPDU(_systemInfo);
                     printDocuments.AddRange(_commandTransmitter.PrintDocuments);
                     CheckForAbortApdu(result, apdus);
