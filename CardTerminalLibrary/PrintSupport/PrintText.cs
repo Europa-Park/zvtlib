@@ -51,7 +51,6 @@ namespace Wiffzack.Devices.CardTerminals.PrintSupport
 
         public void SerializeToXml(XmlElement rootNode)
         {
-			Console.WriteLine(_text);
             XmlHelper.WriteString(rootNode, "Text", _text);
             XmlHelper.WriteBool(rootNode, "Bold", _bold);
             XmlHelper.WriteBool(rootNode, "DoubleHeight", _doubleHeight);

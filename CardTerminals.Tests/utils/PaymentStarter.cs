@@ -16,11 +16,11 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 
 {
 	/// <summary>
-	/// Registration starter. 
-	/// The registration starter awaits a XML file that contains the configuration for transport and registration. 
+	/// Report starter. 
+	/// The report starter awaits a XML file that contains the configuration for transport and report. 
 	/// It executes the command and saves the resulting XML file as /tmp/result.xml.
 	/// </summary>
-	public class RegistrationStarter
+	public class PaymentStarter
 	{
 	
 		/// <summary>
@@ -63,7 +63,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 				config.Load(args[0]);
  			}
 			//if any exception occur, the XML file could not be read and thus the program stops
- 			catch {
+			catch (Exception e){
 				LogManager.Global.GetLogger("Wiffzack").Info("Your XML was probably bad...");
 				XmlHelper.WriteBool(rootNode, "Success", false);
             	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -2);
@@ -81,9 +81,10 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 			try{
 	     		ICommandEnvironment environment = new ZVTCommandEnvironment(config.DocumentElement);
 				environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
-				CommandResult result = environment.CreateInitialisationCommand(null).Execute();
+				PaymentResult result = environment.CreatePaymentCommand((XmlElement)config.DocumentElement.SelectSingleNode("Payment")).Execute();
 				//create XML file with result message
 				result.SerializeToXml(resultXML.DocumentElement);
+				result.Data.WriteXml(resultXML.DocumentElement);
 				//save file in /tmp/result.xml
 				resultXML.Save(Starter.result);
 				//debug message --> remove later

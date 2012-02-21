@@ -12,7 +12,7 @@
     <AssemblyName>CardTerminals.Tests</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <StartupObject>Wiffzack.Devices.CardTerminals.Tests.ReversalStarter</StartupObject>
+    <StartupObject>Wiffzack.Devices.CardTerminals.Tests.Starter</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,18 +37,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Program2.cs" />
-    <Compile Include="utils\AttributeChecker.cs" />
     <Compile Include="utils\RegistrationStarter.cs" />
-    <Compile Include="utils\RegistrationStarter_old.cs" />
     <Compile Include="utils\Starter.cs" />
     <Compile Include="utils\ReportStarter.cs" />
     <Compile Include="utils\ResetStarter.cs" />
     <Compile Include="utils\NetworkDiagnosisStarter.cs" />
     <Compile Include="utils\EndOfDayStarter.cs" />
     <Compile Include="utils\ReversalStarter.cs" />
+    <Compile Include="utils\PaymentStarter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CardTerminalLibrary\CardTerminalLibrary.csproj">
