@@ -84,7 +84,8 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 				PaymentResult result = environment.CreatePaymentCommand((XmlElement)config.DocumentElement.SelectSingleNode("Payment")).Execute();
 				//create XML file with result message
 				result.SerializeToXml(resultXML.DocumentElement);
-				result.Data.WriteXml(resultXML.DocumentElement);
+				if(result.Success==true)
+					result.Data.WriteXml(resultXML.DocumentElement);
 				//save file in /tmp/result.xml
 				resultXML.Save(Starter.result);
 				//debug message --> remove later

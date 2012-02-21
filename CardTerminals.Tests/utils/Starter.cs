@@ -18,12 +18,23 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 			}
 			return returns;
 		}
+		private static void printTypes(Logger _log){
+			_log.Info("Types:");
+			_log.Info("reset		Reset Terminal");
+			_log.Info("eof			Terminal End of Day");
+			_log.Info("network		Network Diagnosis");
+			_log.Info("register		Terminal Registration");
+			_log.Info("report		Terminal Report");
+			_log.Info("reversal		Payment Reversal");
+			_log.Info("payment		Card Payment");
+		}
 		static void Main(string[] args){
 			try{
 				if(args.Length==0 | args[0].Equals("?")){
 					LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
 					Logger _log= LogManager.Global.GetLogger("Wiffzack");
 					_log.Info("<logfile> <resultfile> <type>");
+					printTypes(_log);
 					return;
 				}
 				Starter.logger=args[0];
@@ -60,6 +71,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 				LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
 				Logger _log= LogManager.Global.GetLogger("Wiffzack");
 				_log.Info("<logfile> <resultfile> <type>");
+				printTypes(_log);
 				return;
 			}catch(Exception e){
 				LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Starter.getFileLoggerStream()));

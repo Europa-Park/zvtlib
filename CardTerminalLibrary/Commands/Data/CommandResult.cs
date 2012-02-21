@@ -77,8 +77,10 @@ namespace Wiffzack.Devices.CardTerminals.Commands
             {
                 foreach (IPrintDocument document in _printDocuments)
                 {
-                    XmlElement documentRoot = (XmlElement)rootNode.AppendChild(rootNode.OwnerDocument.CreateElement("Document"));
-                    document.SerializeToXml(documentRoot);
+                    if(document!=null){
+						XmlElement documentRoot = (XmlElement)rootNode.AppendChild(rootNode.OwnerDocument.CreateElement("Document"));
+	                    document.SerializeToXml(documentRoot);
+					}
                 }
             }
 
