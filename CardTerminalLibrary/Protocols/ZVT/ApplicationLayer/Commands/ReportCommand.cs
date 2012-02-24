@@ -43,7 +43,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         public override void ReadSettings(XmlElement settings)
         {
             _printSystemInfo = XmlHelper.ReadBool(settings, "PrintSystemInfo", false);
-            _printReport = XmlHelper.ReadBool(settings, "PrintReport", true);
+            _printReport = XmlHelper.ReadBool(settings, "PrintReport", false);
         }
 
         public ReportCommand(IZvtTransport transport, ZVTCommandEnvironment commandEnvironment)

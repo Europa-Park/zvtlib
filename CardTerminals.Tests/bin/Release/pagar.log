@@ -1,0 +1,234 @@
+22.02.2012 17:07:04,914 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 17:07:05,44 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 17:07:05,874 [Wiffzack.Devices.CardTerminals] Fatal: Cannot open RS232 port: System.ArgumentException: Der angegebene Anschlussname beginnt nicht mit COM/com oder wird nicht in einen gültigen seriellen Anschluss aufgelöst.
+Parametername: portName
+   bei System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   bei System.IO.Ports.SerialPort.Open()
+   bei Wiffzack.Communication.SerialComm.Open()
+   bei Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer.RS232Transport.OpenConnection()
+22.02.2012 17:07:06,264 [Wiffzack] Info: System Error:Cannot open RS232 port
+23.02.2012 17:25:48,283 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+23.02.2012 17:25:48,299 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>COM10</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+23.02.2012 17:25:49,32 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=0: 10 02 06 50 03 00 00 00 10 03 FB 37 
+23.02.2012 17:25:54,57 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+23.02.2012 17:25:54,57 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=1: 10 02 06 50 03 00 00 00 10 03 FB 37 
+23.02.2012 17:25:59,65 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '2'
+23.02.2012 17:25:59,65 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=2: 10 02 06 50 03 00 00 00 10 03 FB 37 
+23.02.2012 17:26:04,72 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '3'
+23.02.2012 17:26:04,72 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed 3-times, reporting error to application layer
+23.02.2012 17:26:04,103 [Wiffzack] Info: System Error:TPDU transmission failed 3-times, reporting error to application layer
+23.02.2012 17:27:16,160 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+23.02.2012 17:27:16,160 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>COM10</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+23.02.2012 17:27:16,331 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=0: 10 02 06 50 03 00 00 00 10 03 FB 37 
+23.02.2012 17:27:21,339 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+23.02.2012 17:27:21,339 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=1: 10 02 06 50 03 00 00 00 10 03 FB 37 
+23.02.2012 17:27:21,448 [Wiffzack.Devices.CardTerminals] Debug: ReceiveTpduFrame: 10 02 80 00 00 10 03 F5 1F 
+23.02.2012 17:27:21,511 [Wiffzack] Info: Received: 80, 00
+23.02.2012 17:27:22,883 [Wiffzack.Devices.CardTerminals] Debug: ReceiveTpduFrame: 10 02 04 FF 01 0E 10 03 95 1A 
+23.02.2012 17:27:22,883 [Wiffzack] Info: Received: 04, ff
+23.02.2012 17:27:22,883 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=0: 10 02 80 00 00 10 03 F5 1F 
+23.02.2012 17:27:23,102 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+23.02.2012 18:41:33,818 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+23.02.2012 18:41:33,854 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+23.02.2012 18:43:25,613 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+23.02.2012 18:43:25,678 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+23.02.2012 18:43:25,684 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+23.02.2012 18:44:20,799 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+23.02.2012 18:44:20,818 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+23.02.2012 18:44:20,824 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+23.02.2012 18:48:07,877 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+23.02.2012 18:48:07,895 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+23.02.2012 18:48:07,901 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+23.02.2012 18:52:02,970 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+23.02.2012 18:52:02,988 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+23.02.2012 18:52:02,994 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+23.02.2012 18:58:19,565 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+23.02.2012 18:58:19,584 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+23.02.2012 18:58:19,590 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+23.02.2012 19:00:32,717 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+23.02.2012 19:00:32,735 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+23.02.2012 19:00:32,741 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+23.02.2012 19:00:51,174 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+23.02.2012 19:00:51,193 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+23.02.2012 19:00:51,199 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+23.02.2012 19:01:42,139 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+23.02.2012 19:01:42,157 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+23.02.2012 19:01:42,163 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+23.02.2012 19:02:04,559 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+23.02.2012 19:02:04,578 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+23.02.2012 19:02:04,583 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+23.02.2012 19:02:50,561 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+23.02.2012 19:02:50,579 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+23.02.2012 19:02:50,585 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+23.02.2012 19:02:53,605 [Wiffzack.Devices.CardTerminals] Info: Serial Port Opend
+23.02.2012 19:02:53,620 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=0: 10 02 06 18 00 10 03 56 3A 
+23.02.2012 19:02:58,621 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+23.02.2012 19:02:58,622 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=1: 10 02 06 18 00 10 03 56 3A 
+23.02.2012 19:03:11,309 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+23.02.2012 19:03:11,328 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+23.02.2012 19:03:11,334 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+23.02.2012 19:03:11,360 [Wiffzack.Devices.CardTerminals] Info: Serial Port Opend
+23.02.2012 19:03:11,370 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=0: 10 02 06 18 00 10 03 56 3A 
+23.02.2012 19:03:16,372 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+23.02.2012 19:03:16,373 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=1: 10 02 06 18 00 10 03 56 3A 
+23.02.2012 19:03:21,373 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '2'
+23.02.2012 19:03:21,373 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=2: 10 02 06 18 00 10 03 56 3A 
+23.02.2012 19:03:26,373 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '3'
+23.02.2012 19:03:26,374 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed 3-times, reporting error to application layer
+23.02.2012 19:03:26,643 [Wiffzack] Info: System Error:TPDU transmission failed 3-times, reporting error to application layer
+23.02.2012 19:03:38,575 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+23.02.2012 19:03:38,594 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+23.02.2012 19:03:38,600 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+23.02.2012 19:03:38,625 [Wiffzack.Devices.CardTerminals] Info: Serial Port Opend
+23.02.2012 19:03:38,633 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=0: 10 02 06 18 00 10 03 56 3A 
+23.02.2012 19:03:43,635 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+23.02.2012 19:03:43,636 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=1: 10 02 06 18 00 10 03 56 3A 
+23.02.2012 19:03:53,419 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+23.02.2012 19:03:53,437 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+23.02.2012 19:03:53,443 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+23.02.2012 19:03:53,468 [Wiffzack.Devices.CardTerminals] Info: Serial Port Opend
+23.02.2012 19:03:53,474 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=0: 10 02 06 18 00 10 03 56 3A 
+24.02.2012 10:07:01,528 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+24.02.2012 10:07:01,572 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>460800</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 10:07:01,579 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+24.02.2012 10:07:01,641 [Wiffzack.Devices.CardTerminals] Info: Serial Port Opend
+24.02.2012 10:07:01,649 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=0: 10 02 06 18 00 10 03 56 3A 
+24.02.2012 10:07:06,697 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+24.02.2012 10:07:06,697 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=1: 10 02 06 18 00 10 03 56 3A 
+24.02.2012 10:07:11,697 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '2'
+24.02.2012 10:07:11,697 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=2: 10 02 06 18 00 10 03 56 3A 
+24.02.2012 10:07:16,697 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '3'
+24.02.2012 10:07:16,697 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed 3-times, reporting error to application layer
+24.02.2012 10:07:16,802 [Wiffzack] Info: System Error:TPDU transmission failed 3-times, reporting error to application layer
+24.02.2012 10:08:22,165 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+24.02.2012 10:08:22,184 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>46800</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 10:08:22,191 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+24.02.2012 10:08:22,221 [Wiffzack.Devices.CardTerminals] Info: Serial Port Opend
+24.02.2012 10:08:22,227 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=0: 10 02 06 18 00 10 03 56 3A 
+24.02.2012 10:08:27,229 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+24.02.2012 10:08:27,229 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=1: 10 02 06 18 00 10 03 56 3A 
+24.02.2012 10:08:32,229 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '2'
+24.02.2012 10:08:32,229 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=2: 10 02 06 18 00 10 03 56 3A 
+24.02.2012 10:08:37,229 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '3'
+24.02.2012 10:08:37,230 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed 3-times, reporting error to application layer
+24.02.2012 10:08:37,498 [Wiffzack] Info: System Error:TPDU transmission failed 3-times, reporting error to application layer
+24.02.2012 10:10:09,405 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+24.02.2012 10:10:09,424 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 10:10:09,431 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+24.02.2012 10:10:09,456 [Wiffzack.Devices.CardTerminals] Info: Serial Port Opend
+24.02.2012 10:10:09,461 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=0: 10 02 06 18 00 10 03 56 3A 
+24.02.2012 10:10:14,463 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+24.02.2012 10:10:14,463 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=1: 10 02 06 18 00 10 03 56 3A 
+24.02.2012 10:10:19,463 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '2'
+24.02.2012 10:10:19,463 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=2: 10 02 06 18 00 10 03 56 3A 
+24.02.2012 10:10:24,463 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '3'
+24.02.2012 10:10:24,463 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed 3-times, reporting error to application layer
+24.02.2012 10:10:24,735 [Wiffzack] Info: System Error:TPDU transmission failed 3-times, reporting error to application layer
+24.02.2012 10:11:55,499 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+24.02.2012 10:11:55,519 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 10:11:55,525 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+24.02.2012 10:11:55,551 [Wiffzack.Devices.CardTerminals] Info: Serial Port Opend
+24.02.2012 10:11:55,556 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=0: 10 02 06 18 00 10 03 56 3A 
+24.02.2012 10:12:00,558 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+24.02.2012 10:12:00,558 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=1: 10 02 06 18 00 10 03 56 3A 
+24.02.2012 10:12:05,558 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '2'
+24.02.2012 10:12:05,558 [Wiffzack.Devices.CardTerminals] Debug: Sending transmitCounter=2: 10 02 06 18 00 10 03 56 3A 
+24.02.2012 10:12:10,558 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed, increasing transmitCounter to '3'
+24.02.2012 10:12:10,558 [Wiffzack.Devices.CardTerminals] Debug: TPDU transmission failed 3-times, reporting error to application layer
+24.02.2012 10:12:10,827 [Wiffzack] Info: System Error:TPDU transmission failed 3-times, reporting error to application layer
+24.02.2012 10:14:53,987 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+24.02.2012 10:14:54,7 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 10:14:54,14 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+24.02.2012 10:16:01,612 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+24.02.2012 10:16:01,633 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 10:16:01,639 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+24.02.2012 10:16:18,828 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+24.02.2012 10:16:18,847 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 10:16:18,853 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+24.02.2012 10:17:19,416 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+24.02.2012 10:17:19,435 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>460800</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 10:17:19,441 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+24.02.2012 10:18:31,204 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+24.02.2012 10:18:31,224 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>460800</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 10:18:31,230 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+24.02.2012 10:22:49,725 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+24.02.2012 10:22:49,743 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>460800</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 10:22:49,750 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+24.02.2012 10:29:28,405 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+24.02.2012 10:29:28,425 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>460800</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 10:29:28,431 [Wiffzack.Devices.CardTerminals] Info: Opening Serial Port
+24.02.2012 10:29:52,146 [Wiffzack] Info: Loading RS232 Transport layer...
+24.02.2012 10:29:52,166 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>460800</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 10:29:52,172 [Wiffzack] Info: Opening Serial Port
+24.02.2012 10:34:15,214 [Wiffzack] Info: Loading RS232 Transport layer...
+24.02.2012 10:34:15,232 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>460800</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 10:34:15,238 [Wiffzack] Info: Opening Serial Port
+24.02.2012 10:35:33,293 [Wiffzack] Info: Loading RS232 Transport layer...
+24.02.2012 10:35:33,311 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>460800</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 10:35:33,317 [Wiffzack] Info: Opening Serial Port
+24.02.2012 10:39:20,117 [Wiffzack] Info: Loading RS232 Transport layer...
+24.02.2012 10:39:20,136 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>460800</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 10:39:20,142 [Wiffzack] Info: Opening Serial Port
+24.02.2012 10:41:57,783 [Wiffzack] Info: Loading RS232 Transport layer...
+24.02.2012 10:41:57,803 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>460800</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 10:41:57,810 [Wiffzack] Info: Opening Serial Port
+24.02.2012 11:07:27,128 [Wiffzack] Info: Loading RS232 Transport layer...
+24.02.2012 11:07:27,149 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>460800</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 11:07:27,155 [Wiffzack] Info: Opening Serial Port
+24.02.2012 11:08:00,817 [Wiffzack] Info: Loading RS232 Transport layer...
+24.02.2012 11:08:00,838 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>460800</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 11:08:00,845 [Wiffzack] Info: Opening Serial Port
+24.02.2012 15:53:14,345 [Wiffzack] Info: Loading RS232 Transport layer...
+24.02.2012 15:53:14,501 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>COM10</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 15:53:14,516 [Wiffzack] Info: Opening Serial Port
+24.02.2012 15:53:14,657 [Wiffzack] Info: Serial Port Opend
+24.02.2012 15:53:14,672 [Wiffzack] Debug: Sending transmitCounter=0: 10 02 06 18 00 10 03 56 3A 
+24.02.2012 15:53:19,680 [Wiffzack] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+24.02.2012 15:53:19,680 [Wiffzack] Debug: Sending transmitCounter=1: 10 02 06 18 00 10 03 56 3A 
+24.02.2012 15:53:19,820 [Wiffzack] Debug: ReceiveTpduFrame: 10 02 80 00 00 10 03 F5 1F 
+24.02.2012 15:53:19,851 [Wiffzack] Info: Received: 80, 00
+24.02.2012 15:53:19,914 [Wiffzack] Debug: ReceiveTpduFrame: 10 02 06 0F 00 10 03 C6 33 
+24.02.2012 15:53:19,961 [Wiffzack] Info: Received: 06, 0f
+24.02.2012 15:53:19,961 [Wiffzack] Debug: Sending transmitCounter=0: 10 02 80 00 00 10 03 F5 1F 
+24.02.2012 15:53:20,226 [Wiffzack] Info: XML file created
+24.02.2012 15:53:56,855 [Wiffzack] Info: Loading RS232 Transport layer...
+24.02.2012 15:53:56,855 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>COM10</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 15:53:56,886 [Wiffzack] Info: Opening Serial Port
+24.02.2012 15:53:57,26 [Wiffzack] Info: Serial Port Opend
+24.02.2012 15:53:57,42 [Wiffzack] Debug: Sending transmitCounter=0: 10 02 06 50 03 00 00 00 10 03 FB 37 
+24.02.2012 15:54:02,50 [Wiffzack] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+24.02.2012 15:54:02,50 [Wiffzack] Debug: Sending transmitCounter=1: 10 02 06 50 03 00 00 00 10 03 FB 37 
+24.02.2012 15:54:02,159 [Wiffzack] Debug: ReceiveTpduFrame: 10 02 80 00 00 10 03 F5 1F 
+24.02.2012 15:54:02,174 [Wiffzack] Info: Received: 80, 00
+24.02.2012 15:54:07,182 [Wiffzack] Debug: ReceiveTpduFrame: timeout occured, going into error state
+24.02.2012 15:54:08,321 [Wiffzack] Debug: ReceiveTpduFrame: 10 02 04 FF 01 0E 10 03 95 1A 
+24.02.2012 15:54:08,321 [Wiffzack] Info: Received: 04, ff
+24.02.2012 15:54:08,321 [Wiffzack] Debug: Sending transmitCounter=0: 10 02 80 00 00 10 03 F5 1F 
+24.02.2012 15:54:08,539 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+24.02.2012 15:54:13,543 [Wiffzack] Debug: ReceiveTpduFrame: timeout occured, going into error state
+24.02.2012 15:54:13,621 [Wiffzack] Warning: RS232Transport: Error closing port, exception omitted: System.IO.IOException: Das Gerät erkennt den Befehl nicht.
+
+   bei System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   bei System.IO.Ports.SerialStream.Dispose(Boolean disposing)
+   bei System.IO.Stream.Close()
+   bei System.IO.Ports.SerialPort.Dispose(Boolean disposing)
+   bei Wiffzack.Communication.SerialComm.Close()
+   bei Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer.RS232Transport.CloseConnection()
+24.02.2012 15:54:14,11 [Wiffzack] Info: System Error:Das Gerät erkennt den Befehl nicht.
+
+24.02.2012 15:55:17,547 [Wiffzack] Info: Loading RS232 Transport layer...
+24.02.2012 15:55:17,562 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>COM10</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 15:55:17,578 [Wiffzack] Info: Opening Serial Port
+24.02.2012 15:55:17,718 [Wiffzack] Info: Serial Port Opend
+24.02.2012 15:55:17,734 [Wiffzack] Debug: Sending transmitCounter=0: 10 02 06 50 03 00 00 00 10 03 FB 37 
+24.02.2012 15:55:22,742 [Wiffzack] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+24.02.2012 15:55:22,742 [Wiffzack] Debug: Sending transmitCounter=1: 10 02 06 50 03 00 00 00 10 03 FB 37 
+24.02.2012 15:55:22,851 [Wiffzack] Debug: ReceiveTpduFrame: 10 02 80 00 00 10 03 F5 1F 
+24.02.2012 15:55:22,866 [Wiffzack] Info: Received: 80, 00
+24.02.2012 15:55:24,239 [Wiffzack] Debug: ReceiveTpduFrame: 10 02 04 FF 01 0E 10 03 95 1A 
+24.02.2012 15:55:24,239 [Wiffzack] Info: Received: 04, ff
+24.02.2012 15:55:24,239 [Wiffzack] Debug: Sending transmitCounter=0: 10 02 80 00 00 10 03 F5 1F 
+24.02.2012 15:55:24,333 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+24.02.2012 15:55:29,340 [Wiffzack] Debug: ReceiveTpduFrame: timeout occured, going into error state
+24.02.2012 15:55:34,348 [Wiffzack] Debug: ReceiveTpduFrame: timeout occured, going into error state
+24.02.2012 15:55:34,566 [Wiffzack] Info: System Error:Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.

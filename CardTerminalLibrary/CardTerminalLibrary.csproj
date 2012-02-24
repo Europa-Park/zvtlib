@@ -159,6 +159,7 @@
     <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\ParameterByteHelper.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\TLV\TLVTag.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\TLV\TLVLength.cs" />
+    <Compile Include="Protocols\ZVT\TransportLayer\ConnectionTimeOutException.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Protocols\ZVT\SampleConfiguration.xml" />

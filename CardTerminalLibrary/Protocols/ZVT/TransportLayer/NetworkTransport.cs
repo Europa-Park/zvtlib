@@ -26,7 +26,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
         }
 
         private const int RECEIVE_RESPONSE_TIMEOUT = 2000;
-
+		public const int MASTER_RESPONES_TIMEOUT = 60000;
         /// <summary>
         /// If not in master mode always receive requests
         /// </summary>
@@ -154,11 +154,10 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
             int myTimeout = RECEIVE_RESPONSE_TIMEOUT;
 
             if (!_masterMode)
-                myTimeout = Timeout.Infinite;
-
-            while (NetworkTpdu.CreateFromBuffer(_receiveBuffer, false) == null && (!_masterMode || Environment.TickCount - start < myTimeout))
+                myTimeout = MASTER_RESPONES_TIMEOUT;
+            while (NetworkTpdu.CreateFromBuffer(_receiveBuffer, false) == null && ( Environment.TickCount - start < myTimeout))
             {
-                _receiveBuffer.WaitForByte(myTimeout, false);
+				_receiveBuffer.WaitForByte(myTimeout, false);
             }
 
             NetworkTpdu responseTpdu = NetworkTpdu.CreateFromBuffer(_receiveBuffer, true);
@@ -167,7 +166,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
                 _log.Debug("Received TPDU: {0}", ByteHelpers.ByteToString(responseTpdu.GetTPDUData()));
 
             if (responseTpdu == null)
-                return null;
+                throw new ConnectionTimeOutException();
             else
                 return responseTpdu.GetAPDUData();
         }

@@ -118,7 +118,6 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
             ReportCommand cmd =  new ReportCommand(_transport, this);
             cmd.Status += RaiseIntermediateStatusEvent;
             ReadSettings(cmd, settings);
-			Console.WriteLine("read settings");
             return cmd;
         }
 

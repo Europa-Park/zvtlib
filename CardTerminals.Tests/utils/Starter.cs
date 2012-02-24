@@ -18,23 +18,22 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 			}
 			return returns;
 		}
-		private static void printTypes(Logger _log){
-			_log.Info("Types:");
-			_log.Info("reset		Reset Terminal");
-			_log.Info("eof			Terminal End of Day");
-			_log.Info("network		Network Diagnosis");
-			_log.Info("register		Terminal Registration");
-			_log.Info("report		Terminal Report");
-			_log.Info("reversal		Payment Reversal");
-			_log.Info("payment		Card Payment");
+		private static void printTypes(){
+			Console.WriteLine("<logfile> <resultfile> <type> <config.xml>");
+			Console.WriteLine("Types:");
+			Console.WriteLine("		reset:			Reset Terminal");
+			Console.WriteLine("		eod:			Terminal End of Day");
+			Console.WriteLine("		network:		Network Diagnosis");
+			Console.WriteLine("		register:		Terminal Registration");
+			Console.WriteLine("		report:			Terminal Report");
+			Console.WriteLine("		reversal:		Payment Reversal");
+			Console.WriteLine("		payment:		Card Payment");
 		}
 		static void Main(string[] args){
 			try{
 				if(args.Length==0 | args[0].Equals("?")){
 					LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
-					Logger _log= LogManager.Global.GetLogger("Wiffzack");
-					_log.Info("<logfile> <resultfile> <type>");
-					printTypes(_log);
+					printTypes();
 					return;
 				}
 				Starter.logger=args[0];
@@ -48,7 +47,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 					case "reset":
 						ResetStarter.Main(newargs);
 						break;
-					case "eof":
+					case "eod":
 						EndOfDayStarter.Main(newargs);
 						break;
 					case "network":
@@ -66,12 +65,13 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 					case "payment":
 						PaymentStarter.Main(newargs);
 						break;
+					default:
+						printTypes();
+						return;
 				}
-			}catch(IndexOutOfRangeException ae){
+			}catch(IndexOutOfRangeException){
 				LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
-				Logger _log= LogManager.Global.GetLogger("Wiffzack");
-				_log.Info("<logfile> <resultfile> <type>");
-				printTypes(_log);
+				printTypes();
 				return;
 			}catch(Exception e){
 				LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Starter.getFileLoggerStream()));

@@ -53,17 +53,15 @@ namespace Wiffzack.Communication
         {
             try
             {
-                
                 lock (_port)
                 {
                     StateObj state;
                     state.data = new byte[BUFFER_SIZE];
-
                     _port.BaseStream.BeginRead(state.data, 0, BUFFER_SIZE, new AsyncCallback(ReadCallback), state);
                 }
             }
-            catch (Exception)
-            { }
+            catch (Exception e)
+            { Console.WriteLine(e.Message);}
         }
 
         /// <summary>
@@ -157,11 +155,10 @@ namespace Wiffzack.Communication
         /// </summary>
         public void Open()
         {
-            _port.Open();
+			_port.Open();
 
             if (OnConnectionEstablished != null)
                 OnConnectionEstablished(this);
-
             StartRead();
         }
 

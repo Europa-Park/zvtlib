@@ -28,7 +28,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
         /// The max time between a packet has been sent and the reception of an acknoledge packet
         /// </summary>
         public const int BLOCK_TIMEOUT = 5000;
-
+		public const int MASTER_RESPONES_TIMEOUT = 10000;
         /// <summary>
         /// Max number of repeats of a single packet
         /// </summary>
@@ -84,6 +84,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
 
         public void OpenConnection()
         {
+			_log.Info("Opening Serial Port");
             try
             {
                 _serialPort.Open();
@@ -93,6 +94,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
                 _log.Fatal("Cannot open RS232 port: {0}", ex);
                 throw new RS232TransportException("Cannot open RS232 port");
             }
+			_log.Info("Serial Port Opend");
         }
 
         public void CloseConnection()
@@ -201,6 +203,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
             while (receiveCounter < MAX_BLOCKREPEATS)
             {
                 byte[] tpduFrameData = ReceiveTpduFrame();
+				if(tpduFrameData==null)
+					throw new ConnectionTimeOutException();
                 RS232Tpdu receivedTpdu = RS232Tpdu.CreateFromTPDUBytes(tpduFrameData);
                 if (tpduFrameData != null && receivedTpdu.CheckCRC(tpduFrameData[tpduFrameData.Length - 2], tpduFrameData[tpduFrameData.Length - 1]))
                 {
@@ -220,7 +224,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
         /// <summary>
         /// Waits for a complete TPDU frame, checks the checksum and sends the ACK, NAK
         /// </summary>
-        /// <returns></returns>
+        /// <returns></returns
         private byte[] ReceiveTpduFrame()
         {
             bool frameComplete = false;
@@ -234,7 +238,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
             int myTimeout = BLOCK_TIMEOUT;
 
             if (!_masterMode)
-                myTimeout = Timeout.Infinite;
+                myTimeout = MASTER_RESPONES_TIMEOUT;
 
             while (!frameComplete && (!_masterMode || Environment.TickCount - startTick < BLOCK_TIMEOUT))
             {

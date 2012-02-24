@@ -32,8 +32,8 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 		public static void Main(string[] args){
 			if(args[0].Equals("?")){
 					LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
-					Logger _log= LogManager.Global.GetLogger("Wiffzack");
-					_log.Info("<config.xml>");
+					Console.WriteLine("payment <config.xml>");
+					printHelp();
 					return;
 			}
 			LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Starter.getFileLoggerStream()));
@@ -63,7 +63,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 				config.Load(args[0]);
  			}
 			//if any exception occur, the XML file could not be read and thus the program stops
-			catch (Exception e){
+			catch (Exception){
 				LogManager.Global.GetLogger("Wiffzack").Info("Your XML was probably bad...");
 				XmlHelper.WriteBool(rootNode, "Success", false);
             	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -2);
@@ -90,7 +90,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 				resultXML.Save(Starter.result);
 				//debug message --> remove later
 				LogManager.Global.GetLogger("Wiffzack").Info("XML file created");
-			}catch(System.ArgumentException se){
+			}catch(System.ArgumentException){
 				LogManager.Global.GetLogger("Wiffzack").Info("Bad Xml Argument");
 				XmlHelper.WriteBool(rootNode, "Success", false);
             	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -3);
@@ -129,6 +129,17 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 					LogManager.Global.GetLogger("Wiffzack").Info(saving.Message);
 				}
 				return;	
+			}catch(ConnectionTimeOutException ce){
+				LogManager.Global.GetLogger("Wiffzack").Info("Network Error:"+ce.Message);
+				XmlHelper.WriteBool(rootNode, "Success", false);
+            	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -150);
+            	XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", ce.Message);
+				try{
+					resultXML.Save(Starter.result);
+				}catch(Exception saving){
+					LogManager.Global.GetLogger("Wiffzack").Info("Error Saving Result");
+					LogManager.Global.GetLogger("Wiffzack").Info(saving.Message);
+				}
 			}catch(Exception e){
 				LogManager.Global.GetLogger("Wiffzack").Info("System Error:"+e.Message);
 				XmlHelper.WriteBool(rootNode, "Success", false);
@@ -149,5 +160,15 @@ namespace Wiffzack.Devices.CardTerminals.Tests
         {
             LogManager.Global.GetLogger("Wiffzack").Info(status.ToString());
         }
+		public static void printHelp(){
+			Console.WriteLine("The payment config.xml needs to look like this:");
+			Console.WriteLine("<Config>");
+			Console.WriteLine("		<Transport>....</Transport>");
+			Console.WriteLine("		<TransportSettings>.....</TransportSettings>");
+			Console.WriteLine("		<Payment>");
+			Console.WriteLine("			<Amount>...</Amount>");
+			Console.WriteLine("		</Payment>");
+			Console.WriteLine("</Config>");
+		}
 	}
 }
