@@ -232,3 +232,58 @@ Parametername: portName
 24.02.2012 15:55:29,340 [Wiffzack] Debug: ReceiveTpduFrame: timeout occured, going into error state
 24.02.2012 15:55:34,348 [Wiffzack] Debug: ReceiveTpduFrame: timeout occured, going into error state
 24.02.2012 15:55:34,566 [Wiffzack] Info: System Error:Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.
+24.02.2012 16:19:34,621 [Wiffzack] Info: Loading RS232 Transport layer...
+24.02.2012 16:19:34,637 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>COM10</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 16:19:34,653 [Wiffzack] Info: Opening Serial Port
+24.02.2012 16:19:34,793 [Wiffzack] Info: Serial Port Opend
+24.02.2012 16:19:34,809 [Wiffzack] Debug: Sending transmitCounter=0: 10 02 06 50 03 00 00 00 10 03 FB 37 
+24.02.2012 16:19:39,816 [Wiffzack] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+24.02.2012 16:19:39,816 [Wiffzack] Debug: Sending transmitCounter=1: 10 02 06 50 03 00 00 00 10 03 FB 37 
+24.02.2012 16:19:44,824 [Wiffzack] Debug: TPDU transmission failed, increasing transmitCounter to '2'
+24.02.2012 16:19:44,824 [Wiffzack] Debug: Sending transmitCounter=2: 10 02 06 50 03 00 00 00 10 03 FB 37 
+24.02.2012 16:19:49,831 [Wiffzack] Debug: TPDU transmission failed, increasing transmitCounter to '3'
+24.02.2012 16:19:49,831 [Wiffzack] Debug: TPDU transmission failed 3-times, reporting error to application layer
+24.02.2012 16:19:50,65 [Wiffzack] Info: System Error:TPDU transmission failed 3-times, reporting error to application layer
+24.02.2012 16:20:40,930 [Wiffzack] Info: Loading RS232 Transport layer...
+24.02.2012 16:20:40,930 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>COM10</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 16:20:40,945 [Wiffzack] Info: Opening Serial Port
+24.02.2012 16:20:41,101 [Wiffzack] Info: Serial Port Opend
+24.02.2012 16:20:41,117 [Wiffzack] Debug: Sending transmitCounter=0: 10 02 06 50 03 00 00 00 10 03 FB 37 
+24.02.2012 16:20:41,257 [Wiffzack] Debug: ReceiveTpduFrame: 10 02 80 00 00 10 03 F5 1F 
+24.02.2012 16:20:41,289 [Wiffzack] Info: Received: 80, 00
+24.02.2012 16:20:42,646 [Wiffzack] Debug: ReceiveTpduFrame: 10 02 04 FF 01 0E 10 03 95 1A 
+24.02.2012 16:20:42,646 [Wiffzack] Info: Received: 04, ff
+24.02.2012 16:20:42,646 [Wiffzack] Debug: Sending transmitCounter=0: 10 02 80 00 00 10 03 F5 1F 
+24.02.2012 16:20:42,833 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+24.02.2012 16:20:52,848 [Wiffzack] Debug: ReceiveTpduFrame: timeout occured, going into error state
+24.02.2012 16:20:52,926 [Wiffzack] Info: Network Error:Connection Time Out Occoured
+24.02.2012 16:32:41,850 [Wiffzack] Info: Loading RS232 Transport layer...
+24.02.2012 16:32:41,855 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>COM10</Port><BaudRate>9620</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 16:32:41,876 [Wiffzack] Info: Opening Serial Port
+24.02.2012 16:32:42,3 [Wiffzack] Info: Serial Port Opend
+24.02.2012 16:32:42,18 [Wiffzack] Debug: Sending transmitCounter=0: 10 02 06 50 03 00 00 00 10 03 FB 37 
+24.02.2012 16:32:42,136 [Wiffzack] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+24.02.2012 16:32:42,137 [Wiffzack] Debug: Sending transmitCounter=1: 10 02 06 50 03 00 00 00 10 03 FB 37 
+24.02.2012 16:32:42,256 [Wiffzack] Debug: ReceiveTpduFrame: 10 02 80 00 00 10 03 F5 1F 
+24.02.2012 16:32:42,265 [Wiffzack] Info: Received: 80, 00
+24.02.2012 16:32:43,647 [Wiffzack] Debug: ReceiveTpduFrame: 10 02 04 FF 01 0E 10 03 95 1A 
+24.02.2012 16:32:43,648 [Wiffzack] Info: Received: 04, ff
+24.02.2012 16:32:43,649 [Wiffzack] Debug: Sending transmitCounter=0: 10 02 80 00 00 10 03 F5 1F 
+24.02.2012 16:32:43,753 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+24.02.2012 16:32:53,753 [Wiffzack] Debug: ReceiveTpduFrame: timeout occured, going into error state
+24.02.2012 16:32:53,842 [Wiffzack] Info: Network Error:Connection Time Out Occoured
+24.02.2012 16:56:23,108 [Wiffzack] Info: Loading RS232 Transport layer...
+24.02.2012 16:56:23,112 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>COM10</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+24.02.2012 16:56:23,131 [Wiffzack] Info: Opening Serial Port
+24.02.2012 16:56:23,259 [Wiffzack] Info: Serial Port Opend
+24.02.2012 16:56:23,274 [Wiffzack] Debug: Sending transmitCounter=0: 10 02 06 50 03 00 00 00 10 03 FB 37 
+24.02.2012 16:56:28,277 [Wiffzack] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+24.02.2012 16:56:28,277 [Wiffzack] Debug: Sending transmitCounter=1: 10 02 06 50 03 00 00 00 10 03 FB 37 
+24.02.2012 16:56:28,400 [Wiffzack] Debug: ReceiveTpduFrame: 10 02 80 00 00 10 03 F5 1F 
+24.02.2012 16:56:28,410 [Wiffzack] Info: Received: 80, 00
+24.02.2012 16:56:29,781 [Wiffzack] Debug: ReceiveTpduFrame: 10 02 04 FF 01 0E 10 03 95 1A 
+24.02.2012 16:56:29,783 [Wiffzack] Info: Received: 04, ff
+24.02.2012 16:56:29,784 [Wiffzack] Debug: Sending transmitCounter=0: 10 02 80 00 00 10 03 F5 1F 
+24.02.2012 16:56:29,892 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+24.02.2012 16:56:39,893 [Wiffzack] Debug: ReceiveTpduFrame: timeout occured, going into error state
+24.02.2012 16:56:39,982 [Wiffzack] Info: Network Error:Connection Time Out Occoured

@@ -1,5 +1,5 @@
 <Result>
   <Success>False</Success>
-  <ProtocolSpecificErrorCode>-255</ProtocolSpecificErrorCode>
-  <ProtocolSpecificErrorDescription>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</ProtocolSpecificErrorDescription>
+  <ProtocolSpecificErrorCode>-150</ProtocolSpecificErrorCode>
+  <ProtocolSpecificErrorDescription>Connection Time Out Occoured</ProtocolSpecificErrorDescription>
 </Result>

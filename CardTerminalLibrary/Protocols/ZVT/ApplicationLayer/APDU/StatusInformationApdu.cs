@@ -237,6 +237,9 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
 			PrefixedParameter<StatusPanEfId> panefid=this.FindParameter<PrefixedParameter<StatusPanEfId>>(StatusInformationApdu.StatusParameterEnum.PanEfId);
 			if(panefid!=null)
 				XmlHelper.WriteInt64(rootNode,"PanEfid",panefid.SubParameter.DecodeNumber());
+			PrefixedParameter<BCDNumberParameter> amount=this.FindParameter<PrefixedParameter<BCDNumberParameter>>(StatusInformationApdu.StatusParameterEnum.Amount);
+			if(amount!=null)
+				XmlHelper.WriteInt64(rootNode,"Amount",amount.SubParameter.DecodeNumber());
 			
 		}
 			

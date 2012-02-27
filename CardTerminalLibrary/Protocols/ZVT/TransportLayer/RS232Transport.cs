@@ -28,7 +28,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
         /// The max time between a packet has been sent and the reception of an acknoledge packet
         /// </summary>
         public const int BLOCK_TIMEOUT = 5000;
-		public const int MASTER_RESPONES_TIMEOUT = 10000;
+		public const int MASTER_RESPONES_TIMEOUT = 180000;
         /// <summary>
         /// Max number of repeats of a single packet
         /// </summary>
