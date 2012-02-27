@@ -55,6 +55,8 @@ namespace Wiffzack.Communication
             {
                 lock (_port)
                 {
+					_port.ReadTimeout=10000;
+					_port.WriteTimeout=2000;
                     StateObj state;
                     state.data = new byte[BUFFER_SIZE];
                     _port.BaseStream.BeginRead(state.data, 0, BUFFER_SIZE, new AsyncCallback(ReadCallback), state);

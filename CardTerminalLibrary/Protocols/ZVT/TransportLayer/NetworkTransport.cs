@@ -26,7 +26,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
         }
 
         private const int RECEIVE_RESPONSE_TIMEOUT = 2000;
-		public const int MASTER_RESPONES_TIMEOUT = 180000;
+		public const int MASTER_RESPONES_TIMEOUT = 200000;
         /// <summary>
         /// If not in master mode always receive requests
         /// </summary>
