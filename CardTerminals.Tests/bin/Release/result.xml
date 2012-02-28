@@ -1,5 +1,5 @@
 <Result>
   <Success>False</Success>
-  <ProtocolSpecificErrorCode>-150</ProtocolSpecificErrorCode>
-  <ProtocolSpecificErrorDescription>Connection Time Out Occoured</ProtocolSpecificErrorDescription>
+  <ProtocolSpecificErrorCode>-255</ProtocolSpecificErrorCode>
+  <ProtocolSpecificErrorDescription>TPDU transmission failed 3-times, reporting error to application layer</ProtocolSpecificErrorDescription>
 </Result>

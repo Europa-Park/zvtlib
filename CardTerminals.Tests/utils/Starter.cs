@@ -8,6 +8,9 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 		public static String result="tmp/result.xml";
 		public static String logger="tmp/pagar.log";
 		public static TextWriter getFileLoggerStream(){
+			if(logger.ToUpper().Equals("-DEBUG")){
+				return Console.Out;
+			}
 			TextWriter returns=null;
 			try{
 				returns=File.AppendText(logger);
@@ -28,6 +31,8 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 			Console.WriteLine("		report:			Terminal Report");
 			Console.WriteLine("		reversal:		Payment Reversal");
 			Console.WriteLine("		payment:		Card Payment");
+			Console.WriteLine("		------------------------------		");
+			Console.WriteLine("Use -debug as log parameter to print the log on the console.");
 		}
 		static void Main(string[] args){
 			try{

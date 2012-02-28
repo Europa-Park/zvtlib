@@ -2,9 +2,9 @@
               <Transport>Serial</Transport>
              <!--<Transport>Network</Transport>-->
               <TransportSettings>
-                <Port>COM10</Port>
+                <Port>/dev/ttyUSB0</Port>
                 <BaudRate>9600</BaudRate>
-				<Parity>None</Parity>
+				<Parity>Even</Parity>
                 <StopBits>One</StopBits>
               </TransportSettings>
 

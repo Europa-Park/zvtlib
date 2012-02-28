@@ -1014,3 +1014,32 @@ Parametername: portName
 27.02.2012 15:18:39,882 [Wiffzack] Info: [Info] Karte einführen (StatusCode: 10)
 27.02.2012 15:21:39,886 [Wiffzack] Debug: ReceiveTpduFrame: timeout occured, going into error state
 27.02.2012 15:21:39,886 [Wiffzack] Info: Network Error:Connection Time Out Occoured
+28.02.2012 17:12:29,875 [Wiffzack] Info: Loading RS232 Transport layer...
+28.02.2012 17:12:29,908 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>Even</Parity><StopBits>One</StopBits></TransportSettings>
+28.02.2012 17:12:29,919 [Wiffzack] Info: Opening Serial Port
+28.02.2012 17:12:39,967 [Wiffzack] Info: Serial Port Opend
+28.02.2012 17:12:39,979 [Wiffzack] Debug: Sending transmitCounter=0: 10 02 06 50 03 00 00 00 10 03 FB 37 
+28.02.2012 17:12:44,985 [Wiffzack] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+28.02.2012 17:12:44,985 [Wiffzack] Debug: Sending transmitCounter=1: 10 02 06 50 03 00 00 00 10 03 FB 37 
+28.02.2012 17:12:49,986 [Wiffzack] Debug: TPDU transmission failed, increasing transmitCounter to '2'
+28.02.2012 17:12:49,986 [Wiffzack] Debug: Sending transmitCounter=2: 10 02 06 50 03 00 00 00 10 03 FB 37 
+28.02.2012 17:12:54,987 [Wiffzack] Debug: TPDU transmission failed, increasing transmitCounter to '3'
+28.02.2012 17:12:54,988 [Wiffzack] Debug: TPDU transmission failed 3-times, reporting error to application layer
+28.02.2012 17:12:55,256 [Wiffzack] Info: System Error:TPDU transmission failed 3-times, reporting error to application layer
+28.02.2012 17:14:12,808 [Wiffzack] Info: Loading RS232 Transport layer...
+28.02.2012 17:14:12,827 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>Even</Parity><StopBits>One</StopBits></TransportSettings>
+28.02.2012 17:14:12,858 [Wiffzack] Info: Opening Serial Port
+28.02.2012 17:14:22,884 [Wiffzack] Info: Serial Port Opend
+28.02.2012 17:14:22,896 [Wiffzack] Debug: Sending transmitCounter=0: 10 02 06 50 03 00 00 00 10 03 FB 37 
+28.02.2012 17:14:35,180 [Wiffzack] Info: Loading RS232 Transport layer...
+28.02.2012 17:14:35,198 [Wiffzack] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>Even</Parity><StopBits>One</StopBits></TransportSettings>
+28.02.2012 17:14:35,204 [Wiffzack] Info: Opening Serial Port
+28.02.2012 17:14:45,230 [Wiffzack] Info: Serial Port Opend
+28.02.2012 17:14:45,243 [Wiffzack] Debug: Sending transmitCounter=0: 10 02 06 18 00 10 03 56 3A 
+28.02.2012 17:14:50,245 [Wiffzack] Debug: TPDU transmission failed, increasing transmitCounter to '1'
+28.02.2012 17:14:50,245 [Wiffzack] Debug: Sending transmitCounter=1: 10 02 06 18 00 10 03 56 3A 
+28.02.2012 17:14:55,246 [Wiffzack] Debug: TPDU transmission failed, increasing transmitCounter to '2'
+28.02.2012 17:14:55,246 [Wiffzack] Debug: Sending transmitCounter=2: 10 02 06 18 00 10 03 56 3A 
+28.02.2012 17:15:00,247 [Wiffzack] Debug: TPDU transmission failed, increasing transmitCounter to '3'
+28.02.2012 17:15:00,248 [Wiffzack] Debug: TPDU transmission failed 3-times, reporting error to application layer
+28.02.2012 17:15:00,518 [Wiffzack] Info: System Error:TPDU transmission failed 3-times, reporting error to application layer
