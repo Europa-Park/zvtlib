@@ -44,9 +44,14 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 				Starter.logger=args[0];
 				Starter.result=args[1];
 				String type=args[2];
-				String[] newargs=new String[args.Length-3];
-				for(int i=3;i<args.Length;i++){
-					newargs[i-3]=args[i];
+				String[] newargs;
+				if(args.Length-3<=0)
+					newargs=null;
+				else{
+					newargs=new String[args.Length-3];
+					for(int i=3;i<args.Length;i++){
+						newargs[i-3]=args[i];
+					}
 				}
 				switch(type){
 					case "reset":

@@ -30,19 +30,13 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 		/// The command-line arguments.
 		/// </param>
 		public static void Main(string[] args){
-			if(args[0].Equals("?")){
-					LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
-					Console.WriteLine("reset <config.xml>");
-					printHelp();
-					return;
-			}
 			LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Starter.getFileLoggerStream()));
 			//create XML file with result message
 			XmlDocument resultXML = new XmlDocument();
 			XmlElement rootNode=resultXML.CreateElement("Result");
 			resultXML.AppendChild(rootNode);
 			//check if the first argument is a file
-			if(args.Length!=1 || !File.Exists(args[0])){
+			if(args==null || args.Length!=1 || !File.Exists(args[0])){
 				LogManager.Global.GetLogger("Wiffzack").Info("Please pass a XML configuration file as first argument!");
 				XmlHelper.WriteBool(rootNode, "Success", false);
             	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -1);
@@ -55,6 +49,12 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 					LogManager.Global.GetLogger("Wiffzack").Info(saving.Message);
 				}
 				return;
+			}
+			if(args[0].Equals("?")){
+					LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
+					Console.WriteLine("reset <config.xml>");
+					printHelp();
+					return;
 			}
 			
 			//load the XML file
