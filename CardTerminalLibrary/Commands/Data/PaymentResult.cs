@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using Wiffzack.Devices.CardTerminals.Common;
 namespace Wiffzack.Devices.CardTerminals.Commands
 {
     public class PaymentResult : CommandResult
@@ -20,7 +20,7 @@ namespace Wiffzack.Devices.CardTerminals.Commands
         {
             _success = success;
             _protocolSpecificErrorCode = protocolSpecificErrorCode;
-            _protocolSpecificErrorDescription = protocolSpecificDescription;
+            _protocolSpecificErrorDescription = StringHelper.addSpaces(protocolSpecificDescription);
 
             _data = data;
         }

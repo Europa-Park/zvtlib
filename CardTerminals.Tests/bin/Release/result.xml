@@ -1,5 +1,173 @@
 <Result>
   <Success>False</Success>
-  <ProtocolSpecificErrorCode>-1</ProtocolSpecificErrorCode>
-  <ProtocolSpecificErrorDescription>Please pass a XML configuration file as first argument!</ProtocolSpecificErrorDescription>
+  <ProtocolSpecificErrorCode>119</ProtocolSpecificErrorCode>
+  <ProtocolSpecificErrorDescription>End Of Day Batch Not Possible</ProtocolSpecificErrorDescription>
+  <Document>
+    <Line>
+      <Text>
+        <Text>  ** KASSENSCHNITT **   </Text>
+        <Bold>False</Bold>
+        <DoubleHeight>False</DoubleHeight>
+        <DoubleWidth>False</DoubleWidth>
+        <Center>False</Center>
+        <AlignRight>
+        </AlignRight>
+      </Text>
+    </Line>
+    <Line>
+      <Text>
+        <Text>TEST ANIMA MUNDI HANDELSG</Text>
+        <Bold>False</Bold>
+        <DoubleHeight>False</DoubleHeight>
+        <DoubleWidth>False</DoubleWidth>
+        <Center>False</Center>
+        <AlignRight>
+        </AlignRight>
+      </Text>
+    </Line>
+    <Line>
+      <Text>
+        <Text>BRUENNER STR 241-243/OBJ H16</Text>
+        <Bold>False</Bold>
+        <DoubleHeight>False</DoubleHeight>
+        <DoubleWidth>False</DoubleWidth>
+        <Center>False</Center>
+        <AlignRight>
+        </AlignRight>
+      </Text>
+    </Line>
+    <Line>
+      <Text>
+        <Text>2201 GERASDORF          </Text>
+        <Bold>False</Bold>
+        <DoubleHeight>False</DoubleHeight>
+        <DoubleWidth>False</DoubleWidth>
+        <Center>False</Center>
+        <AlignRight>
+        </AlignRight>
+      </Text>
+    </Line>
+    <Line>
+      <Text>
+        <Text>                        </Text>
+        <Bold>False</Bold>
+        <DoubleHeight>False</DoubleHeight>
+        <DoubleWidth>False</DoubleWidth>
+        <Center>False</Center>
+        <AlignRight>
+        </AlignRight>
+      </Text>
+    </Line>
+    <Line>
+      <Text>
+        <Text>                        </Text>
+        <Bold>False</Bold>
+        <DoubleHeight>False</DoubleHeight>
+        <DoubleWidth>False</DoubleWidth>
+        <Center>False</Center>
+        <AlignRight>
+        </AlignRight>
+      </Text>
+    </Line>
+    <Line>
+      <Text>
+        <Text>2012.02.29 15:54:16     </Text>
+        <Bold>False</Bold>
+        <DoubleHeight>False</DoubleHeight>
+        <DoubleWidth>False</DoubleWidth>
+        <Center>False</Center>
+        <AlignRight>
+        </AlignRight>
+      </Text>
+    </Line>
+    <Line>
+      <Text>
+        <Text>Terminal-ID:    27228218</Text>
+        <Bold>False</Bold>
+        <DoubleHeight>False</DoubleHeight>
+        <DoubleWidth>False</DoubleWidth>
+        <Center>False</Center>
+        <AlignRight>
+        </AlignRight>
+      </Text>
+    </Line>
+    <Line>
+      <Text>
+        <Text>Verbindungsproblem:</Text>
+        <Bold>False</Bold>
+        <DoubleHeight>False</DoubleHeight>
+        <DoubleWidth>False</DoubleWidth>
+        <Center>False</Center>
+        <AlignRight>
+        </AlignRight>
+      </Text>
+    </Line>
+    <Line>
+      <Text>
+        <Text>Keine ?bertragung!</Text>
+        <Bold>False</Bold>
+        <DoubleHeight>False</DoubleHeight>
+        <DoubleWidth>False</DoubleWidth>
+        <Center>False</Center>
+        <AlignRight>
+        </AlignRight>
+      </Text>
+    </Line>
+    <Line>
+      <Text>
+        <Text>========================</Text>
+        <Bold>False</Bold>
+        <DoubleHeight>False</DoubleHeight>
+        <DoubleWidth>False</DoubleWidth>
+        <Center>False</Center>
+        <AlignRight>
+        </AlignRight>
+      </Text>
+    </Line>
+    <Line>
+      <Text>
+        <Text> </Text>
+        <Bold>False</Bold>
+        <DoubleHeight>False</DoubleHeight>
+        <DoubleWidth>False</DoubleWidth>
+        <Center>False</Center>
+        <AlignRight>
+        </AlignRight>
+      </Text>
+    </Line>
+    <Line>
+      <Text>
+        <Text> </Text>
+        <Bold>False</Bold>
+        <DoubleHeight>False</DoubleHeight>
+        <DoubleWidth>False</DoubleWidth>
+        <Center>False</Center>
+        <AlignRight>
+        </AlignRight>
+      </Text>
+    </Line>
+    <Line>
+      <Text>
+        <Text> </Text>
+        <Bold>False</Bold>
+        <DoubleHeight>False</DoubleHeight>
+        <DoubleWidth>False</DoubleWidth>
+        <Center>False</Center>
+        <AlignRight>
+        </AlignRight>
+      </Text>
+    </Line>
+    <Line>
+      <Text>
+        <Text> </Text>
+        <Bold>False</Bold>
+        <DoubleHeight>False</DoubleHeight>
+        <DoubleWidth>False</DoubleWidth>
+        <Center>False</Center>
+        <AlignRight>
+        </AlignRight>
+      </Text>
+    </Line>
+    <Line />
+  </Document>
 </Result>

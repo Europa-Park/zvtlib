@@ -20,7 +20,7 @@
                 <PTDisableAdministrationFunctions>False</PTDisableAdministrationFunctions>
               </RegistrationCommand>
 	      <Report>
-			<PrintSystemInfo>False</PrintSystemInfo>
+			<PrintSystemInfo>True</PrintSystemInfo>
 			<PrintReport>False</PrintReport>
 	      </Report>
 	      <Reversal>

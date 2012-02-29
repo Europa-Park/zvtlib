@@ -4,7 +4,7 @@ using System.Text;
 using Wiffzack.Devices.CardTerminals.PrintSupport;
 using System.Xml;
 using Wiffzack.Services.Utils;
-
+using Wiffzack.Devices.CardTerminals.Common;
 namespace Wiffzack.Devices.CardTerminals.Commands
 {
     public class CommandResult
@@ -62,7 +62,7 @@ namespace Wiffzack.Devices.CardTerminals.Commands
         {
             _success = success;
             _protocolSpecificErrorCode = protocolSpecificErrorCode;
-            _protocolSpecificErrorDescription = protocolSpecificErrorMessage;
+            _protocolSpecificErrorDescription = StringHelper.addSpaces(protocolSpecificErrorMessage);
         }
 
         public virtual void SerializeToXml(XmlElement rootNode)
