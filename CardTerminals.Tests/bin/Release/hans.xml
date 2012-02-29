@@ -1,0 +1,5 @@
+<Result>
+  <Success>False</Success>
+  <ProtocolSpecificErrorCode>-1</ProtocolSpecificErrorCode>
+  <ProtocolSpecificErrorDescription>Please pass a XML configuration file as first argument!</ProtocolSpecificErrorDescription>
+</Result>

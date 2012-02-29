@@ -1,17 +1,17 @@
 <Config>
-              <Transport>Serial</Transport>
-             <!--<Transport>Network</Transport>-->
-              <TransportSettings>
-                <Port>/dev/ttyUSB0</Port>
+             <!-- <Transport>Serial</Transport>-->
+             <Transport>Network</Transport>
+             <!--<TransportSettings>
+                <Port>COM10</Port>
                 <BaudRate>9600</BaudRate>
-				<Parity>Even</Parity>
+				<Parity>None</Parity>
                 <StopBits>One</StopBits>
-              </TransportSettings>
+              </TransportSettings>-->
 
-              <!--<TransportSettings>
+              <TransportSettings>
                 <RemoteIP>192.168.2.3</RemoteIP>
                 <RemotePort>51234</RemotePort>
-              </TransportSettings>-->
+              </TransportSettings>
 
               <RegistrationCommand>
                 <ECRPrintsAdministrationReceipts>True</ECRPrintsAdministrationReceipts>
