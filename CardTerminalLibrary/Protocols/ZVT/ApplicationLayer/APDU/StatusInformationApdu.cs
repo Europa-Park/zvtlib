@@ -69,8 +69,9 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
 			AllreadyReversed=0xB4,
 			ReversalNotPossible=0xB5,
 			OpenEndOfDayBatchPresent=0xF0,
-			VoltageSupplyToLow=0xBF
-			
+			VoltageSupplyToLow=0xBF,
+			InitialisationRequired=0x55,
+			FunctionNotPossible=0x83
 
         }
 
