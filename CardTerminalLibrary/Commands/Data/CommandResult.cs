@@ -45,7 +45,7 @@ namespace Wiffzack.Devices.CardTerminals.Commands
         public string ProtocolSpecificErrorDescription
         {
             get { return _protocolSpecificErrorDescription; }
-            set { _protocolSpecificErrorDescription = value; }
+            set { _protocolSpecificErrorDescription = StringHelper.addSpaces(value); }
         }
 
         public IPrintDocument[] PrintDocuments

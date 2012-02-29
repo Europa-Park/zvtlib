@@ -1173,3 +1173,23 @@ Parametername: portName
 29.02.2012 15:54:24,808 [Wiffzack] Info: Received: 06, 1e
 29.02.2012 15:54:24,808 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
 29.02.2012 15:54:24,820 [Wiffzack] Info: XML file created
+29.02.2012 15:59:08,872 [Wiffzack] Debug: Transmitting TPDU: 0F 11 03 00 00 00 
+29.02.2012 15:59:09,401 [Wiffzack] Debug: Received TPDU: 84 83 00 
+29.02.2012 15:59:09,406 [Wiffzack] Info: Received: 84, 83
+29.02.2012 15:59:09,416 [Wiffzack] Info: XML file created
+29.02.2012 16:00:26,65 [Wiffzack] Debug: Transmitting TPDU: 0F 11 03 00 00 00 
+29.02.2012 16:00:26,592 [Wiffzack] Debug: Received TPDU: 84 83 00 
+29.02.2012 16:00:26,596 [Wiffzack] Info: Received: 84, 83
+29.02.2012 16:00:26,609 [Wiffzack] Info: XML file created
+29.02.2012 16:00:54,871 [Wiffzack] Debug: Transmitting TPDU: 0F 11 03 00 00 00 
+29.02.2012 16:00:55,394 [Wiffzack] Debug: Received TPDU: 84 83 00 
+29.02.2012 16:00:55,396 [Wiffzack] Info: Received: 84, 83
+29.02.2012 16:00:55,408 [Wiffzack] Info: XML file created
+29.02.2012 16:01:51,958 [Wiffzack] Debug: Transmitting TPDU: 0F 11 03 00 00 00 
+29.02.2012 16:01:52,489 [Wiffzack] Debug: Received TPDU: 84 83 00 
+29.02.2012 16:01:52,494 [Wiffzack] Info: Received: 84, 83
+29.02.2012 16:01:52,506 [Wiffzack] Info: XML file created
+29.02.2012 16:02:12,933 [Wiffzack] Debug: Transmitting TPDU: 0F 11 03 00 00 00 
+29.02.2012 16:02:13,457 [Wiffzack] Debug: Received TPDU: 84 83 00 
+29.02.2012 16:02:13,459 [Wiffzack] Info: Received: 84, 83
+29.02.2012 16:02:13,471 [Wiffzack] Info: XML file created

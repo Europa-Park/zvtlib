@@ -73,7 +73,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             {
                 cmdResult.Success = false;
                 cmdResult.ProtocolSpecificErrorCode = (byte)abort.ResultCode;
-                cmdResult.ProtocolSpecificErrorDescription = StringHelper.addSpaces(abort.ResultCode.ToString());
+                cmdResult.ProtocolSpecificErrorDescription = abort.ResultCode.ToString();
                 return true;
             }
 
@@ -83,7 +83,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             {
                 cmdResult.Success = false;
                 cmdResult.ProtocolSpecificErrorCode = (byte)status.Status;
-                cmdResult.ProtocolSpecificErrorDescription =StringHelper.addSpaces(status.Status.ToString());
+                cmdResult.ProtocolSpecificErrorDescription =status.Status.ToString();
                 return true;
             }
             
