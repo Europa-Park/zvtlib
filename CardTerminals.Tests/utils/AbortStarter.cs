@@ -16,11 +16,11 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 
 {
 	/// <summary>
-	/// Diagnosis starter. 
-	/// The diagnosis starter awaits a XML file that contains the configuration for transport. 
+	/// Abort starter. 
+	/// The Abort starter awaits a XML file that contains the configuration for transport. 
 	/// It executes the command and saves the resulting XML file as /tmp/result.xml.
 	/// </summary>
-	public class NetworkDiagnosisStarter
+	public class AbortStarter
 	{
 	
 		/// <summary>
@@ -52,7 +52,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 			}
 			if(args[0].Equals("?")){
 					LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
-					Console.WriteLine("network <config.xml>");
+					Console.WriteLine("abort <config.xml>");
 					printHelp();
 					return;
 			}
@@ -81,7 +81,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 			try{
 	     		ICommandEnvironment environment = new ZVTCommandEnvironment(config.DocumentElement);
 				environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
-				CommandResult result = environment.CreateDiagnosisCommand(null).Execute();
+				CommandResult result = environment.CreateAbortCommand(null).Execute();
 				//create XML file with result message
 				result.SerializeToXml(resultXML.DocumentElement);
 				//save file in /tmp/result.xml
@@ -159,7 +159,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
             LogManager.Global.GetLogger("Wiffzack").Info(status.ToString());
         }
 		public static void printHelp(){
-			Console.WriteLine("The network config.xml needs to look like this:");
+			Console.WriteLine("The abort config.xml needs to look like this:");
 			Console.WriteLine("<Config>");
 			Console.WriteLine("		<Transport>....</Transport>");
 			Console.WriteLine("		<TransportSettings>.....</TransportSettings>");

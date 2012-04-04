@@ -47,6 +47,8 @@
     <Compile Include="utils\EndOfDayStarter.cs" />
     <Compile Include="utils\ReversalStarter.cs" />
     <Compile Include="utils\PaymentStarter.cs" />
+    <Compile Include="utils\AbortStarter.cs" />
+    <Compile Include="utils\RepeatReceiptStarter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CardTerminalLibrary\CardTerminalLibrary.csproj">

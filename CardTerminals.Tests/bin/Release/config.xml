@@ -9,7 +9,7 @@
               </TransportSettings>-->
 
               <TransportSettings>
-                <RemoteIP>192.168.2.3</RemoteIP>
+                <RemoteIP>192.168.1.2</RemoteIP>
                 <RemotePort>51234</RemotePort>
               </TransportSettings>
 
@@ -27,7 +27,11 @@
 		 <ReceiptNr>225</ReceiptNr>
 	      </Reversal>
 		<Payment>
-			<Amount>100</Amount>
+			<Amount>9999</Amount>
 		</Payment>
+		<RepeatReceipt>
+			<DontPrint>False</DontPrint>
+			<EnableStatusInformation>True</EnableStatusInformation>
+		</RepeatReceipt>
 </Config>
 

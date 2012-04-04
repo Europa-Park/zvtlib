@@ -7,7 +7,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
     /// <summary>
     /// Currently 'EUR' is the only supported currency code (Page 13)
     /// </summary>
-    public class CurrencyCodeParameter:IParameter 
+    public class 		CurrencyCodeParameter:IParameter 
     {
         public static byte[] EUR = new byte[] { 0x09, 0x78 };
 

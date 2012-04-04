@@ -26,6 +26,8 @@ namespace Wiffzack.Devices.CardTerminals.Commands
         IEndOfDayCommand CreateEndOfDayCommand(XmlElement settings);
         IResetCommand CreateResetCommand(XmlElement settings);
         IDiagnosisCommand CreateDiagnosisCommand(XmlElement settings);
+		IAbortCommand CreateAbortCommand(XmlElement settings);
+		IRepeatReceiptCommand CreateRepeatReceiptCommand(XmlElement settings);
         #endregion
 
 

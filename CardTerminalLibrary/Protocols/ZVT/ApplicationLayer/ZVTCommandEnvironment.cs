@@ -136,10 +136,27 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
             ReadSettings(cmd, settings);
             return cmd;
         }
+		
+		public IAbortCommand CreateAbortCommand(XmlElement settings)
+        {
+            AbortCommand cmd = new AbortCommand(_transport, this);
+            cmd.Status += RaiseIntermediateStatusEvent;
+            ReadSettings(cmd, settings);
+            return cmd;
+        }
+
 
         public IDiagnosisCommand CreateDiagnosisCommand(XmlElement settings)
         {
             NetworkDiagnosisCommand cmd = new NetworkDiagnosisCommand(_transport, this);
+            cmd.Status += RaiseIntermediateStatusEvent;
+            ReadSettings(cmd, settings);
+            return cmd;
+        }
+		
+		 public IRepeatReceiptCommand CreateRepeatReceiptCommand(XmlElement settings)
+        {
+            RepeatReceiptCommand cmd = new RepeatReceiptCommand(_transport, this);
             cmd.Status += RaiseIntermediateStatusEvent;
             ReadSettings(cmd, settings);
             return cmd;

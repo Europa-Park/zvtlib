@@ -161,6 +161,14 @@
     <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\TLV\TLVLength.cs" />
     <Compile Include="Protocols\ZVT\TransportLayer\ConnectionTimeOutException.cs" />
     <Compile Include="Common\StringHelper.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\AbortApdu.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\AbortCommand.cs" />
+    <Compile Include="Commands\IAbortCommand.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\RepeatReceiptServiceParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\RepeatReceiptApdu.cs" />
+    <Compile Include="Commands\IRepeatReceiptCommand.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\RepeatReceiptCommand.cs" />
+    <Compile Include="Commands\Data\RepeatReceiptResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Protocols\ZVT\SampleConfiguration.xml" />

@@ -31,6 +31,8 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 			Console.WriteLine("		report:			Terminal Report");
 			Console.WriteLine("		reversal:		Payment Reversal");
 			Console.WriteLine("		payment:		Card Payment");
+			Console.WriteLine("		abort:			Abort Payment");
+			Console.WriteLine("		repeat:			Repeat last Receipt");
 			Console.WriteLine("		------------------------------		");
 			Console.WriteLine("Use -debug as log parameter to print the log on the console.");
 		}
@@ -74,6 +76,12 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 						break;
 					case "payment":
 						PaymentStarter.Main(newargs);
+						break;
+					case "abort":
+						AbortStarter.Main(newargs);
+						break;
+					case "repeat":
+						RepeatReceiptStarter.Main(newargs);
 						break;
 					default:
 						printTypes();

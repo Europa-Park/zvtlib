@@ -1,0 +1,541 @@
+03.04.2012 13:43:56,976 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+03.04.2012 13:43:56,991 [Wiffzack] Debug: Received TPDU: 80 00 00 
+03.04.2012 13:43:57,7 [Wiffzack] Info: Received: 80, 00
+03.04.2012 13:43:58,286 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+03.04.2012 13:43:58,286 [Wiffzack] Info: Received: 04, ff
+03.04.2012 13:43:58,286 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:43:58,364 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+03.04.2012 13:44:15,509 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+03.04.2012 13:44:15,509 [Wiffzack] Info: Received: 04, ff
+03.04.2012 13:44:15,509 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:15,509 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+03.04.2012 13:44:17,833 [Wiffzack] Debug: Received TPDU: 04 FF 01 17 
+03.04.2012 13:44:17,833 [Wiffzack] Info: Received: 04, ff
+03.04.2012 13:44:17,833 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:17,833 [Wiffzack] Info: [Info]  (StatusCode: 23)
+03.04.2012 13:44:20,282 [Wiffzack] Debug: Received TPDU: 04 0F 49 27 77 04 00 00 00 4D 03 00 0C 13 44 23 0D 04 03 60 F0 F5 F3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+03.04.2012 13:44:20,345 [Wiffzack] Info: Received: 04, 0f
+03.04.2012 13:44:20,345 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:20,438 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 2A 2A 20 4B 41 53 53 45 4E 53 43 48 4E 49 54 54 20 2A 2A 20 20 20 
+03.04.2012 13:44:20,438 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:44:20,438 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:20,532 [Wiffzack] Debug: Received TPDU: 06 D1 1A 00 54 45 53 54 20 41 4E 49 4D 41 20 4D 55 4E 44 49 20 48 41 4E 44 45 4C 53 47 
+03.04.2012 13:44:20,532 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:44:20,532 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:20,594 [Wiffzack] Debug: Received TPDU: 06 D1 1D 00 42 52 55 45 4E 4E 45 52 20 53 54 52 20 32 34 31 2D 32 34 33 2F 4F 42 4A 20 48 31 36 
+03.04.2012 13:44:20,594 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:44:20,594 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:20,672 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 32 32 30 31 20 47 45 52 41 53 44 4F 52 46 20 20 20 20 20 20 20 20 20 20 
+03.04.2012 13:44:20,672 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:44:20,672 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:20,750 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
+03.04.2012 13:44:20,750 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:44:20,750 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:20,828 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
+03.04.2012 13:44:20,828 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:44:20,828 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:20,891 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 32 30 31 32 2E 30 34 2E 30 33 20 31 33 3A 34 34 3A 30 31 20 20 20 20 20 
+03.04.2012 13:44:20,891 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:44:20,891 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:20,969 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 54 65 72 6D 69 6E 61 6C 2D 49 44 3A 20 20 20 20 32 37 32 32 38 32 31 38 
+03.04.2012 13:44:20,969 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:44:20,969 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:21,47 [Wiffzack] Debug: Received TPDU: 06 D1 14 00 56 65 72 62 69 6E 64 75 6E 67 73 70 72 6F 62 6C 65 6D 3A 
+03.04.2012 13:44:21,47 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:44:21,47 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:21,125 [Wiffzack] Debug: Received TPDU: 06 D1 13 00 4B 65 69 6E 65 20 DC 62 65 72 74 72 61 67 75 6E 67 21 
+03.04.2012 13:44:21,125 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:44:21,125 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:21,203 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 
+03.04.2012 13:44:21,203 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:44:21,203 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:21,281 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+03.04.2012 13:44:21,281 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:44:21,281 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:21,359 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+03.04.2012 13:44:21,359 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:44:21,359 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:21,437 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+03.04.2012 13:44:21,437 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:44:21,437 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:21,515 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+03.04.2012 13:44:21,515 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:44:21,515 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:21,593 [Wiffzack] Debug: Received TPDU: 06 D1 01 81 
+03.04.2012 13:44:21,593 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:44:21,593 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:21,733 [Wiffzack] Debug: Received TPDU: 06 1E 01 77 
+03.04.2012 13:44:21,733 [Wiffzack] Info: Received: 06, 1e
+03.04.2012 13:44:21,733 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:44:21,811 [Wiffzack] Info: XML file created
+03.04.2012 13:49:40,887 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+03.04.2012 13:49:40,902 [Wiffzack] Debug: Received TPDU: 80 00 00 
+03.04.2012 13:49:40,902 [Wiffzack] Info: Received: 80, 00
+03.04.2012 13:49:46,908 [Wiffzack] Debug: Received TPDU: 06 1E 01 FF 
+03.04.2012 13:49:46,908 [Wiffzack] Info: Received: 06, 1e
+03.04.2012 13:49:46,908 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:49:46,924 [Wiffzack] Info: XML file created
+03.04.2012 13:49:56,924 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+03.04.2012 13:49:56,939 [Wiffzack] Debug: Received TPDU: 80 00 00 
+03.04.2012 13:49:56,939 [Wiffzack] Info: Received: 80, 00
+03.04.2012 13:49:58,374 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+03.04.2012 13:49:58,374 [Wiffzack] Info: Received: 04, ff
+03.04.2012 13:49:58,374 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:49:58,421 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+03.04.2012 13:50:04,661 [Wiffzack] Debug: Received TPDU: 04 FF 01 C9 
+03.04.2012 13:50:04,661 [Wiffzack] Info: Received: 04, ff
+03.04.2012 13:50:04,661 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:50:04,661 [Wiffzack] Info: [Info]  (StatusCode: 201)
+03.04.2012 13:50:36,797 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+03.04.2012 13:50:36,797 [Wiffzack] Info: Received: 04, ff
+03.04.2012 13:50:36,797 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:50:36,797 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+03.04.2012 13:50:40,26 [Wiffzack] Debug: Received TPDU: 04 FF 01 C9 
+03.04.2012 13:50:40,26 [Wiffzack] Info: Received: 04, ff
+03.04.2012 13:50:40,26 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:50:40,26 [Wiffzack] Info: [Info]  (StatusCode: 201)
+03.04.2012 13:51:01,508 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+03.04.2012 13:51:01,508 [Wiffzack] Info: Received: 04, ff
+03.04.2012 13:51:01,508 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:51:01,508 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+03.04.2012 13:51:03,629 [Wiffzack] Debug: Received TPDU: 04 FF 01 C9 
+03.04.2012 13:51:03,629 [Wiffzack] Info: Received: 04, ff
+03.04.2012 13:51:03,629 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:51:03,629 [Wiffzack] Info: [Info]  (StatusCode: 201)
+03.04.2012 13:51:25,188 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+03.04.2012 13:51:25,188 [Wiffzack] Info: Received: 04, ff
+03.04.2012 13:51:25,188 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:51:25,188 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+03.04.2012 13:51:28,340 [Wiffzack] Debug: Received TPDU: 04 FF 01 C9 
+03.04.2012 13:51:28,340 [Wiffzack] Info: Received: 04, ff
+03.04.2012 13:51:28,340 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:51:28,340 [Wiffzack] Info: [Info]  (StatusCode: 201)
+03.04.2012 13:51:51,896 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+03.04.2012 13:51:51,896 [Wiffzack] Info: Received: 04, ff
+03.04.2012 13:51:51,896 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:51:51,896 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+03.04.2012 13:51:55,16 [Wiffzack] Debug: Received TPDU: 04 FF 01 C9 
+03.04.2012 13:51:55,16 [Wiffzack] Info: Received: 04, ff
+03.04.2012 13:51:55,16 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:51:55,16 [Wiffzack] Info: [Info]  (StatusCode: 201)
+03.04.2012 13:52:18,73 [Wiffzack] Debug: Received TPDU: 04 FF 01 17 
+03.04.2012 13:52:18,73 [Wiffzack] Info: Received: 04, ff
+03.04.2012 13:52:18,73 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:18,73 [Wiffzack] Info: [Info]  (StatusCode: 23)
+03.04.2012 13:52:22,877 [Wiffzack] Debug: Received TPDU: 04 0F 49 27 00 04 00 00 00 00 00 00 0C 13 50 01 0D 04 03 60 F0 F5 F3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+03.04.2012 13:52:22,909 [Wiffzack] Info: Received: 04, 0f
+03.04.2012 13:52:22,909 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:23,96 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 2A 2A 20 4B 41 53 53 45 4E 53 43 48 4E 49 54 54 20 2A 2A 20 20 20 
+03.04.2012 13:52:23,111 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:23,111 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:23,174 [Wiffzack] Debug: Received TPDU: 06 D1 1A 00 54 45 53 54 20 41 4E 49 4D 41 20 4D 55 4E 44 49 20 48 41 4E 44 45 4C 53 47 
+03.04.2012 13:52:23,174 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:23,174 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:23,252 [Wiffzack] Debug: Received TPDU: 06 D1 1D 00 42 52 55 45 4E 4E 45 52 20 53 54 52 20 32 34 31 2D 32 34 33 2F 4F 42 4A 20 48 31 36 
+03.04.2012 13:52:23,252 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:23,252 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:23,330 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 32 32 30 31 20 47 45 52 41 53 44 4F 52 46 20 20 20 20 20 20 20 20 20 20 
+03.04.2012 13:52:23,330 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:23,330 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:23,408 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
+03.04.2012 13:52:23,408 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:23,408 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:23,486 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
+03.04.2012 13:52:23,486 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:23,486 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:23,564 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 32 30 31 32 2E 30 34 2E 30 33 20 31 33 3A 35 30 3A 30 31 20 20 20 20 20 
+03.04.2012 13:52:23,564 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:23,564 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:23,642 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 54 65 72 6D 69 6E 61 6C 2D 49 44 3A 20 20 20 20 32 37 32 32 38 32 31 38 
+03.04.2012 13:52:23,642 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:23,642 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:23,720 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+03.04.2012 13:52:23,720 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:23,720 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:23,782 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 41 6E 7A 61 68 6C 20 20 20 20 20 20 20 20 45 55 52 
+03.04.2012 13:52:23,782 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:23,782 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:23,860 [Wiffzack] Debug: Received TPDU: 06 D1 17 00 56 49 53 41 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
+03.04.2012 13:52:23,860 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:23,860 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:23,938 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 30 20 20 20 20 20 20 20 30 2C 30 30 
+03.04.2012 13:52:23,938 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:23,938 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:24,32 [Wiffzack] Debug: Received TPDU: 06 D1 17 00 56 20 50 41 59 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
+03.04.2012 13:52:24,32 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:24,32 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:24,94 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 30 20 20 20 20 20 20 20 30 2C 30 30 
+03.04.2012 13:52:24,94 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:24,94 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:24,172 [Wiffzack] Debug: Received TPDU: 06 D1 17 00 4D 61 73 74 65 72 43 61 72 64 20 20 20 20 20 20 20 20 20 20 20 20 
+03.04.2012 13:52:24,172 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:24,172 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:24,250 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 30 20 20 20 20 20 20 20 30 2C 30 30 
+03.04.2012 13:52:24,250 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:24,250 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:24,328 [Wiffzack] Debug: Received TPDU: 06 D1 17 00 4D 61 65 73 74 72 6F 20 28 61 6C 6C 67 2E 29 20 20 20 20 20 20 20 
+03.04.2012 13:52:24,328 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:24,328 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:24,406 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 30 20 20 20 20 20 20 20 30 2C 30 30 
+03.04.2012 13:52:24,406 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:24,406 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:24,484 [Wiffzack] Debug: Received TPDU: 06 D1 17 00 4D 61 65 73 74 72 6F 20 28 69 6E 6C 2E 29 20 20 20 20 20 20 20 20 
+03.04.2012 13:52:24,484 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:24,484 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:24,562 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 30 20 20 20 20 20 20 20 30 2C 30 30 
+03.04.2012 13:52:24,562 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:24,562 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:24,640 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 
+03.04.2012 13:52:24,640 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:24,640 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:24,718 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 47 65 73 61 6D 74 20 20 20 20 20 20 30 20 20 20 20 20 20 20 30 2C 30 30 
+03.04.2012 13:52:24,718 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:24,718 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:24,796 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+03.04.2012 13:52:24,796 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:24,796 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:24,874 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 56 49 53 41 20 20 20 20 20 20 20 20 20 20 20 20 23 3A 30 30 30 33 35 31 
+03.04.2012 13:52:24,874 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:24,874 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:24,952 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 56 55 3A 20 20 20 20 20 20 20 20 20 20 20 20 31 30 30 34 34 39 36 35 31 
+03.04.2012 13:52:24,952 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:24,952 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:25,30 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 56 20 50 41 59 20 20 20 20 20 20 20 20 20 20 20 23 3A 30 30 30 33 35 32 
+03.04.2012 13:52:25,30 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:25,30 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:25,108 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 56 55 3A 20 20 20 20 20 20 20 20 20 20 20 20 31 30 30 34 34 39 36 35 31 
+03.04.2012 13:52:25,108 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:25,108 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:25,186 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 4D 61 73 74 65 72 43 61 72 64 20 20 20 20 20 20 23 3A 30 30 30 33 35 33 
+03.04.2012 13:52:25,186 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:25,186 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:25,264 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 56 55 3A 20 20 20 20 20 20 20 20 20 20 20 20 31 30 30 34 34 39 36 35 31 
+03.04.2012 13:52:25,264 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:25,264 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:25,327 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 4D 61 65 73 74 72 6F 20 28 61 6C 6C 67 2E 29 20 23 3A 30 30 30 33 35 34 
+03.04.2012 13:52:25,327 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:25,327 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:25,405 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 56 55 3A 20 20 20 20 20 20 20 20 20 20 20 20 31 30 30 34 34 39 36 35 31 
+03.04.2012 13:52:25,405 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:25,405 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:25,483 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 4D 61 65 73 74 72 6F 20 28 69 6E 6C 2E 29 20 20 23 3A 30 30 30 33 35 35 
+03.04.2012 13:52:25,483 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:25,483 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:25,561 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 56 55 3A 20 20 20 20 20 20 20 20 20 20 20 20 31 30 30 34 34 39 36 35 31 
+03.04.2012 13:52:25,561 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:25,561 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:25,639 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 
+03.04.2012 13:52:25,639 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:25,639 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:25,717 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+03.04.2012 13:52:25,717 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:25,717 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:25,795 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+03.04.2012 13:52:25,795 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:25,795 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:25,873 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+03.04.2012 13:52:25,873 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:25,873 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:25,951 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+03.04.2012 13:52:25,951 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:25,951 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:26,29 [Wiffzack] Debug: Received TPDU: 06 D1 01 81 
+03.04.2012 13:52:26,29 [Wiffzack] Info: Received: 06, d1
+03.04.2012 13:52:26,29 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:26,216 [Wiffzack] Debug: Received TPDU: 06 0F 00 
+03.04.2012 13:52:26,231 [Wiffzack] Info: Received: 06, 0f
+03.04.2012 13:52:26,231 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+03.04.2012 13:52:26,231 [Wiffzack] Info: XML file created
+04.04.2012 11:51:36,101 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+04.04.2012 11:51:36,665 [Wiffzack] Debug: Received TPDU: 80 00 00 
+04.04.2012 11:51:36,670 [Wiffzack] Info: Received: 80, 00
+04.04.2012 11:51:38,274 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+04.04.2012 11:51:38,276 [Wiffzack] Info: Received: 04, ff
+04.04.2012 11:51:38,276 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:51:38,304 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+04.04.2012 11:52:51,440 [Wiffzack] Debug: Transmitting TPDU: 06 01 0A 04 00 00 00 09 99 99 49 09 78 
+04.04.2012 11:52:51,967 [Wiffzack] Debug: Received TPDU: 80 00 00 
+04.04.2012 11:52:51,971 [Wiffzack] Info: Received: 80, 00
+04.04.2012 11:52:51,975 [Wiffzack] Debug: Received TPDU: 04 FF 01 0A 
+04.04.2012 11:52:51,975 [Wiffzack] Info: Received: 04, ff
+04.04.2012 11:52:51,976 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:52:52,8 [Wiffzack] Info: [Info] Karte einführen (StatusCode: 10)
+04.04.2012 11:56:12,9 [Wiffzack] Info: Network Error:Connection Time Out Occoured
+04.04.2012 11:58:22,958 [Wiffzack] Debug: Transmitting TPDU: 06 01 0A 04 00 00 00 09 99 99 49 09 78 
+04.04.2012 11:58:23,482 [Wiffzack] Debug: Received TPDU: 80 00 00 
+04.04.2012 11:58:23,484 [Wiffzack] Info: Received: 80, 00
+04.04.2012 11:58:23,485 [Wiffzack] Debug: Received TPDU: 04 FF 01 0A 
+04.04.2012 11:58:23,485 [Wiffzack] Info: Received: 04, ff
+04.04.2012 11:58:23,485 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:58:23,505 [Wiffzack] Info: [Info] Karte einführen (StatusCode: 10)
+04.04.2012 11:59:11,862 [Wiffzack] Debug: Transmitting TPDU: 06 01 0A 04 00 00 00 09 99 99 49 09 78 
+04.04.2012 11:59:12,393 [Wiffzack] Debug: Received TPDU: 80 00 00 
+04.04.2012 11:59:12,397 [Wiffzack] Info: Received: 80, 00
+04.04.2012 11:59:12,403 [Wiffzack] Debug: Received TPDU: 04 FF 01 0A 
+04.04.2012 11:59:12,403 [Wiffzack] Info: Received: 04, ff
+04.04.2012 11:59:12,404 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:12,433 [Wiffzack] Info: [Info] Karte einführen (StatusCode: 10)
+04.04.2012 11:59:21,418 [Wiffzack] Debug: Received TPDU: 04 FF 01 17 
+04.04.2012 11:59:21,419 [Wiffzack] Info: Received: 04, ff
+04.04.2012 11:59:21,419 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:21,419 [Wiffzack] Info: [Info]  (StatusCode: 23)
+04.04.2012 11:59:23,569 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+04.04.2012 11:59:23,569 [Wiffzack] Info: Received: 04, ff
+04.04.2012 11:59:23,569 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:23,569 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+04.04.2012 11:59:29,301 [Wiffzack] Debug: Received TPDU: 04 0F 24 27 F0 29 27 22 82 18 3C F0 F2 F5 4B 61 73 73 65 6E 73 63 68 6E 69 74 74 20 64 75 72 63 68 66 FC 68 72 65 6E 
+04.04.2012 11:59:29,312 [Wiffzack] Info: Received: 04, 0f
+04.04.2012 11:59:29,312 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:29,522 [Wiffzack] Debug: Received TPDU: 06 1E 01 F0 
+04.04.2012 11:59:29,523 [Wiffzack] Info: Received: 06, 1e
+04.04.2012 11:59:29,523 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:29,533 [Wiffzack] Info: XML file created
+04.04.2012 11:59:48,61 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+04.04.2012 11:59:48,592 [Wiffzack] Debug: Received TPDU: 80 00 00 
+04.04.2012 11:59:48,597 [Wiffzack] Info: Received: 80, 00
+04.04.2012 11:59:51,217 [Wiffzack] Debug: Received TPDU: 04 FF 01 17 
+04.04.2012 11:59:51,217 [Wiffzack] Info: Received: 04, ff
+04.04.2012 11:59:51,218 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:51,242 [Wiffzack] Info: [Info]  (StatusCode: 23)
+04.04.2012 11:59:56,439 [Wiffzack] Debug: Received TPDU: 04 0F 49 27 00 04 00 00 00 00 00 00 0C 11 51 42 0D 04 04 60 F0 F5 F3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+04.04.2012 11:59:56,452 [Wiffzack] Info: Received: 04, 0f
+04.04.2012 11:59:56,452 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:56,607 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 2A 2A 20 4B 41 53 53 45 4E 53 43 48 4E 49 54 54 20 2A 2A 20 20 20 
+04.04.2012 11:59:56,609 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:56,609 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:56,681 [Wiffzack] Debug: Received TPDU: 06 D1 1A 00 54 45 53 54 20 41 4E 49 4D 41 20 4D 55 4E 44 49 20 48 41 4E 44 45 4C 53 47 
+04.04.2012 11:59:56,681 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:56,681 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:56,761 [Wiffzack] Debug: Received TPDU: 06 D1 1D 00 42 52 55 45 4E 4E 45 52 20 53 54 52 20 32 34 31 2D 32 34 33 2F 4F 42 4A 20 48 31 36 
+04.04.2012 11:59:56,761 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:56,761 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:56,837 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 32 32 30 31 20 47 45 52 41 53 44 4F 52 46 20 20 20 20 20 20 20 20 20 20 
+04.04.2012 11:59:56,837 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:56,837 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:56,915 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
+04.04.2012 11:59:56,915 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:56,915 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:56,991 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
+04.04.2012 11:59:56,992 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:56,992 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:57,70 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 32 30 31 32 2E 30 34 2E 30 34 20 31 31 3A 35 31 3A 34 32 20 20 20 20 20 
+04.04.2012 11:59:57,70 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:57,70 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:57,146 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 54 65 72 6D 69 6E 61 6C 2D 49 44 3A 20 20 20 20 32 37 32 32 38 32 31 38 
+04.04.2012 11:59:57,147 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:57,147 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:57,223 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+04.04.2012 11:59:57,223 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:57,224 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:57,302 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 41 6E 7A 61 68 6C 20 20 20 20 20 20 20 20 45 55 52 
+04.04.2012 11:59:57,303 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:57,303 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:57,381 [Wiffzack] Debug: Received TPDU: 06 D1 17 00 56 49 53 41 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
+04.04.2012 11:59:57,382 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:57,382 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:57,463 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 30 20 20 20 20 20 20 20 30 2C 30 30 
+04.04.2012 11:59:57,463 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:57,463 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:57,537 [Wiffzack] Debug: Received TPDU: 06 D1 17 00 56 20 50 41 59 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
+04.04.2012 11:59:57,538 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:57,538 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:57,613 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 30 20 20 20 20 20 20 20 30 2C 30 30 
+04.04.2012 11:59:57,613 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:57,613 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:57,690 [Wiffzack] Debug: Received TPDU: 06 D1 17 00 4D 61 73 74 65 72 43 61 72 64 20 20 20 20 20 20 20 20 20 20 20 20 
+04.04.2012 11:59:57,690 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:57,691 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:57,768 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 30 20 20 20 20 20 20 20 30 2C 30 30 
+04.04.2012 11:59:57,769 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:57,769 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:57,844 [Wiffzack] Debug: Received TPDU: 06 D1 17 00 4D 61 65 73 74 72 6F 20 28 61 6C 6C 67 2E 29 20 20 20 20 20 20 20 
+04.04.2012 11:59:57,844 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:57,845 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:57,921 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 30 20 20 20 20 20 20 20 30 2C 30 30 
+04.04.2012 11:59:57,922 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:57,922 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:57,998 [Wiffzack] Debug: Received TPDU: 06 D1 17 00 4D 61 65 73 74 72 6F 20 28 69 6E 6C 2E 29 20 20 20 20 20 20 20 20 
+04.04.2012 11:59:57,999 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:57,999 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:58,77 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 30 20 20 20 20 20 20 20 30 2C 30 30 
+04.04.2012 11:59:58,78 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:58,78 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:58,152 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 
+04.04.2012 11:59:58,153 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:58,153 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:58,230 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 47 65 73 61 6D 74 20 20 20 20 20 20 30 20 20 20 20 20 20 20 30 2C 30 30 
+04.04.2012 11:59:58,231 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:58,231 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:58,309 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+04.04.2012 11:59:58,309 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:58,310 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:58,386 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 56 49 53 41 20 20 20 20 20 20 20 20 20 20 20 20 23 3A 30 30 30 33 37 33 
+04.04.2012 11:59:58,386 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:58,387 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:58,463 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 56 55 3A 20 20 20 20 20 20 20 20 20 20 20 20 31 30 30 34 34 39 36 35 31 
+04.04.2012 11:59:58,463 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:58,464 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:58,540 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 56 20 50 41 59 20 20 20 20 20 20 20 20 20 20 20 23 3A 30 30 30 33 37 34 
+04.04.2012 11:59:58,540 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:58,541 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:58,616 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 56 55 3A 20 20 20 20 20 20 20 20 20 20 20 20 31 30 30 34 34 39 36 35 31 
+04.04.2012 11:59:58,617 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:58,617 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:58,693 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 4D 61 73 74 65 72 43 61 72 64 20 20 20 20 20 20 23 3A 30 30 30 33 37 35 
+04.04.2012 11:59:58,693 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:58,693 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:58,771 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 56 55 3A 20 20 20 20 20 20 20 20 20 20 20 20 31 30 30 34 34 39 36 35 31 
+04.04.2012 11:59:58,772 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:58,772 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:58,847 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 4D 61 65 73 74 72 6F 20 28 61 6C 6C 67 2E 29 20 23 3A 30 30 30 33 37 36 
+04.04.2012 11:59:58,848 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:58,848 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:58,924 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 56 55 3A 20 20 20 20 20 20 20 20 20 20 20 20 31 30 30 34 34 39 36 35 31 
+04.04.2012 11:59:58,924 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:58,925 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:59,1 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 4D 61 65 73 74 72 6F 20 28 69 6E 6C 2E 29 20 20 23 3A 30 30 30 33 37 37 
+04.04.2012 11:59:59,1 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:59,2 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:59,78 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 56 55 3A 20 20 20 20 20 20 20 20 20 20 20 20 31 30 30 34 34 39 36 35 31 
+04.04.2012 11:59:59,79 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:59,79 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:59,154 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 
+04.04.2012 11:59:59,155 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:59,155 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:59,231 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+04.04.2012 11:59:59,232 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:59,232 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:59,308 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+04.04.2012 11:59:59,309 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:59,309 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:59,388 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+04.04.2012 11:59:59,388 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:59,389 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:59,465 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+04.04.2012 11:59:59,465 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:59,466 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:59,541 [Wiffzack] Debug: Received TPDU: 06 D1 01 81 
+04.04.2012 11:59:59,542 [Wiffzack] Info: Received: 06, d1
+04.04.2012 11:59:59,542 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:59,724 [Wiffzack] Debug: Received TPDU: 06 0F 00 
+04.04.2012 11:59:59,728 [Wiffzack] Info: Received: 06, 0f
+04.04.2012 11:59:59,728 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 11:59:59,749 [Wiffzack] Info: XML file created
+04.04.2012 12:00:40,884 [Wiffzack] Debug: Transmitting TPDU: 06 01 0A 04 00 00 00 09 99 99 49 09 78 
+04.04.2012 12:00:41,416 [Wiffzack] Debug: Received TPDU: 80 00 00 
+04.04.2012 12:00:41,420 [Wiffzack] Info: Received: 80, 00
+04.04.2012 12:00:41,422 [Wiffzack] Debug: Received TPDU: 04 FF 01 0A 
+04.04.2012 12:00:41,423 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:00:41,423 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:00:41,443 [Wiffzack] Info: [Info] Karte einführen (StatusCode: 10)
+04.04.2012 12:00:51,497 [Wiffzack] Debug: Received TPDU: 04 FF 01 17 
+04.04.2012 12:00:51,497 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:00:51,497 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:00:51,498 [Wiffzack] Info: [Info]  (StatusCode: 23)
+04.04.2012 12:00:53,648 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+04.04.2012 12:00:53,648 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:00:53,648 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:00:53,649 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+04.04.2012 12:00:55,798 [Wiffzack] Debug: Received TPDU: 04 FF 01 01 
+04.04.2012 12:00:55,798 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:00:55,798 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:00:55,798 [Wiffzack] Info: [Info] Display von PIN-Pad beachten (StatusCode: 1)
+04.04.2012 12:04:15,798 [Wiffzack] Info: Network Error:Connection Time Out Occoured
+04.04.2012 12:19:24,501 [Wiffzack] Debug: Transmitting TPDU: 06 01 0A 04 00 00 00 09 99 99 49 09 78 
+04.04.2012 12:19:25,24 [Wiffzack] Debug: Received TPDU: 80 00 00 
+04.04.2012 12:19:25,27 [Wiffzack] Info: Received: 80, 00
+04.04.2012 12:19:25,64 [Wiffzack] Debug: Received TPDU: 04 FF 01 0A 
+04.04.2012 12:19:25,64 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:19:25,65 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:19:25,84 [Wiffzack] Info: [Info] Karte einführen (StatusCode: 10)
+04.04.2012 12:22:45,84 [Wiffzack] Info: Network Error:Connection Time Out Occoured
+04.04.2012 12:31:11,512 [Wiffzack] Debug: Transmitting TPDU: 06 01 0A 04 00 00 00 09 99 99 49 09 78 
+04.04.2012 12:31:12,40 [Wiffzack] Debug: Received TPDU: 80 00 00 
+04.04.2012 12:31:12,45 [Wiffzack] Info: Received: 80, 00
+04.04.2012 12:31:12,47 [Wiffzack] Debug: Received TPDU: 04 FF 01 0A 
+04.04.2012 12:31:12,47 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:31:12,47 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:31:12,67 [Wiffzack] Info: [Info] Karte einführen (StatusCode: 10)
+04.04.2012 12:32:43,89 [Wiffzack] Debug: Transmitting TPDU: 06 00 06 12 34 56 98 09 78 
+04.04.2012 12:32:43,617 [Wiffzack] Debug: Received TPDU: 80 00 00 
+04.04.2012 12:32:43,621 [Wiffzack] Info: Received: 80, 00
+04.04.2012 12:32:43,625 [Wiffzack] Debug: Received TPDU: 06 0F 07 19 00 29 27 22 82 18 
+04.04.2012 12:32:43,631 [Wiffzack] Info: Received: 06, 0f
+04.04.2012 12:32:43,631 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:32:43,636 [Wiffzack] Info: XML file created
+04.04.2012 12:32:50,46 [Wiffzack] Debug: Transmitting TPDU: 06 01 0A 04 00 00 00 09 99 99 49 09 78 
+04.04.2012 12:32:50,576 [Wiffzack] Debug: Received TPDU: 80 00 00 
+04.04.2012 12:32:50,580 [Wiffzack] Info: Received: 80, 00
+04.04.2012 12:32:50,584 [Wiffzack] Debug: Received TPDU: 04 FF 01 0A 
+04.04.2012 12:32:50,584 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:32:50,585 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:32:50,616 [Wiffzack] Info: [Info] Karte einführen (StatusCode: 10)
+04.04.2012 12:33:06,44 [Wiffzack] Debug: Received TPDU: 04 FF 01 0A 
+04.04.2012 12:33:06,45 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:33:06,45 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:33:06,45 [Wiffzack] Info: [Info] Karte einführen (StatusCode: 10)
+04.04.2012 12:33:06,761 [Wiffzack] Debug: Received TPDU: 04 FF 01 17 
+04.04.2012 12:33:06,761 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:33:06,761 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:33:06,762 [Wiffzack] Info: [Info]  (StatusCode: 23)
+04.04.2012 12:33:09,116 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+04.04.2012 12:33:09,116 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:33:09,117 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:33:09,117 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+04.04.2012 12:33:11,267 [Wiffzack] Debug: Received TPDU: 04 FF 01 01 
+04.04.2012 12:33:11,268 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:33:11,268 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:33:11,269 [Wiffzack] Info: [Info] Display von PIN-Pad beachten (StatusCode: 1)
+04.04.2012 12:33:16,425 [Wiffzack] Debug: Received TPDU: 04 FF 01 00 
+04.04.2012 12:33:16,426 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:33:16,426 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:33:16,426 [Wiffzack] Info: [Info] Warte auf Bestätigung des Betrages... (StatusCode: 0)
+04.04.2012 12:33:18,471 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+04.04.2012 12:33:18,472 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:33:18,472 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:33:18,473 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+04.04.2012 12:33:27,676 [Wiffzack] Debug: Received TPDU: 04 0F 14 27 33 29 27 22 82 18 3C F0 F0 F9 41 62 67 65 6C 65 68 6E 74 
+04.04.2012 12:33:27,684 [Wiffzack] Info: Received: 04, 0f
+04.04.2012 12:33:27,684 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:33:27,884 [Wiffzack] Debug: Received TPDU: 06 1E 01 33 
+04.04.2012 12:33:27,885 [Wiffzack] Info: Received: 06, 1e
+04.04.2012 12:33:27,885 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:33:27,901 [Wiffzack] Info: XML file created
+04.04.2012 12:33:49,22 [Wiffzack] Debug: Transmitting TPDU: 06 01 0A 04 00 00 00 00 99 99 49 09 78 
+04.04.2012 12:33:49,553 [Wiffzack] Debug: Received TPDU: 80 00 00 
+04.04.2012 12:33:49,557 [Wiffzack] Info: Received: 80, 00
+04.04.2012 12:33:49,559 [Wiffzack] Debug: Received TPDU: 04 FF 01 0A 
+04.04.2012 12:33:49,559 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:33:49,559 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:33:49,578 [Wiffzack] Info: [Info] Karte einführen (StatusCode: 10)
+04.04.2012 12:33:53,289 [Wiffzack] Debug: Received TPDU: 04 FF 01 17 
+04.04.2012 12:33:53,289 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:33:53,289 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:33:53,290 [Wiffzack] Info: [Info]  (StatusCode: 23)
+04.04.2012 12:33:55,643 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+04.04.2012 12:33:55,643 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:33:55,644 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:33:55,644 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+04.04.2012 12:33:57,793 [Wiffzack] Debug: Received TPDU: 04 FF 01 01 
+04.04.2012 12:33:57,794 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:33:57,794 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:33:57,794 [Wiffzack] Info: [Info] Display von PIN-Pad beachten (StatusCode: 1)
+04.04.2012 12:34:01,891 [Wiffzack] Debug: Received TPDU: 04 FF 01 00 
+04.04.2012 12:34:01,891 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:34:01,892 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:34:01,892 [Wiffzack] Info: [Info] Warte auf Bestätigung des Betrages... (StatusCode: 0)
+04.04.2012 12:34:04,245 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+04.04.2012 12:34:04,245 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:34:04,246 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:34:04,246 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+04.04.2012 12:34:13,461 [Wiffzack] Debug: Received TPDU: 04 FF 01 17 
+04.04.2012 12:34:13,461 [Wiffzack] Info: Received: 04, ff
+04.04.2012 12:34:13,462 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:34:13,462 [Wiffzack] Info: [Info]  (StatusCode: 23)
+04.04.2012 12:34:27,23 [Wiffzack] Debug: Received TPDU: 04 0F 70 27 00 04 00 00 00 00 99 99 0B 00 03 78 0C 12 33 59 0D 04 04 0E 14 12 17 00 01 19 70 22 F1 F0 EE EE EE EE EE EE EE E5 37 3F 29 27 22 82 18 2A 31 30 30 34 34 39 36 35 31 20 20 20 20 20 20 3B 35 33 34 35 34 36 00 00 3C F0 F1 F4 47 45 4E 2E 4E 52 2E 3A 35 33 34 35 34 36 49 09 78 87 03 78 88 00 03 78 8A 2E 8B F0 F8 4D 41 45 53 54 52 4F 00 
+04.04.2012 12:34:27,35 [Wiffzack] Info: Received: 04, 0f
+04.04.2012 12:34:27,36 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:34:28,355 [Wiffzack] Debug: Received TPDU: 06 0F 00 
+04.04.2012 12:34:28,359 [Wiffzack] Info: Received: 06, 0f
+04.04.2012 12:34:28,359 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+04.04.2012 12:34:28,370 [Wiffzack] Info: XML file created
