@@ -31,6 +31,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 			Console.WriteLine("		report:			Terminal Report");
 			Console.WriteLine("		reversal:		Payment Reversal");
 			Console.WriteLine("		payment:		Card Payment");
+			Console.WriteLine("		telepayment:		Card Payment with telephonic authorization");
 			Console.WriteLine("		abort:			Abort Payment");
 			Console.WriteLine("		repeat:			Repeat last Receipt");
 			Console.WriteLine("		------------------------------		");
@@ -76,6 +77,9 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 						break;
 					case "payment":
 						PaymentStarter.Main(newargs);
+						break;
+					case "telepayment":
+						TelePaymentStarter.Main(newargs);
 						break;
 					case "abort":
 						AbortStarter.Main(newargs);

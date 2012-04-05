@@ -16,8 +16,8 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 
 {
 	/// <summary>
-	/// Report starter. 
-	/// The report starter awaits a XML file that contains the configuration for transport and report. 
+	/// Payment starter. 
+	/// The Payment starter awaits a XML file that contains the configuration for transport and report. 
 	/// It executes the command and saves the resulting XML file as /tmp/result.xml.
 	/// </summary>
 	public class PaymentStarter
@@ -84,7 +84,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 				PaymentResult result = environment.CreatePaymentCommand((XmlElement)config.DocumentElement.SelectSingleNode("Payment")).Execute();
 				//create XML file with result message
 				result.SerializeToXml(resultXML.DocumentElement);
-				if(result.Success==true)
+				if(result.Data!=null)
 					result.Data.WriteXml(resultXML.DocumentElement);
 				//save file in /tmp/result.xml
 				resultXML.Save(Starter.result);

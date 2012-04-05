@@ -49,6 +49,7 @@
     <Compile Include="utils\PaymentStarter.cs" />
     <Compile Include="utils\AbortStarter.cs" />
     <Compile Include="utils\RepeatReceiptStarter.cs" />
+    <Compile Include="utils\TelePaymentStarter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CardTerminalLibrary\CardTerminalLibrary.csproj">

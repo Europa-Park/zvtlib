@@ -169,6 +169,9 @@
     <Compile Include="Commands\IRepeatReceiptCommand.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\RepeatReceiptCommand.cs" />
     <Compile Include="Commands\Data\RepeatReceiptResult.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\TeleAuthorizationApdu.cs" />
+    <Compile Include="Commands\ITelePaymentCommand.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\TeleAuthorizationCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Protocols\ZVT\SampleConfiguration.xml" />

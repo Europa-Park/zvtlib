@@ -249,7 +249,9 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
         public void WriteXml(XmlElement rootNode)
         {
             XmlHelper.WriteString(rootNode, "RawData", ByteHelpers.ByteToString(_rawApduData));
-			XmlHelper.WriteInt64(rootNode,"ReceiptNr",this.FindParameter<BCDNumberParameter>(StatusInformationApdu.StatusParameterEnum.ReceiptNr).DecodeNumber());
+			BCDNumberParameter receiptNr=this.FindParameter<BCDNumberParameter>(StatusInformationApdu.StatusParameterEnum.ReceiptNr);
+			if(receiptNr!=null)
+				XmlHelper.WriteInt64(rootNode,"ReceiptNr",receiptNr.DecodeNumber());
 			PrefixedParameter<AsciiLVarParameter> additional=this.FindParameter<PrefixedParameter<AsciiLVarParameter>>(StatusInformationApdu.StatusParameterEnum.AdditionalCardDataForECCash);
 			if(additional!=null)
 				XmlHelper.WriteString(rootNode,"Additional",additional.SubParameter.Text);
@@ -259,7 +261,15 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
 			PrefixedParameter<BCDNumberParameter> amount=this.FindParameter<PrefixedParameter<BCDNumberParameter>>(StatusInformationApdu.StatusParameterEnum.Amount);
 			if(amount!=null)
 				XmlHelper.WriteInt64(rootNode,"Amount",amount.SubParameter.DecodeNumber());
-			
+			PrefixedParameter<AsciiLVarParameter> additionalInfo=this.FindParameter<PrefixedParameter<AsciiLVarParameter>>(StatusInformationApdu.StatusParameterEnum.AdditionalTextForCC);
+		
+			if(additionalInfo!=null){
+				XmlHelper.WriteString(rootNode,"AdditionalInfo",additionalInfo.SubParameter.Text);
+				Console.WriteLine(additionalInfo.SubParameter.Data.Length +"<-- length");
+				Console.WriteLine("First: "+additionalInfo.SubParameter.Data[0]);
+				Console.WriteLine("Last: "+additionalInfo.SubParameter.Data[additionalInfo.SubParameter.Data.Length-1]);
+					
+			}
 		}
 			
 

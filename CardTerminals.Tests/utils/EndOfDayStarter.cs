@@ -16,8 +16,8 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 
 {
 	/// <summary>
-	/// Reset starter. 
-	/// The report starter awaits a XML file that contains the configuration for transport. 
+	/// EOD starter. 
+	/// The eod starter awaits a XML file that contains the configuration for transport. 
 	/// It executes the command and saves the resulting XML file as /result.xml.
 	/// </summary>
 	public class EndOfDayStarter

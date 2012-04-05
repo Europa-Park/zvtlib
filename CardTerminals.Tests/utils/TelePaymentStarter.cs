@@ -16,11 +16,11 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 
 {
 	/// <summary>
-	/// Reversal starter. 
-	/// The reversal starter awaits a XML file that contains the configuration for transport and report. 
+	/// TelePayment starter. 
+	/// The TelePayment starter awaits a XML file that contains the configuration for transport and report. 
 	/// It executes the command and saves the resulting XML file as /tmp/result.xml.
 	/// </summary>
-	public class ReversalStarter
+	public class TelePaymentStarter
 	{
 	
 		/// <summary>
@@ -52,7 +52,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 			}
 			if(args[0].Equals("?")){
 					LogManager.Global = new LogManager(true, new TextLogger(null, LogLevel.Everything, "Wiffzack", Console.Out));
-					Console.WriteLine("reversal <config.xml>");
+					Console.WriteLine("telepayment <config.xml>");
 					printHelp();
 					return;
 			}
@@ -63,7 +63,7 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 				config.Load(args[0]);
  			}
 			//if any exception occur, the XML file could not be read and thus the program stops
- 			catch (Exception){
+			catch (Exception){
 				LogManager.Global.GetLogger("Wiffzack").Info("Your XML was probably bad...");
 				XmlHelper.WriteBool(rootNode, "Success", false);
             	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", -2);
@@ -81,11 +81,11 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 			try{
 	     		ICommandEnvironment environment = new ZVTCommandEnvironment(config.DocumentElement);
 				environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
-				ReversalCommand revers=(ReversalCommand)environment.CreateReversalCommand(null);
-				revers.ReceiptNr=(int)XmlHelper.ReadInt((XmlElement)config.DocumentElement.SelectSingleNode("Reversal"), "ReceiptNr");
-				CommandResult result=revers.Execute();
+				PaymentResult result = environment.CreateTelePaymentCommand((XmlElement)config.DocumentElement.SelectSingleNode("Payment")).Execute();
 				//create XML file with result message
 				result.SerializeToXml(resultXML.DocumentElement);
+				if(result.Data!=null)
+					result.Data.WriteXml(resultXML.DocumentElement);
 				//save file in /tmp/result.xml
 				resultXML.Save(Starter.result);
 				//debug message --> remove later
@@ -161,13 +161,13 @@ namespace Wiffzack.Devices.CardTerminals.Tests
             LogManager.Global.GetLogger("Wiffzack").Info(status.ToString());
         }
 		public static void printHelp(){
-			Console.WriteLine("The reversal config.xml needs to look like this:");
+			Console.WriteLine("The telepayment config.xml needs to look like this:");
 			Console.WriteLine("<Config>");
 			Console.WriteLine("		<Transport>....</Transport>");
 			Console.WriteLine("		<TransportSettings>.....</TransportSettings>");
-			Console.WriteLine("		<Reversal>");
-			Console.WriteLine("			<ReceiptNr>...</ReceiptNr>");
-			Console.WriteLine("		</Reversal>");
+			Console.WriteLine("		<Payment>");
+			Console.WriteLine("			<Amount>...</Amount>");
+			Console.WriteLine("		</Payment>");
 			Console.WriteLine("</Config>");
 		}
 	}
