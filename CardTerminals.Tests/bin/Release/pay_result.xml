@@ -1,7 +1,7 @@
 <Result>
   <Success>False</Success>
-  <ProtocolSpecificErrorCode>131</ProtocolSpecificErrorCode>
-  <ProtocolSpecificErrorDescription>Function Not Possible</ProtocolSpecificErrorDescription>
-  <RawData>04 0F 20 27 83 29 27 22 82 18 3C F0 F2 F1 41 62 67 65 6C 65 68 6E 74 20 64 75 72 63 68 20 4B 61 72 74 65 </RawData>
-  <AdditionalInfo>Abgelehnt durch Karte</AdditionalInfo>
+  <ProtocolSpecificErrorCode>255</ProtocolSpecificErrorCode>
+  <ProtocolSpecificErrorDescription>System Error</ProtocolSpecificErrorDescription>
+  <RawData>04 0F 1A 27 FF 29 27 22 82 18 3C F0 F1 F5 4B 41 52 54 45 20 41 42 47 45 4C 45 48 4E 54 </RawData>
+  <AdditionalInfo>KARTE ABGELEHNT</AdditionalInfo>
 </Result>

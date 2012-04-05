@@ -265,10 +265,6 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
 		
 			if(additionalInfo!=null){
 				XmlHelper.WriteString(rootNode,"AdditionalInfo",additionalInfo.SubParameter.Text);
-				Console.WriteLine(additionalInfo.SubParameter.Data.Length +"<-- length");
-				Console.WriteLine("First: "+additionalInfo.SubParameter.Data[0]);
-				Console.WriteLine("Last: "+additionalInfo.SubParameter.Data[additionalInfo.SubParameter.Data.Length-1]);
-					
 			}
 		}
 			

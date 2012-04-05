@@ -41,6 +41,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
 
         public TeleAuthorizationApdu()
         {
+			_parameters.Add(new BCDNumberParameter(0, 0, 0, 0, 0, 0));
             _parameters.Add(_amountParam);
             _parameters.Add(_currencyCodeParam);
         }
