@@ -1,7 +1,7 @@
 <Result>
   <Success>False</Success>
-  <ProtocolSpecificErrorCode>255</ProtocolSpecificErrorCode>
-  <ProtocolSpecificErrorDescription>System Error</ProtocolSpecificErrorDescription>
-  <RawData>04 0F 1A 27 FF 29 27 22 82 18 3C F0 F1 F5 4B 41 52 54 45 20 41 42 47 45 4C 45 48 4E 54 </RawData>
-  <AdditionalInfo>KARTE ABGELEHNT</AdditionalInfo>
+  <ProtocolSpecificErrorCode>51</ProtocolSpecificErrorCode>
+  <ProtocolSpecificErrorDescription>51</ProtocolSpecificErrorDescription>
+  <RawData>04 0F 14 27 33 29 27 22 82 18 3C F0 F0 F9 41 62 67 65 6C 65 68 6E 74 </RawData>
+  <AdditionalInfo>Abgelehnt</AdditionalInfo>
 </Result>
