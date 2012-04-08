@@ -20,6 +20,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         {
             try
             {
+				Console.WriteLine("Executing Abort Command");
                 CommandResult result = new CommandResult();
                 result.Success = true;
 
