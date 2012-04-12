@@ -56,5 +56,10 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
         /// </summary>
         /// <returns></returns>
         byte[] ReceiveResponsePacket();
+		
+		int MASTER_RESPONES_TIMEOUT{get; set;}
+		int RECEIVE_RESPONSE_TIMEOUT{get; set;}
+		
+		
     }
 }

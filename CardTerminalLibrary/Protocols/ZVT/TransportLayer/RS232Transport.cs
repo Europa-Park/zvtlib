@@ -8,7 +8,7 @@ using Wiffzack.Diagnostic.Log;
 using Wiffzack.Devices.CardTerminals.Common;
 using System.Diagnostics;
 using System.Threading;
-
+using Wiffzack.Services.Utils;
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
 {
     /// <summary>
@@ -27,8 +27,18 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
         /// <summary>
         /// The max time between a packet has been sent and the reception of an acknoledge packet
         /// </summary>
-        public const int BLOCK_TIMEOUT = 5000;
-		public const int MASTER_RESPONES_TIMEOUT = 180000;
+       	private int _RECEIVE_RESPONSE_TIMEOUT;
+        public int RECEIVE_RESPONSE_TIMEOUT
+		{
+			get { return _RECEIVE_RESPONSE_TIMEOUT; }
+			set { _RECEIVE_RESPONSE_TIMEOUT =(int) value;}
+		}
+		private int _MASTER_RESPONES_TIMEOUT;
+		public int MASTER_RESPONES_TIMEOUT
+		{
+			get { return _MASTER_RESPONES_TIMEOUT; }
+			set { _MASTER_RESPONES_TIMEOUT =(int) value;}
+		}
         /// <summary>
         /// Max number of repeats of a single packet
         /// </summary>
@@ -67,6 +77,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
             _log.Info("Loading RS232 Transport layer...");
             _log.Verbose("RS232 Transport layer using configuration: {0}", configuration.OuterXml);
             _serialPort = new SerialComm();
+			MASTER_RESPONES_TIMEOUT = XmlHelper.ReadInt(configuration,"TimeoutT4",180000);
+			RECEIVE_RESPONSE_TIMEOUT = XmlHelper.ReadInt(configuration,"TimeoutT3",5000);
             _serialPort.AutoOpen = false;
             _serialPort.SetupCommunication(configuration);
             _serialPort.OnDataReceived += new OnDataReceivedDelegate(_serialPort_OnDataReceived);
@@ -164,7 +176,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
                 //Read NAK or ACK or something else ;)
                 byte? statusByte = null;
 
-                statusByte = _buffer.WaitForByte(BLOCK_TIMEOUT, true);
+                statusByte = _buffer.WaitForByte(RECEIVE_RESPONSE_TIMEOUT, true);
 
                 if (statusByte != null && statusByte == ACK)
                 {
@@ -235,12 +247,12 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
 
             ReceiveStates currentState = ReceiveStates.WaitForStartingDLE;
 
-            int myTimeout = BLOCK_TIMEOUT;
+            int myTimeout = RECEIVE_RESPONSE_TIMEOUT;
 
             if (!_masterMode)
                 myTimeout = MASTER_RESPONES_TIMEOUT;
 
-            while (!frameComplete && (!_masterMode || Environment.TickCount - startTick < BLOCK_TIMEOUT))
+            while (!frameComplete && (!_masterMode || Environment.TickCount - startTick < RECEIVE_RESPONSE_TIMEOUT))
             {
                 //For the first [DLE] the timeout is BLOCK_TIMEOUT, after the DLE was received
                 //only BYTE_TIMEOUT is allowed during the bytes

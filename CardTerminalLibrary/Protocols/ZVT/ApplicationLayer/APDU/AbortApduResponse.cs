@@ -7,9 +7,9 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
     public class AbortApduResponse : ApduResponse
     {
 
-        public StatusInformationApdu.StatusParameterEnum ResultCode
+        public StatusCodes.ErrorIDEnum ResultCode
         {
-            get { return (StatusInformationApdu.StatusParameterEnum)base._rawApduData[3]; }
+            get { return (StatusCodes.ErrorIDEnum)base._rawApduData[3]; }
         }
 
         public AbortApduResponse(params byte[] rawData)

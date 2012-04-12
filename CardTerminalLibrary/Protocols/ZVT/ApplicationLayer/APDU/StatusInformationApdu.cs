@@ -52,26 +52,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
             ResultCodeBinary = 0xA0,
             TurnoverNr = 0x88,
             CardTypeName = 0x8B,
-			DiagnosisRequired = 0xC2,
-			CommunicationFault=0x9B,
-			SystemError=0xFF,
-			NoConnection=0xA3,
-			EndOfDayBatchNotPossible=0x77,
-			CardNotReadable=0x64,
-			CardDataNotPresent=0x65,
-			ProcessingError=0x66,
-			AbortViaTimeOutOrAbortKey=0x6C,
-			CreditNotSufficient=0x71,
-			CardExpired=0x78,
-			CardNotYetValid=0x79,
-			UnknownCard=0x7A,
-			CommunicationError=0x7D,
-			AllreadyReversed=0xB4,
-			ReversalNotPossible=0xB5,
-			OpenEndOfDayBatchPresent=0xF0,
-			VoltageSupplyToLow=0xBF,
-			InitialisationRequired=0x55,
-			FunctionNotPossible=0x83
+			
 
         }
 
@@ -257,8 +238,10 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
 				XmlHelper.WriteString(rootNode,"Additional",additional.SubParameter.Text);
 			PrefixedParameter<StatusPanEfId> panefid=this.FindParameter<PrefixedParameter<StatusPanEfId>>(StatusInformationApdu.StatusParameterEnum.PanEfId);
 			if(panefid!=null)
-				XmlHelper.WriteInt64(rootNode,"PanEfid",panefid.SubParameter.DecodeNumber());
+				XmlHelper.WriteString(rootNode,"PanEfid",panefid.SubParameter.DecodeNumberAsString());
+			
 			PrefixedParameter<BCDNumberParameter> amount=this.FindParameter<PrefixedParameter<BCDNumberParameter>>(StatusInformationApdu.StatusParameterEnum.Amount);
+			
 			if(amount!=null)
 				XmlHelper.WriteInt64(rootNode,"Amount",amount.SubParameter.DecodeNumber());
 			PrefixedParameter<AsciiLVarParameter> additionalInfo=this.FindParameter<PrefixedParameter<AsciiLVarParameter>>(StatusInformationApdu.StatusParameterEnum.AdditionalTextForCC);

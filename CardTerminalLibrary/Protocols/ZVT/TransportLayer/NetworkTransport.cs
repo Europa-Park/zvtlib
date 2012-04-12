@@ -24,9 +24,18 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
             public SocketError _socketError;
             public AsyncCallback _callback;
         }
-
-        private const int RECEIVE_RESPONSE_TIMEOUT = 5000;
-		public const int MASTER_RESPONES_TIMEOUT = 200000;
+		private int _RECEIVE_RESPONSE_TIMEOUT;
+         public int RECEIVE_RESPONSE_TIMEOUT
+		{
+			get { return _RECEIVE_RESPONSE_TIMEOUT; }
+			set { _RECEIVE_RESPONSE_TIMEOUT =(int) value;}
+		}
+		private int _MASTER_RESPONES_TIMEOUT;
+		public int MASTER_RESPONES_TIMEOUT
+		{
+			get { return _MASTER_RESPONES_TIMEOUT; }
+			set { _MASTER_RESPONES_TIMEOUT =(int) value;}
+		}
         /// <summary>
         /// If not in master mode always receive requests
         /// </summary>
@@ -58,10 +67,16 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
         public NetworkTransport(XmlElement config)
         {
             _config = config;
+			
         }
 
         public void OpenConnection()
         {
+			MASTER_RESPONES_TIMEOUT = XmlHelper.ReadInt(_config,"TimeoutT4",180000);
+			RECEIVE_RESPONSE_TIMEOUT = XmlHelper.ReadInt(_config,"TimeoutT3",5000);
+			_log.Info("Setting Timeouts");
+			_log.Info("T4 Timeout: "+MASTER_RESPONES_TIMEOUT);
+			_log.Info("T3 Timeout: "+RECEIVE_RESPONSE_TIMEOUT);
             _client = new TcpClient();
             _client.Connect(IPAddress.Parse(XmlHelper.ReadString(_config, "RemoteIP")), XmlHelper.ReadInt(_config, "RemotePort", 5577));
             StartReceive(null);
@@ -155,9 +170,20 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
 
             if (!_masterMode)
                 myTimeout = MASTER_RESPONES_TIMEOUT;
+			int waitTimeLeft=-1;
             while (NetworkTpdu.CreateFromBuffer(_receiveBuffer, false) == null && ( Environment.TickCount - start < myTimeout))
             {
-				_receiveBuffer.WaitForByte(myTimeout, false);
+				if(waitTimeLeft<1){
+					_receiveBuffer.WaitForByte(myTimeout, false);
+				}else{
+					_receiveBuffer.WaitForByte(waitTimeLeft, false);
+				}
+				/*
+				 * the waitTimeLeft variable is used if one waitForByte call does not wait for the full timeout duration
+				 * Without the waitTimeLeft variable the system would try to wait another full timeout duration instead of
+				 * the time left.
+				 */
+				waitTimeLeft=myTimeout-(Environment.TickCount - start);
             }
 
             NetworkTpdu responseTpdu = NetworkTpdu.CreateFromBuffer(_receiveBuffer, true);

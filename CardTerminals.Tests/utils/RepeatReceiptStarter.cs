@@ -83,8 +83,10 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 				environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
 				RepeatReceiptResult result = (RepeatReceiptResult) environment.CreateRepeatReceiptCommand((XmlElement)config.DocumentElement.SelectSingleNode("RepeatReceipt")).Execute();
 				//create XML file with result message
-				if(result.Success==true && result.Data!=null)
+				if(result.Success==true && result.Data!=null){
+					LogManager.Global.GetLogger("Wiffzack").Info("Writing Data");
 					result.Data.WriteXml(resultXML.DocumentElement);
+				}
 				result.SerializeToXml(resultXML.DocumentElement);
 				//save file in /tmp/result.xml
 				resultXML.Save(Starter.result);

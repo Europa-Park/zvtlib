@@ -129,7 +129,6 @@ namespace Wiffzack.Communication
 
             _port.ReadBufferSize = Math.Max(4096, XmlHelper.ReadInt(_config, "ReadBuffer", 4096));
             _port.WriteBufferSize = Math.Max(4096, XmlHelper.ReadInt(_config, "WriteBuffer", 4096));
-
             if(_autoOpen)
                 Open();
         }
