@@ -14,8 +14,10 @@ namespace Wiffzack.Devices.CardTerminals.Commands
         public IData Data
         {
             get { return _data; }
+			set { _data=(value); }
         }
-
+		public PaymentResult(){
+		}
         public PaymentResult(bool success, int? protocolSpecificErrorCode, string protocolSpecificDescription, IData data)
         {
             _success = success;

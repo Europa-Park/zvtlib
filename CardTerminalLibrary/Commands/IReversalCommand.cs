@@ -10,6 +10,6 @@ namespace Wiffzack.Devices.CardTerminals.Commands
     /// </summary>
     public interface IReversalCommand : ICommand
     {
-        CommandResult Execute();
+        PaymentResult Execute();
     }
 }

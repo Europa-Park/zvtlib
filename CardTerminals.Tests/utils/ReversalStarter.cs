@@ -83,9 +83,11 @@ namespace Wiffzack.Devices.CardTerminals.Tests
 				environment.StatusReceived += new IntermediateStatusDelegate(environment_StatusReceived);
 				ReversalCommand revers=(ReversalCommand)environment.CreateReversalCommand(null);
 				revers.ReceiptNr=(int)XmlHelper.ReadInt((XmlElement)config.DocumentElement.SelectSingleNode("Reversal"), "ReceiptNr");
-				CommandResult result=revers.Execute();
+				PaymentResult result=revers.Execute();
 				//create XML file with result message
 				result.SerializeToXml(resultXML.DocumentElement);
+				if(result.Data!=null)
+					result.Data.WriteXml(resultXML.DocumentElement);
 				//save file in /tmp/result.xml
 				resultXML.Save(Starter.result);
 				//debug message --> remove later

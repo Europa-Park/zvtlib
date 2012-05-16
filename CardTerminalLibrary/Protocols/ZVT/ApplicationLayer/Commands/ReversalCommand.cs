@@ -12,7 +12,7 @@ using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Parameters;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 {
-    public class ReversalCommand : CommandBase<ReversalApdu, CommandResult>, IReversalCommand
+    public class ReversalCommand : CommandBase<ReversalApdu, PaymentResult>, IReversalCommand
     {
         
         private Logger _log = LogManager.Global.GetLogger("Wiffzack");
@@ -45,11 +45,11 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             _apdu = new ReversalApdu();
         }
 
-        public override CommandResult Execute()
+        public override PaymentResult Execute()
         {
             try
             {
-                CommandResult result = new CommandResult();
+                PaymentResult result = new PaymentResult();
                 result.Success = true;
 
                 if(_environment.RaiseAskOpenConnection())
@@ -57,6 +57,12 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 
                 ApduCollection apdus = _commandTransmitter.TransmitAPDU(_apdu);
                 CheckForAbortApdu(result, apdus);
+				if(result.Success){
+					//Contains the result (success or failure) and much information about the transaction
+            		StatusInformationApdu statusInformation = apdus.FindFirstApduOfType<StatusInformationApdu>();
+					result.Data=statusInformation;
+				}
+
                 result.PrintDocuments = _commandTransmitter.PrintDocuments;
 
                 return result;
