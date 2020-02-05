@@ -104,7 +104,14 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
             ReadSettings(cmd, settings);
             return cmd;
         }
-		
+
+		public IPaymentCommand CreateRefundCommand(XmlElement settings) {
+			RefundCommand cmd = new RefundCommand(_transport, this);
+			cmd.Status += RaiseIntermediateStatusEvent;
+			ReadSettings(cmd, settings);
+			return cmd;
+		}
+
 		public ITelePaymentCommand CreateTelePaymentCommand(XmlElement settings)
         {
             TeleAuthorizationCommand cmd = new TeleAuthorizationCommand(_transport, this);

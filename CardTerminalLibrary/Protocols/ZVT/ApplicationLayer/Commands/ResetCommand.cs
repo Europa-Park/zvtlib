@@ -40,9 +40,9 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 
         #region ICommand Members
 
-        public event IntermediateStatusDelegate Status;
+        //public event IntermediateStatusDelegate Status;
 
-        public void ReadSettings(System.Xml.XmlElement settings)
+        public override void ReadSettings(System.Xml.XmlElement settings)
         {
             
         }

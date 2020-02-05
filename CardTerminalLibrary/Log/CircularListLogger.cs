@@ -55,7 +55,9 @@ namespace Wiffzack.Diagnostic.Log
 				if (_onFlush != null)				
 					_onFlush();				
 			}
+#pragma warning disable CS0168 // Variable is declared but never used
 			catch (Exception e_bad)
+#pragma warning restore CS0168 // Variable is declared but never used
 			{
 #if DEBUG
                 SysDebug.WriteLine("CircularListLogger: InternalFlush: Exception: " // TRANSLATEME
@@ -82,7 +84,9 @@ namespace Wiffzack.Diagnostic.Log
 				if (_onLog != null)
 					_onLog(_recordList, end_pointer);
 			}
+#pragma warning disable CS0168 // Variable is declared but never used
 			catch (Exception e_bad)
+#pragma warning restore CS0168 // Variable is declared but never used
 			{
 #if DEBUG
                 SysDebug.WriteLine("CircularListLogger: InternalPublish: Exception: " // TRANSLATEME
