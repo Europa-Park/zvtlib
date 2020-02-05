@@ -1,7 +1,0 @@
-03.04.2012 13:42:57,477 [Wiffzack] Debug: Transmitting TPDU: 06 18 00 
-03.04.2012 13:42:57,586 [Wiffzack] Debug: Received TPDU: 80 00 00 
-03.04.2012 13:42:57,586 [Wiffzack] Info: Received: 80, 00
-03.04.2012 13:42:57,758 [Wiffzack] Debug: Received TPDU: 06 0F 00 
-03.04.2012 13:42:57,805 [Wiffzack] Info: Received: 06, 0f
-03.04.2012 13:42:57,820 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
-03.04.2012 13:42:57,867 [Wiffzack] Info: XML file created
