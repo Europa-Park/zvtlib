@@ -16,3 +16,6 @@ tmp/
 /CardTerminals.Tests/bin/
 /*.suo
 /CardTerminalLibrary/binaries
+*/bin/*
+*/binaries/*
+*/obj/*
