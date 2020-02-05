@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU;
-
+using Wiffzack.Diagnostic.Log;
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.ApduHandlerDefinitions
 {
     public class AckSenderApduHandler : IApduHandler
@@ -17,7 +17,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.ApduHand
         /// Transport layer
         /// </summary>
         private IZvtTransport _transport;
-
+		private Logger _log = LogManager.Global.GetLogger("Wiffzack");
         public AckSenderApduHandler(IZvtTransport transport)
         {
             _transport = transport;
@@ -55,7 +55,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.ApduHand
         /// <returns></returns>
         public bool IsCompatibleHandler(IZvtApdu responseApdu)
         {
-            Console.WriteLine("Received: {0:x2}, {1:x2}", responseApdu.ControlField.Class, responseApdu.ControlField.Instruction);
+            _log.Info("Received: {0:x2}, {1:x2}", responseApdu.ControlField.Class, responseApdu.ControlField.Instruction);
             foreach (byte[] compatibleApdu in _compatibleApdus)
             {
                 if (responseApdu.ControlField.Equals(compatibleApdu))

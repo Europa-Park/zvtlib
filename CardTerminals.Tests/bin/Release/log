@@ -1,0 +1,516 @@
+22.02.2012 14:14:20,981 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+22.02.2012 14:14:21,509 [Wiffzack] Debug: Received TPDU: 80 00 00 
+22.02.2012 14:14:21,513 [Wiffzack] Info: Received: 80, 00
+22.02.2012 14:14:22,337 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+22.02.2012 14:14:22,337 [Wiffzack] Info: Received: 04, ff
+22.02.2012 14:14:22,338 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:14:22,360 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+22.02.2012 14:14:26,912 [Wiffzack] Debug: Received TPDU: 04 FF 01 17 
+22.02.2012 14:14:26,913 [Wiffzack] Info: Received: 04, ff
+22.02.2012 14:14:26,913 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:14:26,913 [Wiffzack] Info: [Info]  (StatusCode: 23)
+22.02.2012 14:17:08,763 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+22.02.2012 14:17:09,288 [Wiffzack] Debug: Received TPDU: 80 00 00 
+22.02.2012 14:17:09,293 [Wiffzack] Info: Received: 80, 00
+22.02.2012 14:17:10,157 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+22.02.2012 14:17:10,157 [Wiffzack] Info: Received: 04, ff
+22.02.2012 14:17:10,158 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:17:10,188 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+22.02.2012 14:17:35,44 [Wiffzack] Debug: Received TPDU: 04 FF 01 17 
+22.02.2012 14:17:35,44 [Wiffzack] Info: Received: 04, ff
+22.02.2012 14:17:35,44 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:17:35,45 [Wiffzack] Info: [Info]  (StatusCode: 23)
+22.02.2012 14:17:35,52 [Wiffzack] Debug: Received TPDU: 04 0F 49 27 77 04 00 00 00 4D 03 00 0C 14 17 20 0D 02 22 60 F0 F5 F3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+22.02.2012 14:17:35,57 [Wiffzack] Info: Received: 04, 0f
+22.02.2012 14:17:35,57 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:17:35,57 [Wiffzack] Debug: Received TPDU: 04 0F 49 27 77 04 00 00 00 4D 03 00 0C 14 17 20 0D 02 22 60 F0 F5 F3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+22.02.2012 14:17:35,57 [Wiffzack] Info: Received: 04, 0f
+22.02.2012 14:17:35,57 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:17:35,57 [Wiffzack] Debug: Received TPDU: 04 0F 49 27 77 04 00 00 00 4D 03 00 0C 14 17 20 0D 02 22 60 F0 F5 F3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+22.02.2012 14:17:35,57 [Wiffzack] Info: Received: 04, 0f
+22.02.2012 14:17:35,57 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:17:35,58 [Wiffzack] Debug: Received TPDU: 06 1E 01 FF 
+22.02.2012 14:17:35,58 [Wiffzack] Info: Received: 06, 1e
+22.02.2012 14:17:35,58 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:17:35,62 [Wiffzack] Info: XML file created
+22.02.2012 14:23:25,653 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+22.02.2012 14:23:26,179 [Wiffzack] Debug: Received TPDU: 80 00 00 
+22.02.2012 14:23:26,184 [Wiffzack] Info: Received: 80, 00
+22.02.2012 14:23:27,3 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+22.02.2012 14:23:27,4 [Wiffzack] Info: Received: 04, ff
+22.02.2012 14:23:27,5 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:23:27,27 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+22.02.2012 14:31:30,166 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+22.02.2012 14:31:30,692 [Wiffzack] Debug: Received TPDU: 80 00 00 
+22.02.2012 14:31:30,694 [Wiffzack] Info: Received: 80, 00
+22.02.2012 14:31:32,850 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+22.02.2012 14:31:32,851 [Wiffzack] Info: Received: 04, ff
+22.02.2012 14:31:32,851 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:31:32,880 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+22.02.2012 14:35:55,476 [Wiffzack] Info: Connection Error: Connection refused
+22.02.2012 14:36:02,833 [Wiffzack] Info: Connection Error: Connection refused
+22.02.2012 14:36:05,553 [Wiffzack] Info: Connection Error: Connection refused
+22.02.2012 14:36:06,553 [Wiffzack] Info: Connection Error: Connection refused
+22.02.2012 14:36:07,889 [Wiffzack] Info: Connection Error: Connection refused
+22.02.2012 14:36:09,61 [Wiffzack] Info: Connection Error: Connection refused
+22.02.2012 14:36:10,470 [Wiffzack] Info: Connection Error: Connection refused
+22.02.2012 14:36:29,42 [Wiffzack] Info: Connection Error: Connection refused
+22.02.2012 14:36:30,481 [Wiffzack] Info: Connection Error: Connection refused
+22.02.2012 14:36:50,503 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+22.02.2012 14:36:51,28 [Wiffzack] Debug: Received TPDU: 80 00 00 
+22.02.2012 14:36:51,71 [Wiffzack] Info: Received: 80, 00
+22.02.2012 14:36:51,858 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+22.02.2012 14:36:51,859 [Wiffzack] Info: Received: 04, ff
+22.02.2012 14:36:51,860 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:36:51,888 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+22.02.2012 14:37:15,408 [Wiffzack] Debug: Received TPDU: 04 FF 01 17 
+22.02.2012 14:37:15,409 [Wiffzack] Info: Received: 04, ff
+22.02.2012 14:37:15,409 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:15,409 [Wiffzack] Info: [Info]  (StatusCode: 23)
+22.02.2012 14:37:15,416 [Wiffzack] Debug: Received TPDU: 04 0F 49 27 77 04 00 00 00 4D 03 00 0C 14 37 01 0D 02 22 60 F0 F5 F3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+22.02.2012 14:37:15,430 [Wiffzack] Info: Received: 04, 0f
+22.02.2012 14:37:15,431 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:15,431 [Wiffzack] Debug: Received TPDU: 04 0F 49 27 77 04 00 00 00 4D 03 00 0C 14 37 01 0D 02 22 60 F0 F5 F3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+22.02.2012 14:37:15,431 [Wiffzack] Info: Received: 04, 0f
+22.02.2012 14:37:15,431 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:15,431 [Wiffzack] Debug: Received TPDU: 04 0F 49 27 77 04 00 00 00 4D 03 00 0C 14 37 01 0D 02 22 60 F0 F5 F3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+22.02.2012 14:37:15,431 [Wiffzack] Info: Received: 04, 0f
+22.02.2012 14:37:15,431 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:15,431 [Wiffzack] Debug: Received TPDU: 06 1E 01 FF 
+22.02.2012 14:37:15,431 [Wiffzack] Info: Received: 06, 1e
+22.02.2012 14:37:15,431 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:15,436 [Wiffzack] Info: XML file created
+22.02.2012 14:37:41,547 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+22.02.2012 14:37:42,74 [Wiffzack] Debug: Received TPDU: 80 00 00 
+22.02.2012 14:37:42,79 [Wiffzack] Info: Received: 80, 00
+22.02.2012 14:37:42,901 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+22.02.2012 14:37:42,901 [Wiffzack] Info: Received: 04, ff
+22.02.2012 14:37:42,902 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:42,926 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+22.02.2012 14:37:47,559 [Wiffzack] Debug: Received TPDU: 04 FF 01 17 
+22.02.2012 14:37:47,559 [Wiffzack] Info: Received: 04, ff
+22.02.2012 14:37:47,560 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:47,560 [Wiffzack] Info: [Info]  (StatusCode: 23)
+22.02.2012 14:37:50,12 [Wiffzack] Debug: Received TPDU: 04 0F 49 27 77 04 00 00 00 4D 03 00 0C 14 37 51 0D 02 22 60 F0 F5 F3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+22.02.2012 14:37:50,27 [Wiffzack] Info: Received: 04, 0f
+22.02.2012 14:37:50,27 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:50,168 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 2A 2A 20 4B 41 53 53 45 4E 53 43 48 4E 49 54 54 20 2A 2A 20 20 20 
+22.02.2012 14:37:50,170 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:37:50,170 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:50,244 [Wiffzack] Debug: Received TPDU: 06 D1 1A 00 54 45 53 54 20 41 4E 49 4D 41 20 4D 55 4E 44 49 20 48 41 4E 44 45 4C 53 47 
+22.02.2012 14:37:50,244 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:37:50,245 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:50,321 [Wiffzack] Debug: Received TPDU: 06 D1 1D 00 42 52 55 45 4E 4E 45 52 20 53 54 52 20 32 34 31 2D 32 34 33 2F 4F 42 4A 20 48 31 36 
+22.02.2012 14:37:50,321 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:37:50,321 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:50,398 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 32 32 30 31 20 47 45 52 41 53 44 4F 52 46 20 20 20 20 20 20 20 20 20 20 
+22.02.2012 14:37:50,398 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:37:50,399 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:50,474 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
+22.02.2012 14:37:50,474 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:37:50,474 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:50,550 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
+22.02.2012 14:37:50,551 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:37:50,551 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:50,629 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 32 30 31 32 2E 30 32 2E 32 32 20 31 34 3A 33 37 3A 34 34 20 20 20 20 20 
+22.02.2012 14:37:50,629 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:37:50,629 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:50,705 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 54 65 72 6D 69 6E 61 6C 2D 49 44 3A 20 20 20 20 32 37 32 32 38 32 31 38 
+22.02.2012 14:37:50,706 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:37:50,706 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:50,782 [Wiffzack] Debug: Received TPDU: 06 D1 14 00 56 65 72 62 69 6E 64 75 6E 67 73 70 72 6F 62 6C 65 6D 3A 
+22.02.2012 14:37:50,782 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:37:50,783 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:50,859 [Wiffzack] Debug: Received TPDU: 06 D1 13 00 4B 65 69 6E 65 20 DC 62 65 72 74 72 61 67 75 6E 67 21 
+22.02.2012 14:37:50,859 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:37:50,860 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:50,935 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 
+22.02.2012 14:37:50,935 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:37:50,935 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:51,11 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+22.02.2012 14:37:51,11 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:37:51,11 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:51,90 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+22.02.2012 14:37:51,90 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:37:51,90 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:51,168 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+22.02.2012 14:37:51,169 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:37:51,169 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:51,245 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+22.02.2012 14:37:51,245 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:37:51,245 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:51,321 [Wiffzack] Debug: Received TPDU: 06 D1 01 81 
+22.02.2012 14:37:51,322 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:37:51,322 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:51,463 [Wiffzack] Debug: Received TPDU: 06 1E 01 77 
+22.02.2012 14:37:51,464 [Wiffzack] Info: Received: 06, 1e
+22.02.2012 14:37:51,464 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:37:51,480 [Wiffzack] Info: XML file created
+22.02.2012 14:38:02,167 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+22.02.2012 14:38:02,693 [Wiffzack] Debug: Received TPDU: 80 00 00 
+22.02.2012 14:38:02,698 [Wiffzack] Info: Received: 80, 00
+22.02.2012 14:38:04,330 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+22.02.2012 14:38:04,331 [Wiffzack] Info: Received: 04, ff
+22.02.2012 14:38:04,332 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:04,358 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+22.02.2012 14:38:14,628 [Wiffzack] Debug: Received TPDU: 04 FF 01 17 
+22.02.2012 14:38:14,629 [Wiffzack] Info: Received: 04, ff
+22.02.2012 14:38:14,629 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:14,629 [Wiffzack] Info: [Info]  (StatusCode: 23)
+22.02.2012 14:38:14,636 [Wiffzack] Debug: Received TPDU: 04 0F 49 27 77 04 00 00 00 4D 03 00 0C 14 38 13 0D 02 22 60 F0 F5 F3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+22.02.2012 14:38:14,651 [Wiffzack] Info: Received: 04, 0f
+22.02.2012 14:38:14,651 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:14,727 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 2A 2A 20 4B 41 53 53 45 4E 53 43 48 4E 49 54 54 20 2A 2A 20 20 20 
+22.02.2012 14:38:14,728 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:38:14,728 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:14,802 [Wiffzack] Debug: Received TPDU: 06 D1 1A 00 54 45 53 54 20 41 4E 49 4D 41 20 4D 55 4E 44 49 20 48 41 4E 44 45 4C 53 47 
+22.02.2012 14:38:14,803 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:38:14,803 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:14,880 [Wiffzack] Debug: Received TPDU: 06 D1 1D 00 42 52 55 45 4E 4E 45 52 20 53 54 52 20 32 34 31 2D 32 34 33 2F 4F 42 4A 20 48 31 36 
+22.02.2012 14:38:14,880 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:38:14,880 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:14,957 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 32 32 30 31 20 47 45 52 41 53 44 4F 52 46 20 20 20 20 20 20 20 20 20 20 
+22.02.2012 14:38:14,957 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:38:14,957 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:15,32 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
+22.02.2012 14:38:15,32 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:38:15,32 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:15,108 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
+22.02.2012 14:38:15,109 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:38:15,109 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:15,186 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 32 30 31 32 2E 30 32 2E 32 32 20 31 34 3A 33 38 3A 30 35 20 20 20 20 20 
+22.02.2012 14:38:15,186 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:38:15,186 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:15,262 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 54 65 72 6D 69 6E 61 6C 2D 49 44 3A 20 20 20 20 32 37 32 32 38 32 31 38 
+22.02.2012 14:38:15,263 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:38:15,263 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:15,342 [Wiffzack] Debug: Received TPDU: 06 D1 14 00 56 65 72 62 69 6E 64 75 6E 67 73 70 72 6F 62 6C 65 6D 3A 
+22.02.2012 14:38:15,342 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:38:15,342 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:15,418 [Wiffzack] Debug: Received TPDU: 06 D1 13 00 4B 65 69 6E 65 20 DC 62 65 72 74 72 61 67 75 6E 67 21 
+22.02.2012 14:38:15,418 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:38:15,418 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:15,493 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 
+22.02.2012 14:38:15,494 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:38:15,494 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:15,570 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+22.02.2012 14:38:15,570 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:38:15,570 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:15,646 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+22.02.2012 14:38:15,894 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:38:15,967 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:15,991 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+22.02.2012 14:38:15,992 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:38:15,992 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:16,67 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+22.02.2012 14:38:16,67 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:38:16,67 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:16,144 [Wiffzack] Debug: Received TPDU: 06 D1 01 81 
+22.02.2012 14:38:16,144 [Wiffzack] Info: Received: 06, d1
+22.02.2012 14:38:16,144 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:16,288 [Wiffzack] Debug: Received TPDU: 06 1E 01 77 
+22.02.2012 14:38:16,289 [Wiffzack] Info: Received: 06, 1e
+22.02.2012 14:38:16,289 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:16,299 [Wiffzack] Info: XML file created
+22.02.2012 14:38:32,545 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+22.02.2012 14:38:33,72 [Wiffzack] Debug: Received TPDU: 80 00 00 
+22.02.2012 14:38:33,77 [Wiffzack] Info: Received: 80, 00
+22.02.2012 14:38:33,880 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+22.02.2012 14:38:33,880 [Wiffzack] Info: Received: 04, ff
+22.02.2012 14:38:33,881 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:38:33,911 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+22.02.2012 14:40:56,644 [Wiffzack] Info: Connection Error: No route to host
+22.02.2012 14:40:59,651 [Wiffzack] Info: Connection Error: No route to host
+22.02.2012 14:41:29,436 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+22.02.2012 14:41:29,962 [Wiffzack] Debug: Received TPDU: 80 00 00 
+22.02.2012 14:41:29,967 [Wiffzack] Info: Received: 80, 00
+22.02.2012 14:41:31,580 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+22.02.2012 14:41:31,580 [Wiffzack] Info: Received: 04, ff
+22.02.2012 14:41:31,581 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:41:31,609 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+22.02.2012 14:43:05,917 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+22.02.2012 14:43:06,442 [Wiffzack] Debug: Received TPDU: 80 00 00 
+22.02.2012 14:43:06,444 [Wiffzack] Info: Received: 80, 00
+22.02.2012 14:43:07,278 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+22.02.2012 14:43:07,279 [Wiffzack] Info: Received: 04, ff
+22.02.2012 14:43:07,279 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:43:07,308 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+22.02.2012 14:43:27,312 [Wiffzack] Info: System Error:Object reference not set to an instance of an object
+22.02.2012 14:55:05,946 [Wiffzack] Info: Connection Error: Connection refused
+22.02.2012 14:55:23,964 [Wiffzack] Info: Connection Error: No route to host
+22.02.2012 14:55:37,681 [Wiffzack] Info: Connection Error: No route to host
+22.02.2012 14:56:25,885 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+22.02.2012 14:56:26,410 [Wiffzack] Debug: Received TPDU: 80 00 00 
+22.02.2012 14:56:26,415 [Wiffzack] Info: Received: 80, 00
+22.02.2012 14:56:27,232 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+22.02.2012 14:56:27,233 [Wiffzack] Info: Received: 04, ff
+22.02.2012 14:56:27,234 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 14:56:27,265 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+22.02.2012 14:56:47,268 [Wiffzack] Info: System Error:A system exception has occurred.
+22.02.2012 15:03:51,903 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+22.02.2012 15:03:53,921 [Wiffzack] Info: System Error:Connection Time Out Occoured
+22.02.2012 15:04:02,374 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+22.02.2012 15:04:02,899 [Wiffzack] Debug: Received TPDU: 80 00 00 
+22.02.2012 15:04:02,903 [Wiffzack] Info: Received: 80, 00
+22.02.2012 15:04:03,729 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+22.02.2012 15:04:03,730 [Wiffzack] Info: Received: 04, ff
+22.02.2012 15:04:03,730 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:04:03,757 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+22.02.2012 15:04:08,322 [Wiffzack] Debug: Received TPDU: 04 FF 01 17 
+22.02.2012 15:04:08,323 [Wiffzack] Info: Received: 04, ff
+22.02.2012 15:04:08,323 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:04:08,324 [Wiffzack] Info: [Info]  (StatusCode: 23)
+22.02.2012 15:04:10,776 [Wiffzack] Debug: Received TPDU: 04 0F 49 27 77 04 00 00 00 4D 03 00 0C 15 04 12 0D 02 22 60 F0 F5 F3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+22.02.2012 15:04:10,788 [Wiffzack] Info: Received: 04, 0f
+22.02.2012 15:04:10,788 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:04:10,936 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 2A 2A 20 4B 41 53 53 45 4E 53 43 48 4E 49 54 54 20 2A 2A 20 20 20 
+22.02.2012 15:04:10,937 [Wiffzack] Info: Received: 06, d1
+22.02.2012 15:04:10,937 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:04:11,12 [Wiffzack] Debug: Received TPDU: 06 D1 1A 00 54 45 53 54 20 41 4E 49 4D 41 20 4D 55 4E 44 49 20 48 41 4E 44 45 4C 53 47 
+22.02.2012 15:04:11,12 [Wiffzack] Info: Received: 06, d1
+22.02.2012 15:04:11,12 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:04:11,88 [Wiffzack] Debug: Received TPDU: 06 D1 1D 00 42 52 55 45 4E 4E 45 52 20 53 54 52 20 32 34 31 2D 32 34 33 2F 4F 42 4A 20 48 31 36 
+22.02.2012 15:04:11,88 [Wiffzack] Info: Received: 06, d1
+22.02.2012 15:04:11,88 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:04:11,166 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 32 32 30 31 20 47 45 52 41 53 44 4F 52 46 20 20 20 20 20 20 20 20 20 20 
+22.02.2012 15:04:11,166 [Wiffzack] Info: Received: 06, d1
+22.02.2012 15:04:11,166 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:04:11,243 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
+22.02.2012 15:04:11,244 [Wiffzack] Info: Received: 06, d1
+22.02.2012 15:04:11,244 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:04:11,319 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
+22.02.2012 15:04:11,319 [Wiffzack] Info: Received: 06, d1
+22.02.2012 15:04:11,319 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:04:11,395 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 32 30 31 32 2E 30 32 2E 32 32 20 31 35 3A 30 34 3A 30 34 20 20 20 20 20 
+22.02.2012 15:04:11,396 [Wiffzack] Info: Received: 06, d1
+22.02.2012 15:04:11,396 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:04:11,472 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 54 65 72 6D 69 6E 61 6C 2D 49 44 3A 20 20 20 20 32 37 32 32 38 32 31 38 
+22.02.2012 15:04:11,472 [Wiffzack] Info: Received: 06, d1
+22.02.2012 15:04:11,472 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:04:11,549 [Wiffzack] Debug: Received TPDU: 06 D1 14 00 56 65 72 62 69 6E 64 75 6E 67 73 70 72 6F 62 6C 65 6D 3A 
+22.02.2012 15:04:11,549 [Wiffzack] Info: Received: 06, d1
+22.02.2012 15:04:11,549 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:04:11,625 [Wiffzack] Debug: Received TPDU: 06 D1 13 00 4B 65 69 6E 65 20 DC 62 65 72 74 72 61 67 75 6E 67 21 
+22.02.2012 15:04:11,626 [Wiffzack] Info: Received: 06, d1
+22.02.2012 15:04:11,626 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:04:11,703 [Wiffzack] Debug: Received TPDU: 06 D1 19 00 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 3D 
+22.02.2012 15:04:11,704 [Wiffzack] Info: Received: 06, d1
+22.02.2012 15:04:11,704 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:04:11,779 [Wiffzack] Debug: Received TPDU: 06 D1 02 00 20 
+22.02.2012 15:04:11,779 [Wiffzack] Info: Received: 06, d1
+22.02.2012 15:04:11,779 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:04:31,783 [Wiffzack] Info: System Error:Connection Time Out Occoured
+22.02.2012 15:25:11,176 [Wiffzack] Info: Connection Error: No route to host
+22.02.2012 15:25:41,84 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+22.02.2012 15:25:41,692 [Wiffzack] Debug: Received TPDU: 80 00 00 
+22.02.2012 15:25:41,697 [Wiffzack] Info: Received: 80, 00
+22.02.2012 15:25:42,597 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+22.02.2012 15:25:42,597 [Wiffzack] Info: Received: 04, ff
+22.02.2012 15:25:42,598 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:25:42,625 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+22.02.2012 15:27:42,627 [Wiffzack] Info: Network Error:Connection Time Out Occoured
+22.02.2012 15:30:19,442 [Wiffzack] Info: Connection Error: Connection refused
+22.02.2012 15:30:29,227 [Wiffzack] Debug: Transmitting TPDU: 06 00 06 12 34 56 9E 09 78 
+22.02.2012 15:30:29,755 [Wiffzack] Debug: Received TPDU: 80 00 00 
+22.02.2012 15:30:29,760 [Wiffzack] Info: Received: 80, 00
+22.02.2012 15:30:29,764 [Wiffzack] Debug: Received TPDU: 06 0F 07 19 00 29 27 22 82 18 
+22.02.2012 15:30:29,770 [Wiffzack] Info: Received: 06, 0f
+22.02.2012 15:30:29,771 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:30:29,776 [Wiffzack] Info: XML file created
+22.02.2012 15:30:45,514 [Wiffzack] Debug: Transmitting TPDU: 06 50 03 00 00 00 
+22.02.2012 15:30:46,39 [Wiffzack] Debug: Received TPDU: 80 00 00 
+22.02.2012 15:30:46,43 [Wiffzack] Info: Received: 80, 00
+22.02.2012 15:30:46,890 [Wiffzack] Debug: Received TPDU: 04 FF 01 0E 
+22.02.2012 15:30:46,891 [Wiffzack] Info: Received: 04, ff
+22.02.2012 15:30:46,892 [Wiffzack] Debug: Transmitting TPDU: 80 00 00 
+22.02.2012 15:30:46,920 [Wiffzack] Info: [Info] Arbeite... (StatusCode: 14)
+22.02.2012 15:53:50,557 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 15:53:50,575 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 15:53:50,584 [Wiffzack.Devices.CardTerminals] Fatal: Cannot open RS232 port: System.IO.IOException: No such file or directory
+  at System.IO.Ports.SerialPortStream.ThrowIOException () [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.SerialPortStream..ctor (System.String portName, Int32 baudRate, Int32 dataBits, Parity parity, StopBits stopBits, Boolean dtrEnable, Boolean rtsEnable, Handshake handshake, Int32 readTimeout, Int32 writeTimeout, Int32 readBufferSize, Int32 writeBufferSize) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPortStream:.ctor (string,int,int,System.IO.Ports.Parity,System.IO.Ports.StopBits,bool,bool,System.IO.Ports.Handshake,int,int,int,int)
+  at System.IO.Ports.SerialPort.Open () [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPort:Open ()
+  at Wiffzack.Communication.SerialComm.Open () [0x00000] in <filename unknown>:0 
+  at Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer.RS232Transport.OpenConnection () [0x00000] in <filename unknown>:0 
+22.02.2012 15:53:50,587 [Wiffzack] Info: System Error:Cannot open RS232 port
+22.02.2012 15:56:22,417 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 15:56:22,435 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 15:57:13,205 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 15:57:13,223 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 15:57:20,884 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 15:57:20,903 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 15:57:44,438 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 15:57:44,457 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 15:58:29,450 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 15:58:29,469 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 15:58:29,478 [Wiffzack.Devices.CardTerminals] Fatal: Cannot open RS232 port: System.IO.IOException: No such file or directory
+  at System.IO.Ports.SerialPortStream.ThrowIOException () [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.SerialPortStream..ctor (System.String portName, Int32 baudRate, Int32 dataBits, Parity parity, StopBits stopBits, Boolean dtrEnable, Boolean rtsEnable, Handshake handshake, Int32 readTimeout, Int32 writeTimeout, Int32 readBufferSize, Int32 writeBufferSize) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPortStream:.ctor (string,int,int,System.IO.Ports.Parity,System.IO.Ports.StopBits,bool,bool,System.IO.Ports.Handshake,int,int,int,int)
+  at System.IO.Ports.SerialPort.Open () [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPort:Open ()
+  at Wiffzack.Communication.SerialComm.Open () [0x00000] in <filename unknown>:0 
+  at Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer.RS232Transport.OpenConnection () [0x00000] in <filename unknown>:0 
+22.02.2012 15:58:29,481 [Wiffzack] Info: System Error:Cannot open RS232 port
+22.02.2012 15:58:34,931 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 15:58:34,949 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 15:58:34,958 [Wiffzack.Devices.CardTerminals] Fatal: Cannot open RS232 port: System.IO.IOException: No such file or directory
+  at System.IO.Ports.SerialPortStream.ThrowIOException () [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.SerialPortStream..ctor (System.String portName, Int32 baudRate, Int32 dataBits, Parity parity, StopBits stopBits, Boolean dtrEnable, Boolean rtsEnable, Handshake handshake, Int32 readTimeout, Int32 writeTimeout, Int32 readBufferSize, Int32 writeBufferSize) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPortStream:.ctor (string,int,int,System.IO.Ports.Parity,System.IO.Ports.StopBits,bool,bool,System.IO.Ports.Handshake,int,int,int,int)
+  at System.IO.Ports.SerialPort.Open () [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPort:Open ()
+  at Wiffzack.Communication.SerialComm.Open () [0x00000] in <filename unknown>:0 
+  at Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer.RS232Transport.OpenConnection () [0x00000] in <filename unknown>:0 
+22.02.2012 15:58:34,961 [Wiffzack] Info: System Error:Cannot open RS232 port
+22.02.2012 15:58:59,90 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 15:58:59,108 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 15:58:59,117 [Wiffzack.Devices.CardTerminals] Fatal: Cannot open RS232 port: System.IO.IOException: No such file or directory
+  at System.IO.Ports.SerialPortStream.ThrowIOException () [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.SerialPortStream..ctor (System.String portName, Int32 baudRate, Int32 dataBits, Parity parity, StopBits stopBits, Boolean dtrEnable, Boolean rtsEnable, Handshake handshake, Int32 readTimeout, Int32 writeTimeout, Int32 readBufferSize, Int32 writeBufferSize) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPortStream:.ctor (string,int,int,System.IO.Ports.Parity,System.IO.Ports.StopBits,bool,bool,System.IO.Ports.Handshake,int,int,int,int)
+  at System.IO.Ports.SerialPort.Open () [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPort:Open ()
+  at Wiffzack.Communication.SerialComm.Open () [0x00000] in <filename unknown>:0 
+  at Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer.RS232Transport.OpenConnection () [0x00000] in <filename unknown>:0 
+22.02.2012 15:58:59,120 [Wiffzack] Info: System Error:Cannot open RS232 port
+22.02.2012 15:59:23,127 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 15:59:23,146 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 15:59:23,154 [Wiffzack.Devices.CardTerminals] Fatal: Cannot open RS232 port: System.IO.IOException: No such file or directory
+  at System.IO.Ports.SerialPortStream.ThrowIOException () [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.SerialPortStream..ctor (System.String portName, Int32 baudRate, Int32 dataBits, Parity parity, StopBits stopBits, Boolean dtrEnable, Boolean rtsEnable, Handshake handshake, Int32 readTimeout, Int32 writeTimeout, Int32 readBufferSize, Int32 writeBufferSize) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPortStream:.ctor (string,int,int,System.IO.Ports.Parity,System.IO.Ports.StopBits,bool,bool,System.IO.Ports.Handshake,int,int,int,int)
+  at System.IO.Ports.SerialPort.Open () [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPort:Open ()
+  at Wiffzack.Communication.SerialComm.Open () [0x00000] in <filename unknown>:0 
+  at Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer.RS232Transport.OpenConnection () [0x00000] in <filename unknown>:0 
+22.02.2012 15:59:23,157 [Wiffzack] Info: System Error:Cannot open RS232 port
+22.02.2012 16:00:01,928 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:00:01,946 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:00:12,290 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:00:12,308 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:00:12,317 [Wiffzack.Devices.CardTerminals] Fatal: Cannot open RS232 port: System.IO.IOException: No such file or directory
+  at System.IO.Ports.SerialPortStream.ThrowIOException () [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.SerialPortStream..ctor (System.String portName, Int32 baudRate, Int32 dataBits, Parity parity, StopBits stopBits, Boolean dtrEnable, Boolean rtsEnable, Handshake handshake, Int32 readTimeout, Int32 writeTimeout, Int32 readBufferSize, Int32 writeBufferSize) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPortStream:.ctor (string,int,int,System.IO.Ports.Parity,System.IO.Ports.StopBits,bool,bool,System.IO.Ports.Handshake,int,int,int,int)
+  at System.IO.Ports.SerialPort.Open () [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPort:Open ()
+  at Wiffzack.Communication.SerialComm.Open () [0x00000] in <filename unknown>:0 
+  at Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer.RS232Transport.OpenConnection () [0x00000] in <filename unknown>:0 
+22.02.2012 16:00:12,320 [Wiffzack] Info: System Error:Cannot open RS232 port
+22.02.2012 16:00:38,392 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:00:38,410 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:02:16,395 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:02:16,413 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:03:40,228 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:03:40,247 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:03:59,657 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:03:59,676 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:04:09,291 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:04:09,310 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:04:40,756 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:04:40,775 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:06:17,944 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:06:17,963 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:06:44,160 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:06:44,179 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:06:44,188 [Wiffzack.Devices.CardTerminals] Fatal: Cannot open RS232 port: System.IO.IOException: No such file or directory
+  at System.IO.Ports.SerialPortStream.ThrowIOException () [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.SerialPortStream..ctor (System.String portName, Int32 baudRate, Int32 dataBits, Parity parity, StopBits stopBits, Boolean dtrEnable, Boolean rtsEnable, Handshake handshake, Int32 readTimeout, Int32 writeTimeout, Int32 readBufferSize, Int32 writeBufferSize) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPortStream:.ctor (string,int,int,System.IO.Ports.Parity,System.IO.Ports.StopBits,bool,bool,System.IO.Ports.Handshake,int,int,int,int)
+  at System.IO.Ports.SerialPort.Open () [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPort:Open ()
+  at Wiffzack.Communication.SerialComm.Open () [0x00000] in <filename unknown>:0 
+  at Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer.RS232Transport.OpenConnection () [0x00000] in <filename unknown>:0 
+22.02.2012 16:06:44,191 [Wiffzack] Info: System Error:Cannot open RS232 port
+22.02.2012 16:06:48,134 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:06:48,152 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:06:48,161 [Wiffzack.Devices.CardTerminals] Fatal: Cannot open RS232 port: System.IO.IOException: No such file or directory
+  at System.IO.Ports.SerialPortStream.ThrowIOException () [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.SerialPortStream..ctor (System.String portName, Int32 baudRate, Int32 dataBits, Parity parity, StopBits stopBits, Boolean dtrEnable, Boolean rtsEnable, Handshake handshake, Int32 readTimeout, Int32 writeTimeout, Int32 readBufferSize, Int32 writeBufferSize) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPortStream:.ctor (string,int,int,System.IO.Ports.Parity,System.IO.Ports.StopBits,bool,bool,System.IO.Ports.Handshake,int,int,int,int)
+  at System.IO.Ports.SerialPort.Open () [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPort:Open ()
+  at Wiffzack.Communication.SerialComm.Open () [0x00000] in <filename unknown>:0 
+  at Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer.RS232Transport.OpenConnection () [0x00000] in <filename unknown>:0 
+22.02.2012 16:06:48,164 [Wiffzack] Info: System Error:Cannot open RS232 port
+22.02.2012 16:06:53,451 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:06:53,469 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:06:58,572 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:06:58,591 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:07:48,143 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:07:48,161 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:07:48,170 [Wiffzack.Devices.CardTerminals] Fatal: Cannot open RS232 port: System.IO.IOException: No such file or directory
+  at System.IO.Ports.SerialPortStream.ThrowIOException () [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.SerialPortStream..ctor (System.String portName, Int32 baudRate, Int32 dataBits, Parity parity, StopBits stopBits, Boolean dtrEnable, Boolean rtsEnable, Handshake handshake, Int32 readTimeout, Int32 writeTimeout, Int32 readBufferSize, Int32 writeBufferSize) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPortStream:.ctor (string,int,int,System.IO.Ports.Parity,System.IO.Ports.StopBits,bool,bool,System.IO.Ports.Handshake,int,int,int,int)
+  at System.IO.Ports.SerialPort.Open () [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPort:Open ()
+  at Wiffzack.Communication.SerialComm.Open () [0x00000] in <filename unknown>:0 
+  at Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer.RS232Transport.OpenConnection () [0x00000] in <filename unknown>:0 
+22.02.2012 16:07:48,173 [Wiffzack] Info: System Error:Cannot open RS232 port
+22.02.2012 16:07:51,405 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:07:51,426 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:08:25,755 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:08:25,773 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:08:25,782 [Wiffzack.Devices.CardTerminals] Fatal: Cannot open RS232 port: System.IO.IOException: No such file or directory
+  at System.IO.Ports.SerialPortStream.ThrowIOException () [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.SerialPortStream..ctor (System.String portName, Int32 baudRate, Int32 dataBits, Parity parity, StopBits stopBits, Boolean dtrEnable, Boolean rtsEnable, Handshake handshake, Int32 readTimeout, Int32 writeTimeout, Int32 readBufferSize, Int32 writeBufferSize) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPortStream:.ctor (string,int,int,System.IO.Ports.Parity,System.IO.Ports.StopBits,bool,bool,System.IO.Ports.Handshake,int,int,int,int)
+  at System.IO.Ports.SerialPort.Open () [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPort:Open ()
+  at Wiffzack.Communication.SerialComm.Open () [0x00000] in <filename unknown>:0 
+  at Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer.RS232Transport.OpenConnection () [0x00000] in <filename unknown>:0 
+22.02.2012 16:08:25,785 [Wiffzack] Info: System Error:Cannot open RS232 port
+22.02.2012 16:08:58,156 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:08:58,175 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:08:58,183 [Wiffzack.Devices.CardTerminals] Fatal: Cannot open RS232 port: System.IO.IOException: No such file or directory
+  at System.IO.Ports.SerialPortStream.ThrowIOException () [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.SerialPortStream..ctor (System.String portName, Int32 baudRate, Int32 dataBits, Parity parity, StopBits stopBits, Boolean dtrEnable, Boolean rtsEnable, Handshake handshake, Int32 readTimeout, Int32 writeTimeout, Int32 readBufferSize, Int32 writeBufferSize) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPortStream:.ctor (string,int,int,System.IO.Ports.Parity,System.IO.Ports.StopBits,bool,bool,System.IO.Ports.Handshake,int,int,int,int)
+  at System.IO.Ports.SerialPort.Open () [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPort:Open ()
+  at Wiffzack.Communication.SerialComm.Open () [0x00000] in <filename unknown>:0 
+  at Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer.RS232Transport.OpenConnection () [0x00000] in <filename unknown>:0 
+22.02.2012 16:08:58,186 [Wiffzack] Info: System Error:Cannot open RS232 port
+22.02.2012 16:11:25,648 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:11:25,666 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:12:33,788 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:12:33,807 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:12:33,816 [Wiffzack.Devices.CardTerminals] Fatal: Cannot open RS232 port: System.IO.IOException: No such file or directory
+  at System.IO.Ports.SerialPortStream.ThrowIOException () [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.SerialPortStream..ctor (System.String portName, Int32 baudRate, Int32 dataBits, Parity parity, StopBits stopBits, Boolean dtrEnable, Boolean rtsEnable, Handshake handshake, Int32 readTimeout, Int32 writeTimeout, Int32 readBufferSize, Int32 writeBufferSize) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPortStream:.ctor (string,int,int,System.IO.Ports.Parity,System.IO.Ports.StopBits,bool,bool,System.IO.Ports.Handshake,int,int,int,int)
+  at System.IO.Ports.SerialPort.Open () [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPort:Open ()
+  at Wiffzack.Communication.SerialComm.Open () [0x00000] in <filename unknown>:0 
+  at Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer.RS232Transport.OpenConnection () [0x00000] in <filename unknown>:0 
+22.02.2012 16:12:33,819 [Wiffzack] Info: System Error:Cannot open RS232 port
+22.02.2012 16:12:37,671 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:12:37,690 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:16:16,909 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:16:16,928 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:16:16,936 [Wiffzack.Devices.CardTerminals] Fatal: Cannot open RS232 port: System.IO.IOException: No such file or directory
+  at System.IO.Ports.SerialPortStream.ThrowIOException () [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.SerialPortStream..ctor (System.String portName, Int32 baudRate, Int32 dataBits, Parity parity, StopBits stopBits, Boolean dtrEnable, Boolean rtsEnable, Handshake handshake, Int32 readTimeout, Int32 writeTimeout, Int32 readBufferSize, Int32 writeBufferSize) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPortStream:.ctor (string,int,int,System.IO.Ports.Parity,System.IO.Ports.StopBits,bool,bool,System.IO.Ports.Handshake,int,int,int,int)
+  at System.IO.Ports.SerialPort.Open () [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPort:Open ()
+  at Wiffzack.Communication.SerialComm.Open () [0x00000] in <filename unknown>:0 
+  at Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer.RS232Transport.OpenConnection () [0x00000] in <filename unknown>:0 
+22.02.2012 16:16:16,939 [Wiffzack] Info: System Error:Cannot open RS232 port
+22.02.2012 16:16:21,903 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:16:21,921 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>
+22.02.2012 16:16:21,930 [Wiffzack.Devices.CardTerminals] Fatal: Cannot open RS232 port: System.IO.IOException: No such file or directory
+  at System.IO.Ports.SerialPortStream.ThrowIOException () [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.SerialPortStream..ctor (System.String portName, Int32 baudRate, Int32 dataBits, Parity parity, StopBits stopBits, Boolean dtrEnable, Boolean rtsEnable, Handshake handshake, Int32 readTimeout, Int32 writeTimeout, Int32 readBufferSize, Int32 writeBufferSize) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPortStream:.ctor (string,int,int,System.IO.Ports.Parity,System.IO.Ports.StopBits,bool,bool,System.IO.Ports.Handshake,int,int,int,int)
+  at System.IO.Ports.SerialPort.Open () [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPort:Open ()
+  at Wiffzack.Communication.SerialComm.Open () [0x00000] in <filename unknown>:0 
+  at Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer.RS232Transport.OpenConnection () [0x00000] in <filename unknown>:0 
+22.02.2012 16:16:21,933 [Wiffzack] Info: System Error:Cannot open RS232 port
+22.02.2012 16:16:27,45 [Wiffzack.Devices.CardTerminals] Info: Loading RS232 Transport layer...
+22.02.2012 16:16:27,64 [Wiffzack.Devices.CardTerminals] Verbose: RS232 Transport layer using configuration: <TransportSettings><Port>/dev/ttyUSB0</Port><BaudRate>9600</BaudRate><Parity>None</Parity><StopBits>One</StopBits></TransportSettings>

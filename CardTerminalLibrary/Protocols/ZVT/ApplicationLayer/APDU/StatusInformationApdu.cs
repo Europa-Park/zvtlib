@@ -51,7 +51,9 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
             AdditionalTextForCC = 0x3C,
             ResultCodeBinary = 0xA0,
             TurnoverNr = 0x88,
-            CardTypeName = 0x8B
+            CardTypeName = 0x8B,
+			
+
         }
 
 
@@ -228,7 +230,27 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
         public void WriteXml(XmlElement rootNode)
         {
             XmlHelper.WriteString(rootNode, "RawData", ByteHelpers.ByteToString(_rawApduData));
-        }
+			BCDNumberParameter receiptNr=this.FindParameter<BCDNumberParameter>(StatusInformationApdu.StatusParameterEnum.ReceiptNr);
+			if(receiptNr!=null)
+				XmlHelper.WriteInt64(rootNode,"ReceiptNr",receiptNr.DecodeNumber());
+			PrefixedParameter<AsciiLVarParameter> additional=this.FindParameter<PrefixedParameter<AsciiLVarParameter>>(StatusInformationApdu.StatusParameterEnum.AdditionalCardDataForECCash);
+			if(additional!=null)
+				XmlHelper.WriteString(rootNode,"Additional",additional.SubParameter.Text);
+			PrefixedParameter<StatusPanEfId> panefid=this.FindParameter<PrefixedParameter<StatusPanEfId>>(StatusInformationApdu.StatusParameterEnum.PanEfId);
+			if(panefid!=null)
+				XmlHelper.WriteString(rootNode,"PanEfid",panefid.SubParameter.DecodeNumberAsString());
+			
+			PrefixedParameter<BCDNumberParameter> amount=this.FindParameter<PrefixedParameter<BCDNumberParameter>>(StatusInformationApdu.StatusParameterEnum.Amount);
+			
+			if(amount!=null)
+				XmlHelper.WriteInt64(rootNode,"Amount",amount.SubParameter.DecodeNumber());
+			PrefixedParameter<AsciiLVarParameter> additionalInfo=this.FindParameter<PrefixedParameter<AsciiLVarParameter>>(StatusInformationApdu.StatusParameterEnum.AdditionalTextForCC);
+		
+			if(additionalInfo!=null){
+				XmlHelper.WriteString(rootNode,"AdditionalInfo",additionalInfo.SubParameter.Text);
+			}
+		}
+			
 
         public void ReadXml(XmlElement rootNode)
         {

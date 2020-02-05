@@ -13,8 +13,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 
         public string Text
         {
-            get { return Encoding.ASCII.GetString(_data); }
-            set { _data = Encoding.ASCII.GetBytes(value); }
+            get { return  Encoding.GetEncoding(28591).GetString(_data); }
+            set { _data = Encoding.GetEncoding(28591).GetBytes(value); }
         }
 
      

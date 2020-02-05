@@ -53,17 +53,17 @@ namespace Wiffzack.Communication
         {
             try
             {
-                
                 lock (_port)
                 {
+					_port.ReadTimeout=10000;
+					_port.WriteTimeout=2000;
                     StateObj state;
                     state.data = new byte[BUFFER_SIZE];
-
                     _port.BaseStream.BeginRead(state.data, 0, BUFFER_SIZE, new AsyncCallback(ReadCallback), state);
                 }
             }
-            catch (Exception)
-            { }
+            catch (Exception e)
+            { Console.WriteLine(e.Message);}
         }
 
         /// <summary>
@@ -129,7 +129,6 @@ namespace Wiffzack.Communication
 
             _port.ReadBufferSize = Math.Max(4096, XmlHelper.ReadInt(_config, "ReadBuffer", 4096));
             _port.WriteBufferSize = Math.Max(4096, XmlHelper.ReadInt(_config, "WriteBuffer", 4096));
-
             if(_autoOpen)
                 Open();
         }
@@ -157,11 +156,10 @@ namespace Wiffzack.Communication
         /// </summary>
         public void Open()
         {
-            _port.Open();
+			_port.Open();
 
             if (OnConnectionEstablished != null)
                 OnConnectionEstablished(this);
-
             StartRead();
         }
 

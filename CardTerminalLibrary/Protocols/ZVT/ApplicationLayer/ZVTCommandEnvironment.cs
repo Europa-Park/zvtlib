@@ -39,7 +39,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
             get
             {
                 XmlElement config = (XmlElement)_environmentConfig.SelectSingleNode("RegistrationCommand");
-
+				
                 if (config == null)
                 {
                     config = (XmlElement)_environmentConfig.AppendChild(_environmentConfig.OwnerDocument.CreateElement("RegistrationCommand"));
@@ -53,15 +53,14 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
         public ZVTCommandEnvironment(XmlElement environmentConfig)
         {
             _environmentConfig = environmentConfig;
-
             string transport = XmlHelper.ReadString(environmentConfig, "Transport");
-
             if (transport == null)
                 throw new ArgumentException("No transport layer specified");
 
             if (transport.Equals("serial", StringComparison.InvariantCultureIgnoreCase))
             {
                 XmlElement serialConfig = (XmlElement)environmentConfig.SelectSingleNode("TransportSettings");
+				
                 if(serialConfig == null)
                     throw new ArgumentException("No serial configuration specified");
 
@@ -72,7 +71,6 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
                 XmlElement networkConfig = (XmlElement)environmentConfig.SelectSingleNode("TransportSettings");
                 if (networkConfig == null)
                     throw new ArgumentException("No network configuration specified");
-
                 _transport = new NetworkTransport(networkConfig);
             }
         }
@@ -102,6 +100,14 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
         public IPaymentCommand CreatePaymentCommand(XmlElement settings)
         {
             AuthorizationCommand cmd = new AuthorizationCommand(_transport, this);
+            cmd.Status += RaiseIntermediateStatusEvent;
+            ReadSettings(cmd, settings);
+            return cmd;
+        }
+		
+		public ITelePaymentCommand CreateTelePaymentCommand(XmlElement settings)
+        {
+            TeleAuthorizationCommand cmd = new TeleAuthorizationCommand(_transport, this);
             cmd.Status += RaiseIntermediateStatusEvent;
             ReadSettings(cmd, settings);
             return cmd;
@@ -138,10 +144,27 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
             ReadSettings(cmd, settings);
             return cmd;
         }
+		
+		public IAbortCommand CreateAbortCommand(XmlElement settings)
+        {
+            AbortCommand cmd = new AbortCommand(_transport, this);
+            cmd.Status += RaiseIntermediateStatusEvent;
+            ReadSettings(cmd, settings);
+            return cmd;
+        }
+
 
         public IDiagnosisCommand CreateDiagnosisCommand(XmlElement settings)
         {
             NetworkDiagnosisCommand cmd = new NetworkDiagnosisCommand(_transport, this);
+            cmd.Status += RaiseIntermediateStatusEvent;
+            ReadSettings(cmd, settings);
+            return cmd;
+        }
+		
+		 public IRepeatReceiptCommand CreateRepeatReceiptCommand(XmlElement settings)
+        {
+            RepeatReceiptCommand cmd = new RepeatReceiptCommand(_transport, this);
             cmd.Status += RaiseIntermediateStatusEvent;
             ReadSettings(cmd, settings);
             return cmd;

@@ -1,0 +1,7 @@
+<Result>
+  <Success>False</Success>
+  <ProtocolSpecificErrorCode>51</ProtocolSpecificErrorCode>
+  <ProtocolSpecificErrorDescription>51</ProtocolSpecificErrorDescription>
+  <RawData>04 0F 14 27 33 29 27 22 82 18 3C F0 F0 F9 41 62 67 65 6C 65 68 6E 74 </RawData>
+  <AdditionalInfo>Abgelehnt</AdditionalInfo>
+</Result>

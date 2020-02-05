@@ -36,7 +36,7 @@ namespace Wiffzack.Diagnostic.Log
 			this.loglevel_ = init_level;
 			this.name_ = logger_name;
 			this.domain_ = (parent != null)?
-				(parent.DomainName + "." + logger_name) : logger_name;
+				(parent.DomainName) : logger_name;
 		}
 
 		/*------------------------------------------------------------

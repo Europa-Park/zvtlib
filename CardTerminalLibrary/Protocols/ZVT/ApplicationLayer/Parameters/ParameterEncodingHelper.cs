@@ -88,7 +88,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
             int dataLength = ExtractLVarLength(buffer, offset, lengthBytes);
 
             byte[] data = new byte[dataLength];
-            Array.Copy(buffer, offset + 2, data, 0, dataLength);
+            Array.Copy(buffer, offset + lengthBytes, data, 0, dataLength);
 
             return data;
         }

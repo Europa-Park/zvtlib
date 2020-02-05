@@ -4,7 +4,7 @@ using System.Text;
 using Wiffzack.Devices.CardTerminals.PrintSupport;
 using System.Xml;
 using Wiffzack.Services.Utils;
-
+using Wiffzack.Devices.CardTerminals.Common;
 namespace Wiffzack.Devices.CardTerminals.Commands
 {
     public class CommandResult
@@ -45,7 +45,7 @@ namespace Wiffzack.Devices.CardTerminals.Commands
         public string ProtocolSpecificErrorDescription
         {
             get { return _protocolSpecificErrorDescription; }
-            set { _protocolSpecificErrorDescription = value; }
+            set { _protocolSpecificErrorDescription = StringHelper.addSpaces(value); }
         }
 
         public IPrintDocument[] PrintDocuments
@@ -62,21 +62,25 @@ namespace Wiffzack.Devices.CardTerminals.Commands
         {
             _success = success;
             _protocolSpecificErrorCode = protocolSpecificErrorCode;
-            _protocolSpecificErrorDescription = protocolSpecificErrorMessage;
+            _protocolSpecificErrorDescription = StringHelper.addSpaces(protocolSpecificErrorMessage);
         }
 
         public virtual void SerializeToXml(XmlElement rootNode)
         {
             XmlHelper.WriteBool(rootNode, "Success", Success);
-            XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", _protocolSpecificErrorCode);
-            XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", _protocolSpecificErrorDescription);
+			if(_protocolSpecificErrorCode!=null)
+            	XmlHelper.WriteInt(rootNode, "ProtocolSpecificErrorCode", _protocolSpecificErrorCode);
+			if(_protocolSpecificErrorDescription!=null && !_protocolSpecificErrorDescription.Equals(""))
+            	XmlHelper.WriteString(rootNode, "ProtocolSpecificErrorDescription", _protocolSpecificErrorDescription);
 
             if (_printDocuments != null)
             {
                 foreach (IPrintDocument document in _printDocuments)
                 {
-                    XmlElement documentRoot = (XmlElement)rootNode.AppendChild(rootNode.OwnerDocument.CreateElement("Document"));
-                    document.SerializeToXml(documentRoot);
+                    if(document!=null){
+						XmlElement documentRoot = (XmlElement)rootNode.AppendChild(rootNode.OwnerDocument.CreateElement("Document"));
+	                    document.SerializeToXml(documentRoot);
+					}
                 }
             }
 

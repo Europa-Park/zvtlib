@@ -4,6 +4,7 @@ using System.Text;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU;
 using Wiffzack.Devices.CardTerminals.Commands;
+using Wiffzack.Devices.CardTerminals.Common;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 {
@@ -82,7 +83,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             {
                 cmdResult.Success = false;
                 cmdResult.ProtocolSpecificErrorCode = (byte)status.Status;
-                cmdResult.ProtocolSpecificErrorDescription = status.Status.ToString();
+                cmdResult.ProtocolSpecificErrorDescription =status.Status.ToString();
                 return true;
             }
             

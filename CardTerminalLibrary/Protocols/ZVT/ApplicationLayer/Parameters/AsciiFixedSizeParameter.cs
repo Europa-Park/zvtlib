@@ -9,8 +9,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Paramete
 
         public string Text
         {
-            get { return Encoding.ASCII.GetString(_myData); }
-            set { _myData = Encoding.ASCII.GetBytes(value); }
+            get { return Encoding.GetEncoding(28591).GetString(_myData); }
+            set { _myData = Encoding.GetEncoding(28591).GetBytes(value); }
         }
 
         public AsciiFixedSizeParameter(int size)

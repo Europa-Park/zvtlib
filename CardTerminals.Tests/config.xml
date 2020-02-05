@@ -1,0 +1,26 @@
+<Config>
+	<!--<Transport>Serial</Transport>-->
+	<Transport>Network</Transport>
+	
+	<!--<TransportSettings>
+		<Port>/dev/ttyUSB0</Port>
+		<BaudRate>9600</BaudRate>
+		<Parity>None</Parity>
+		<StopBits>One</StopBits>
+		<DataBits>8</DataBits>
+		<ReadBuffer>4096</ReadBuffer>
+		<WriteBuffer>4096</WriteBuffer>
+	</TransportSettings>-->
+
+	<TransportSettings>
+		<RemoteIP>aaa:192.168.1.3</RemoteIP>
+		<RemotePort>a51234</RemotePort>
+	</TransportSettings>
+
+	<RegistrationCommand>
+		<ECRPrintsAdministrationReceipts>False</ECRPrintsAdministrationReceipts>
+		<ECRPrintsPaymentReceipt>False</ECRPrintsPaymentReceipt>
+		<PTDisableAmountInput>True</PTDisableAmountInput>
+		<PTDisableAdministrationFunctions>False</PTDisableAdministrationFunctions>
+	</RegistrationCommand>
+</Config>
