@@ -104,11 +104,14 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             {
                 StatusInformationResultCode result = statusInformation.FindParameter<StatusInformationResultCode>(StatusInformationApdu.StatusParameterEnum.ResultCode);
 
-                if (result.ResultCode != StatusCodes.ErrorIDEnum.NoError)
+                if (result?.ResultCode != StatusCodes.ErrorIDEnum.NoError)
                 {
                     success = false;
-                    errorCode = (byte)result.ResultCode;
-                    errorDescription = result.ResultCode.ToString();
+
+                    if (result != null) {
+                        errorCode = (byte)result.ResultCode;
+                        errorDescription = result.ResultCode.ToString();
+                    } 
                 }
             }
             else if (status != null && status.Status != StatusCodes.ErrorIDEnum.NoError)

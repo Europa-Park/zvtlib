@@ -5,6 +5,7 @@ using Wiffzack.Devices.CardTerminals.Commands;
 using System.Xml;
 using Wiffzack.Services.Utils;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands;
+using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Parameters;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
@@ -75,10 +76,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
             }
         }
 
-        public void RaiseIntermediateStatusEvent(IntermediateStatus status)
-        {
-            if (StatusReceived != null)
-                StatusReceived(status);
+        public void RaiseIntermediateStatusEvent(IntermediateStatus status) {
+            StatusReceived?.Invoke(status);
         }
 
         private void ReadSettings(ICommand command, XmlElement settings)
@@ -89,9 +88,13 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer
 
         #region ICommandEnvironment Members
 
-        public IInitialisationCommand CreateInitialisationCommand(XmlElement settings)
+        public IInitialisationCommand CreateInitialisationCommand(XmlElement settings) {
+            return CreateInitialisationCommand(settings, null);
+        }
+
+        public IInitialisationCommand CreateInitialisationCommand(XmlElement settings, List<TLVItem> tlvParameters)
         {
-            RegistrationCommand cmd = new RegistrationCommand(_transport, this);
+            RegistrationCommand cmd = new RegistrationCommand(_transport, this, tlvParameters);
             cmd.Status += RaiseIntermediateStatusEvent;
             ReadSettings(cmd, settings);
             return cmd;

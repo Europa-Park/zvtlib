@@ -32,6 +32,10 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
         }
         */
 
+		/// <summary>
+        /// Password parameter is required but not evaluated
+        /// </summary>
+        private BCDNumberParameter _Password = new BCDNumberParameter(0, 0, 0, 0, 0, 0);
 
         public Int64 CentAmount
         {
@@ -41,6 +45,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
 
         public AuthorizationApdu()
         {
+            //_parameters.Add(_Password);
             _parameters.Add(_amountParam);
             _parameters.Add(_currencyCodeParam);
         }

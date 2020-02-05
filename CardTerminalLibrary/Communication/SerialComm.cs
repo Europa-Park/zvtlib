@@ -47,7 +47,10 @@ namespace Wiffzack.Communication
 					_port.WriteTimeout=2000;
                     StateObj state;
                     state.data = new byte[BUFFER_SIZE];
-                    _port.BaseStream.BeginRead(state.data, 0, BUFFER_SIZE, ReadCallback, state);
+
+                    if (_port.IsOpen) {
+                        _port.BaseStream.BeginRead(state.data, 0, BUFFER_SIZE, ReadCallback, state);
+                    }
                 }
             }
             catch (Exception e)
@@ -63,12 +66,15 @@ namespace Wiffzack.Communication
             try
             {
                 int read;
-                lock (_SerialPortLock)
-                    read = _port.BaseStream.EndRead(ar);
+                lock (_SerialPortLock) {
+                    if (_port.IsOpen) {
+                        read = _port.BaseStream.EndRead(ar);
+                        StateObj state = (StateObj)ar.AsyncState;
+                        OnDataReceived?.Invoke(state.data, read);
 
-                StateObj state = (StateObj)ar.AsyncState;
-                OnDataReceived?.Invoke(state.data, read);
-
+                    }
+                }
+                
                 StartRead();
             }
             //Die Verbindung wurde beendet

@@ -32,10 +32,10 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
 
         private Logger _log = LogManager.Global.GetLogger("Wiffzack");
 
-        public RegistrationCommand(IZvtTransport transport, ZVTCommandEnvironment env)
+        public RegistrationCommand(IZvtTransport transport, ZVTCommandEnvironment env, List<TLVItem> tlvParameters = null)
         {
             _transport = transport;
-            _registration = new RegistrationApdu();
+            _registration = new RegistrationApdu(tlvParameters);
             _environment = env;
 
             XmlElement myConfig = env.RegistrationCommandConfig;

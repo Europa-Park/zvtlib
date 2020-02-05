@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Parameters;
 using Wiffzack.Devices.CardTerminals.Commands;
@@ -76,6 +77,13 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
         {
             _parameters.Clear();
 
+            if (_rawApduData == null || _rawApduData.Length <= 3) {
+                return;
+            }
+
+            // If the initial length byte at index 2 is 0xFF two additional length bytes follow
+            var offset = _rawApduData?.ElementAt(2) == 0xFF ? 5 : 3;
+
             LoadParameterHelper.LoadParameters(CreateParameterForBMP,
                 (LoadParameterHelper.AddToParameterListDelegate)delegate(byte bmp, IParameter param)
                 {
@@ -84,7 +92,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
                     else
                         _parameters.Add((StatusParameterEnum)bmp, param);
                 },
-                _rawApduData, 3);
+                _rawApduData, offset);
         }
 
         /// <summary>

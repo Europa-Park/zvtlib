@@ -111,6 +111,9 @@
     <Compile Include="Commands\IDiagnosisCommand.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\RefundCommand.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\ResetCommand.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\ParameterByteHelper.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\TLVContainerParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\TLV\TLVTag.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\ZVTCommandEnvironment.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\AuthorizationCommand.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\CommandBase.cs" />
@@ -165,10 +168,7 @@
     <Compile Include="Protocols\ZVT\TransportLayer\IZvtTpdu.cs" />
     <Compile Include="Protocols\ZVT\TransportLayer\TpduBase.cs" />
     <Compile Include="Protocols\ZVT\TransportLayer\TransportException.cs" />
-    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\TLVParameter.cs" />
-    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\ParameterByteHelper.cs" />
-    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\TLV\TLVTag.cs" />
-    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\TLV\TLVLength.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\TLV\TLVItem.cs" />
     <Compile Include="Protocols\ZVT\TransportLayer\ConnectionTimeOutException.cs" />
     <Compile Include="Common\StringHelper.cs" />
     <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\AbortApdu.cs" />

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Parameters;
+using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Parameters.TLV;
 
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
 {
@@ -52,12 +54,16 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
             set { _serviceByte.Enabled = value; }
         }
 
-        public RegistrationApdu()
+        public RegistrationApdu(List<TLVItem> tlvParameters = null)
         {
             _parameters.Add(_passwordParam);
             _parameters.Add(_configByteParam);
             _parameters.Add(_currencyCode);
             _parameters.Add(_serviceByte);
+
+            if (tlvParameters != null && tlvParameters.Any()) {
+                _parameters.Add(new TLVContainerParameter(tlvParameters));
+            }
         }
 
         protected override byte[] ByteControlField
@@ -71,9 +77,8 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.APDU
 
             foreach (IParameter param in _parameters)
                 param.AddToBytes(buffer);
-//			buffer.Add(0x06);
-//			buffer.Add(0x00);
-			int len=buffer.Count;
+
+            int len=buffer.Count;
 			byte[] lenarr=ParameterByteHelper.convertLength(len);
 			for(int i=lenarr.Length-1;i>=0;i--){
 				buffer.Insert(0,lenarr[i]);
