@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer;
 using System.Xml;
 using Wiffzack.Communication;
 using Wiffzack.Diagnostic.Log;
 using Wiffzack.Devices.CardTerminals.Common;
 using System.Diagnostics;
-using System.Threading;
 using Wiffzack.Services.Utils;
 namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
 {
@@ -24,21 +22,13 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
         /// </summary>
         public const int BYTE_TIMEOUT = 1000;
 
-        /// <summary>
-        /// The max time between a packet has been sent and the reception of an acknoledge packet
-        /// </summary>
-       	private int _RECEIVE_RESPONSE_TIMEOUT;
-        public int RECEIVE_RESPONSE_TIMEOUT
-		{
-			get { return _RECEIVE_RESPONSE_TIMEOUT; }
-			set { _RECEIVE_RESPONSE_TIMEOUT =(int) value;}
-		}
-		private int _MASTER_RESPONES_TIMEOUT;
-		public int MASTER_RESPONES_TIMEOUT
-		{
-			get { return _MASTER_RESPONES_TIMEOUT; }
-			set { _MASTER_RESPONES_TIMEOUT =(int) value;}
-		}
+		/// <summary>
+		/// The max time between a packet has been sent and the reception of an acknoledge packet
+		/// </summary>
+		public int RECEIVE_RESPONSE_TIMEOUT { get; set; }
+
+        public int MASTER_RESPONES_TIMEOUT { get; set; }
+
         /// <summary>
         /// Max number of repeats of a single packet
         /// </summary>
@@ -81,7 +71,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
 			RECEIVE_RESPONSE_TIMEOUT = XmlHelper.ReadInt(configuration,"TimeoutT3",5000);
             _serialPort.AutoOpen = false;
             _serialPort.SetupCommunication(configuration);
-            _serialPort.OnDataReceived += new OnDataReceivedDelegate(_serialPort_OnDataReceived);
+            _serialPort.OnDataReceived += _serialPort_OnDataReceived;
         }
 
         #region Serial Port data handling
@@ -97,24 +87,28 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
         public void OpenConnection()
         {
 			_log.Info("Opening Serial Port");
+
             try
             {
                 _serialPort.Open();
-            }
+                _log.Info("Serial Port opened");
+			}
             catch (Exception ex)
             {
                 _log.Fatal("Cannot open RS232 port: {0}", ex);
                 throw new RS232TransportException("Cannot open RS232 port");
             }
-			_log.Info("Serial Port Opend");
         }
 
         public void CloseConnection()
         {
-            try
+            _log.Info("Closing Serial Port");
+
+			try
             {
                 _serialPort.Close();
-            }
+                _log.Info("Serial Port closed");
+			}
             catch (Exception ex)
             {
                 _log.Warning("RS232Transport: Error closing port, exception omitted: {0}", ex);
@@ -154,7 +148,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
         /// <param name="status"></param>
         private void SendStatus(byte status)
         {
-            _serialPort.SendData(new byte[] { status }, 0, 1);
+            _serialPort.SendData(new [] { status }, 0, 1);
         }
 
         /// <summary>
@@ -174,9 +168,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
                 _serialPort.SendData(tpduData, 0, tpduData.Length);
 
                 //Read NAK or ACK or something else ;)
-                byte? statusByte = null;
-
-                statusByte = _buffer.WaitForByte(RECEIVE_RESPONSE_TIMEOUT, true);
+                var statusByte = _buffer.WaitForByte(RECEIVE_RESPONSE_TIMEOUT, true);
 
                 if (statusByte != null && statusByte == ACK)
                 {
@@ -193,7 +185,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
             if (transmitSucceded == false)
             {
                 _log.Debug("TPDU transmission failed {0}-times, reporting error to application layer", transmitCounter);
-                throw new RS232TransportException(string.Format("TPDU transmission failed {0}-times, reporting error to application layer", transmitCounter));
+                throw new RS232TransportException($"TPDU transmission failed {transmitCounter}-times, reporting error to application layer");
             }
             else
             {
@@ -215,19 +207,20 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
             while (receiveCounter < MAX_BLOCKREPEATS)
             {
                 byte[] tpduFrameData = ReceiveTpduFrame();
-				if(tpduFrameData==null)
+
+                if (tpduFrameData==null)
 					throw new ConnectionTimeOutException();
+
                 RS232Tpdu receivedTpdu = RS232Tpdu.CreateFromTPDUBytes(tpduFrameData);
-                if (tpduFrameData != null && receivedTpdu.CheckCRC(tpduFrameData[tpduFrameData.Length - 2], tpduFrameData[tpduFrameData.Length - 1]))
+
+                if (receivedTpdu.CheckCRC(tpduFrameData[tpduFrameData.Length - 2], tpduFrameData[tpduFrameData.Length - 1]))
                 {
                     SendStatus(ACK);
                     return receivedTpdu.GetAPDUData();
                 }
-                else
-                {
-                    receiveCounter++;
-                    SendStatus(NAK);
-                }
+
+                receiveCounter++;
+                SendStatus(NAK);
             }
 
             return null;
@@ -236,7 +229,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
         /// <summary>
         /// Waits for a complete TPDU frame, checks the checksum and sends the ACK, NAK
         /// </summary>
-        /// <returns></returns
+        /// <returns></returns>
         private byte[] ReceiveTpduFrame()
         {
             bool frameComplete = false;
@@ -283,7 +276,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.TransportLayer
                     currentState = ReceiveStates.APDUData;
                 else if (currentState == ReceiveStates.WaitForSTX)
                 {
-                    _log.Debug("ReceiveTpduFrame: No STX after DLE, reseting and waiting for DLE");
+                    _log.Debug("ReceiveTpduFrame: No STX after DLE, resetting and waiting for DLE");
                     currentState = ReceiveStates.WaitForStartingDLE;
                     frameData.Clear();
                 }

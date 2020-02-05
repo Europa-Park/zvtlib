@@ -61,6 +61,7 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
             {
                 if(_environment.RaiseAskOpenConnection())
                     _transport.OpenConnection();
+
                 MagicResponseCommandTransmitter commandTransmitter = new MagicResponseCommandTransmitter(_transport);
                 commandTransmitter.ResponseReceived += new Action<IZvtApdu>(commandTransmitter_ResponseReceived);
                 commandTransmitter.StatusReceived += new Action<IntermediateStatusApduResponse>(commandTransmitter_StatusReceived);

@@ -35,14 +35,19 @@ namespace Wiffzack.Devices.CardTerminals.Protocols.ZVT.ApplicationLayer.Commands
         {
 
         }
+
         public void Execute()
         {
-            if(_environment.RaiseAskOpenConnection())
-                _transport.OpenConnection();
-            ApduCollection responses = _commandTransmitter.TransmitAPDU(_initialisation);
-
-            if(_environment.RaiseAskCloseConnection())
-                _transport.CloseConnection();
+            try {
+                if (_environment.RaiseAskOpenConnection())
+                    _transport.OpenConnection();
+                ApduCollection responses = _commandTransmitter.TransmitAPDU(_initialisation);
+            } 
+            finally 
+            {
+                if (_environment.RaiseAskCloseConnection())
+                    _transport.CloseConnection();
+            }
         }
 
     }

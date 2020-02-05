@@ -1,40 +1,28 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.IO.Ports;
-using System.Diagnostics;
 using System.IO;
 using System.Xml;
 using Wiffzack.Services.Utils;
 
 namespace Wiffzack.Communication
 {
-    public class SerialComm:ICommunication
-    {
+    public class SerialComm:ICommunication {
+        private readonly object _SerialPortLock = new object();
         private const int BUFFER_SIZE = 256;
 
         /// <summary>
         /// Gibt an ob das serielle Port bei Konfiguration automatisch geöffnet werden soll
         /// (notwendig für ICommunication)
         /// </summary>
-        private bool _autoOpen = true;
-
-        public bool AutoOpen
-        {
-            get { return _autoOpen; }
-            set { _autoOpen = value; }
-        }
+        public bool AutoOpen { get; set; } = true;
 
         private struct StateObj
         {
             public byte[] data;
         }
 
-        private SerialPort _port = null;
+        private SerialPort _port;
         private XmlElement _config;
-
-
-
 
         public SerialComm()
         {
@@ -53,13 +41,13 @@ namespace Wiffzack.Communication
         {
             try
             {
-                lock (_port)
+                lock (_SerialPortLock)
                 {
 					_port.ReadTimeout=10000;
 					_port.WriteTimeout=2000;
                     StateObj state;
                     state.data = new byte[BUFFER_SIZE];
-                    _port.BaseStream.BeginRead(state.data, 0, BUFFER_SIZE, new AsyncCallback(ReadCallback), state);
+                    _port.BaseStream.BeginRead(state.data, 0, BUFFER_SIZE, ReadCallback, state);
                 }
             }
             catch (Exception e)
@@ -75,20 +63,17 @@ namespace Wiffzack.Communication
             try
             {
                 int read;
-                lock (_port)
+                lock (_SerialPortLock)
                     read = _port.BaseStream.EndRead(ar);
 
                 StateObj state = (StateObj)ar.AsyncState;
-                if (OnDataReceived != null)
-                    OnDataReceived(state.data, read);
+                OnDataReceived?.Invoke(state.data, read);
 
                 StartRead();
             }
             //Die Verbindung wurde beendet
-            catch (IOException)
-            {
-                if (OnConnectionClosed != null)
-                    OnConnectionClosed(this);
+            catch (IOException) {
+                OnConnectionClosed?.Invoke(this);
                 //_port.Close();
             }
             catch (Exception)
@@ -97,7 +82,7 @@ namespace Wiffzack.Communication
 
         public void SetLines(bool RTS, bool DTR)
         {
-            lock (_port)
+            lock (_SerialPortLock)
             {
                 _port.RtsEnable = RTS;
                 _port.DtrEnable = DTR;
@@ -112,7 +97,7 @@ namespace Wiffzack.Communication
 
         public event Action<ICommunication> OnConnectionClosed;
 
-        public void SetupCommunication(System.Xml.XmlElement setup)
+        public void SetupCommunication(XmlElement setup)
         {
             _config = setup;
             LoadConfig();           
@@ -121,22 +106,25 @@ namespace Wiffzack.Communication
 
         public void LoadConfig()
         {
-            _port = new SerialPort(XmlHelper.ReadString(_config, "Port"),
-               XmlHelper.ReadInt(_config, "BaudRate", 9600),
-               XmlHelper.ReadEnum<Parity>(_config, "Parity", Parity.Even),
-               XmlHelper.ReadInt(_config, "DataBits", 8) ,
-               XmlHelper.ReadEnum<StopBits>(_config, "StopBits", StopBits.One));
+            lock (_SerialPortLock) {
+                _port = new SerialPort(XmlHelper.ReadString(_config, "Port"),
+                    XmlHelper.ReadInt(_config, "BaudRate", 9600),
+                    XmlHelper.ReadEnum(_config, "Parity", Parity.Even),
+                    XmlHelper.ReadInt(_config, "DataBits", 8),
+                    XmlHelper.ReadEnum(_config, "StopBits", StopBits.One));
 
-            _port.ReadBufferSize = Math.Max(4096, XmlHelper.ReadInt(_config, "ReadBuffer", 4096));
-            _port.WriteBufferSize = Math.Max(4096, XmlHelper.ReadInt(_config, "WriteBuffer", 4096));
-            if(_autoOpen)
+                _port.ReadBufferSize = Math.Max(4096, XmlHelper.ReadInt(_config, "ReadBuffer", 4096));
+                _port.WriteBufferSize = Math.Max(4096, XmlHelper.ReadInt(_config, "WriteBuffer", 4096));
+            }
+
+            if(AutoOpen)
                 Open();
         }
 
 
         public void SendData(byte[] data, int offset, int length)
         {
-            lock (_port)
+            lock (_SerialPortLock)
             {
                 _port.BaseStream.Write(data, offset, length);
             }
@@ -156,10 +144,12 @@ namespace Wiffzack.Communication
         /// </summary>
         public void Open()
         {
-			_port.Open();
+            lock (_SerialPortLock) {
+                if (!_port.IsOpen)
+                    _port.Open();
+            }
 
-            if (OnConnectionEstablished != null)
-                OnConnectionEstablished(this);
+            OnConnectionEstablished?.Invoke(this);
             StartRead();
         }
 
@@ -168,10 +158,10 @@ namespace Wiffzack.Communication
         /// </summary>
         public void Close()
         {
-            if (_port != null && _port.IsOpen)
-            {
-                lock(_port)
+            lock (_SerialPortLock) {
+                if (_port != null && _port.IsOpen) {
                     _port.Close();
+                }
             }
         }
 
