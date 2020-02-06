@@ -2,7 +2,7 @@
 
 This library can be used to communicate with payment terminals according to the ZVT-Protocol specification.
 
-The solution contains 5 seperate projects:
+The solution contains 4 seperate projects:
 * CardTerminalLibrary: This library contains the actual ZVT-Protocol implementation.
 * CardTerminals.Tests: Command line utility that can be used to run/test several CardTerminalLibrary functions.
 * ZvtEcrInterface: This library provides a very easy to use wrapper around the original CardTerminalLibrary.
@@ -42,7 +42,7 @@ zvtCommunication.EnvironmentStatus += delegate(IntermediateStatus status) {
 };
 ```
 
-2) Most terminals require initial registration command before performing payment commands
+2) Most terminals require an initial registration command before performing payment commands
 
 ```C#
 try {
